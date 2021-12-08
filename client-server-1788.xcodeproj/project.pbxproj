@@ -56,15 +56,39 @@
 		2E3BC4F4276147F000690ADE /* client-server-1788 */ = {
 			isa = PBXGroup;
 			children = (
+				2E3BC50A2761485800690ADE /* App */,
+				2E3BC50C2761486B00690ADE /* client-server */,
+				2E3BC50E2761488200690ADE /* Sources */,
+			);
+			path = "client-server-1788";
+			sourceTree = "<group>";
+		};
+		2E3BC50A2761485800690ADE /* App */ = {
+			isa = PBXGroup;
+			children = (
 				2E3BC4F5276147F000690ADE /* AppDelegate.swift */,
 				2E3BC4F7276147F000690ADE /* SceneDelegate.swift */,
-				2E3BC4F9276147F000690ADE /* ViewController.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		2E3BC50C2761486B00690ADE /* client-server */ = {
+			isa = PBXGroup;
+			children = (
 				2E3BC4FB276147F000690ADE /* Main.storyboard */,
+				2E3BC4F9276147F000690ADE /* ViewController.swift */,
+			);
+			path = "client-server";
+			sourceTree = "<group>";
+		};
+		2E3BC50E2761488200690ADE /* Sources */ = {
+			isa = PBXGroup;
+			children = (
 				2E3BC4FE276147F300690ADE /* Assets.xcassets */,
 				2E3BC500276147F300690ADE /* LaunchScreen.storyboard */,
 				2E3BC503276147F300690ADE /* Info.plist */,
 			);
-			path = "client-server-1788";
+			path = Sources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -288,7 +312,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9BK8NWYM5V;
-				INFOPLIST_FILE = "client-server-1788/Info.plist";
+				INFOPLIST_FILE = "client-server-1788/Sources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -307,7 +331,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9BK8NWYM5V;
-				INFOPLIST_FILE = "client-server-1788/Info.plist";
+				INFOPLIST_FILE = "client-server-1788/Sources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
