@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Pk4-aS-MJ3">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Send Cash View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="SendCashViewController" customModule="client_server_1788" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RMp-Ah-13a">
+                                <rect key="frame" x="40" y="148" width="334" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Cash" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2dI-FC-ure">
+                                <rect key="frame" x="40" y="232" width="334" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VfY-0k-cZX">
+                                <rect key="frame" x="165" y="296" width="84" height="30"/>
+                                <state key="normal" title="Send a cash"/>
+                                <connections>
+                                    <action selector="sendCashAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sn6-0Z-zPQ"/>
+                                    <segue destination="cK9-ff-0D9" kind="show" id="9KD-kT-y3n"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="RMp-Ah-13a" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="60" id="41o-ER-3MO"/>
+                            <constraint firstItem="VfY-0k-cZX" firstAttribute="top" secondItem="2dI-FC-ure" secondAttribute="bottom" constant="30" id="4pW-ac-q61"/>
+                            <constraint firstItem="RMp-Ah-13a" firstAttribute="leading" secondItem="2dI-FC-ure" secondAttribute="leading" id="N8B-o2-7Th"/>
+                            <constraint firstItem="RMp-Ah-13a" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="Xce-CF-gmp"/>
+                            <constraint firstItem="2dI-FC-ure" firstAttribute="centerX" secondItem="VfY-0k-cZX" secondAttribute="centerX" id="f1n-W7-pDT"/>
+                            <constraint firstItem="RMp-Ah-13a" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mRe-52-azk"/>
+                            <constraint firstItem="RMp-Ah-13a" firstAttribute="trailing" secondItem="2dI-FC-ure" secondAttribute="trailing" id="tdC-es-Bd2"/>
+                            <constraint firstItem="2dI-FC-ure" firstAttribute="top" secondItem="RMp-Ah-13a" secondAttribute="bottom" constant="50" id="ziZ-OA-nnJ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="8DR-OM-ZAq"/>
+                    <connections>
+                        <outlet property="cashTextField" destination="2dI-FC-ure" id="QJL-SJ-0ia"/>
+                        <outlet property="nameTextField" destination="RMp-Ah-13a" id="Q9j-yo-Uym"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1047.8260869565217" y="88.392857142857139"/>
+        </scene>
+        <!--Ditail Cash View Controller-->
+        <scene sceneID="sKo-yp-Ml9">
+            <objects>
+                <viewController id="cK9-ff-0D9" customClass="DitailCashViewController" customModule="client_server_1788" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hln-Qs-KPK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IHM-V9-oRY">
+                                <rect key="frame" x="60" y="191" width="294" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="cash" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q0h-I4-MqK">
+                                <rect key="frame" x="60" y="271" width="294" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ts7-QF-iWS"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="q0h-I4-MqK" firstAttribute="trailing" secondItem="IHM-V9-oRY" secondAttribute="trailing" id="HfN-lz-X7D"/>
+                            <constraint firstItem="q0h-I4-MqK" firstAttribute="leading" secondItem="IHM-V9-oRY" secondAttribute="leading" id="QiM-RE-hmH"/>
+                            <constraint firstItem="q0h-I4-MqK" firstAttribute="top" secondItem="IHM-V9-oRY" secondAttribute="bottom" constant="59" id="TFa-6q-Lrq"/>
+                            <constraint firstItem="IHM-V9-oRY" firstAttribute="top" secondItem="ts7-QF-iWS" secondAttribute="top" constant="103" id="dP0-zD-RaO"/>
+                            <constraint firstItem="IHM-V9-oRY" firstAttribute="centerX" secondItem="hln-Qs-KPK" secondAttribute="centerX" id="eqP-PK-4rT"/>
+                            <constraint firstItem="IHM-V9-oRY" firstAttribute="leading" secondItem="ts7-QF-iWS" secondAttribute="leading" constant="60" id="l6m-5A-TbE"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="TgM-Me-Ghe"/>
+                    <connections>
+                        <outlet property="cashLabel" destination="q0h-I4-MqK" id="Ehb-i2-BZv"/>
+                        <outlet property="nameLabel" destination="IHM-V9-oRY" id="EDO-lN-LMl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sGc-le-Sds" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1818.840579710145" y="87.723214285714278"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="9fm-AI-wF5">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Pk4-aS-MJ3" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="UE9-L9-2f3">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="BEM-TG-oaQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tbC-iS-5sY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="88.392857142857139"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

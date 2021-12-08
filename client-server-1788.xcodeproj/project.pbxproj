@@ -9,21 +9,27 @@
 /* Begin PBXBuildFile section */
 		2E3BC4F6276147F000690ADE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3BC4F5276147F000690ADE /* AppDelegate.swift */; };
 		2E3BC4F8276147F000690ADE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3BC4F7276147F000690ADE /* SceneDelegate.swift */; };
-		2E3BC4FA276147F000690ADE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3BC4F9276147F000690ADE /* ViewController.swift */; };
+		2E3BC4FA276147F000690ADE /* SendCashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3BC4F9276147F000690ADE /* SendCashViewController.swift */; };
 		2E3BC4FD276147F000690ADE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E3BC4FB276147F000690ADE /* Main.storyboard */; };
 		2E3BC4FF276147F300690ADE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E3BC4FE276147F300690ADE /* Assets.xcassets */; };
 		2E3BC502276147F300690ADE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E3BC500276147F300690ADE /* LaunchScreen.storyboard */; };
+		2E3BC51127614A9400690ADE /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3BC51027614A9400690ADE /* Account.swift */; };
+		2E3BC51627614EE100690ADE /* DitailCashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3BC51527614EE100690ADE /* DitailCashViewController.swift */; };
+		2E3BC51A2761556D00690ADE /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3BC5192761556D00690ADE /* Session.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2E3BC4F2276147F000690ADE /* client-server-1788.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "client-server-1788.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E3BC4F5276147F000690ADE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2E3BC4F7276147F000690ADE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2E3BC4F9276147F000690ADE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2E3BC4F9276147F000690ADE /* SendCashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendCashViewController.swift; sourceTree = "<group>"; };
 		2E3BC4FC276147F000690ADE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2E3BC4FE276147F300690ADE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2E3BC501276147F300690ADE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2E3BC503276147F300690ADE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2E3BC51027614A9400690ADE /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		2E3BC51527614EE100690ADE /* DitailCashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DitailCashViewController.swift; sourceTree = "<group>"; };
+		2E3BC5192761556D00690ADE /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,8 +81,10 @@
 		2E3BC50C2761486B00690ADE /* client-server */ = {
 			isa = PBXGroup;
 			children = (
-				2E3BC4FB276147F000690ADE /* Main.storyboard */,
-				2E3BC4F9276147F000690ADE /* ViewController.swift */,
+				2E3BC4F9276147F000690ADE /* SendCashViewController.swift */,
+				2E3BC51527614EE100690ADE /* DitailCashViewController.swift */,
+				2E3BC51027614A9400690ADE /* Account.swift */,
+				2E3BC5192761556D00690ADE /* Session.swift */,
 			);
 			path = "client-server";
 			sourceTree = "<group>";
@@ -84,6 +92,7 @@
 		2E3BC50E2761488200690ADE /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				2E3BC4FB276147F000690ADE /* Main.storyboard */,
 				2E3BC4FE276147F300690ADE /* Assets.xcassets */,
 				2E3BC500276147F300690ADE /* LaunchScreen.storyboard */,
 				2E3BC503276147F300690ADE /* Info.plist */,
@@ -161,7 +170,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2E3BC4FA276147F000690ADE /* ViewController.swift in Sources */,
+				2E3BC51627614EE100690ADE /* DitailCashViewController.swift in Sources */,
+				2E3BC4FA276147F000690ADE /* SendCashViewController.swift in Sources */,
+				2E3BC51A2761556D00690ADE /* Session.swift in Sources */,
+				2E3BC51127614A9400690ADE /* Account.swift in Sources */,
 				2E3BC4F6276147F000690ADE /* AppDelegate.swift in Sources */,
 				2E3BC4F8276147F000690ADE /* SceneDelegate.swift in Sources */,
 			);
