@@ -94,7 +94,7 @@
 				2E3BC4F9276147F000690ADE /* SendCashViewController.swift */,
 				2E3BC51527614EE100690ADE /* DitailCashViewController.swift */,
 				2E3BC51027614A9400690ADE /* Account.swift */,
-				2E3BC5192761556D00690ADE /* Session.swift */,
+				2E73CC832765329B00FB6EC4 /* Services */,
 			);
 			path = "client-server";
 			sourceTree = "<group>";
@@ -113,9 +113,25 @@
 		2E6617802762AFF4004B9360 /* VKServise */ = {
 			isa = PBXGroup;
 			children = (
-				2E6617812762B04D004B9360 /* AuthorizationVKViewController.swift */,
+				2E73CC812765327D00FB6EC4 /* Modules */,
 			);
 			path = VKServise;
+			sourceTree = "<group>";
+		};
+		2E73CC812765327D00FB6EC4 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				2E6617812762B04D004B9360 /* AuthorizationVKViewController.swift */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		2E73CC832765329B00FB6EC4 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				2E3BC5192761556D00690ADE /* Session.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		62BCC15F4C903D1DCB832210 /* Frameworks */ = {

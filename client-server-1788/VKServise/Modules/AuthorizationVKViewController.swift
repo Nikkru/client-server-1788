@@ -38,6 +38,7 @@ class AuthorizationVKViewController: UIViewController {
                     URLQueryItem(name: "scope", value: "262150"),
                     URLQueryItem(name: "response_type", value: "token"),
                     URLQueryItem(name: "state", value: "1234567"),
+                    URLQueryItem(name: "revoke", value: "1"),
                     URLQueryItem(name: "v", value: "5.68")
                 ]
                 
@@ -60,22 +61,28 @@ extension AuthorizationVKViewController: WKNavigationDelegate {
             decisionHandler(.allow)
             return
         }
-        
+        //  разбиваем строку ответа на массив строк
         let params = fragment
             .components(separatedBy: "&")
             .map { $0.components(separatedBy: "=") }
-            .reduce([String: String]()) { result, param in
-                var dict = result
+            .reduce([String: String]()) { result, param in // собираем из массива словарь
+                var dict = result // буфер
                 let key = param[0]
                 let value = param[1]
                 dict[key] = value
                 return dict
         }
         
-        let token = params["access_token"]
+       guard let token = params["access_token"],
+             let userId = params["user_id"] else { return }
         
         print("token = \(token)")
+        print("user Id = \(userId)")
         
+        Session.shared.token = token
+        Session.shared.userId = userId
+        
+        performSegue(withIdentifier: "showFriendSegue", sender: nil)
         
         decisionHandler(.cancel)
     }
