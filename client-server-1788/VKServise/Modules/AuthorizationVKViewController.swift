@@ -17,8 +17,8 @@ class AuthorizationVKViewController: UIViewController {
         }
     }
     
-//    private let appId = "8023112"
-    private let appId = "7822904"
+    private let appId = "8023112"
+//    private let appId = "7822904"
         
     override func viewDidLoad() {
         super.viewDidLoad()

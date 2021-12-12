@@ -20,6 +20,8 @@ class ApiRequestViewController: UIViewController {
 
         getFriendsApi()
         getPhotosApi()
+        getGroupsApi()
+        searchGroupsApi()
     }
     private func getFriendsApi() {
         
@@ -29,7 +31,7 @@ class ApiRequestViewController: UIViewController {
             "order": "name",
             "fields": "photo_50",
             "access_token": token,
-            "count": 10,
+            "count": 5,
             "v": version
         ]
         
@@ -50,7 +52,7 @@ class ApiRequestViewController: UIViewController {
             "rev": 0,
             "fields": "photo_50",
             "access_token": token,
-            "count": 20,
+            "count": 5,
             "v": version
         ]
         
@@ -63,4 +65,45 @@ class ApiRequestViewController: UIViewController {
               }
     }
 
+    private func getGroupsApi() {
+        
+        let method = "groups.get"
+        let parameters: Parameters = [
+            "user_id": userId,
+            "extended": 1,
+            "access_token": token,
+            "count": 5,
+            "v": version
+        ]
+        
+        let url = baseUrl + method
+        
+        AF.request(url, method: .get, parameters: parameters).responseJSON { response in
+            print(response.request ?? "fall request")
+            print(response.value ?? "no value of response")
+                  
+              }
+    }
+    
+    private func searchGroupsApi() {
+        
+        let searchWord = "Jazz"
+        
+        let method = "groups.search"
+        let parameters: Parameters = [
+            "q": searchWord,
+            "access_token": token,
+            "offset": 3,
+            "count": 5,
+            "v": version
+        ]
+        
+        let url = baseUrl + method
+        
+        AF.request(url, method: .get, parameters: parameters).responseJSON { response in
+            print(response.request ?? "fall request")
+            print(response.value ?? "no value of response")
+                  
+              }
+    }
 }
