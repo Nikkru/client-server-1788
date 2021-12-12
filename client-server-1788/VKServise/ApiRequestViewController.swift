@@ -19,6 +19,7 @@ class ApiRequestViewController: UIViewController {
         super.viewDidLoad()
 
         getFriendsApi()
+        getPhotosApi()
     }
     private func getFriendsApi() {
         
@@ -28,6 +29,7 @@ class ApiRequestViewController: UIViewController {
             "order": "name",
             "fields": "photo_50",
             "access_token": token,
+            "count": 10,
             "v": version
         ]
         
@@ -38,7 +40,27 @@ class ApiRequestViewController: UIViewController {
             print(response.value ?? "no value of response")
                   
               }
-
+    }
+    
+    private func getPhotosApi() {
+        
+        let method = "photos.getAll"
+        let parameters: Parameters = [
+            "user_id": userId,
+            "rev": 0,
+            "fields": "photo_50",
+            "access_token": token,
+            "count": 20,
+            "v": version
+        ]
+        
+        let url = baseUrl + method
+        
+        AF.request(url, method: .get, parameters: parameters).responseJSON { response in
+            print(response.request ?? "fall request")
+            print(response.value ?? "no value of response")
+                  
+              }
     }
 
 }
