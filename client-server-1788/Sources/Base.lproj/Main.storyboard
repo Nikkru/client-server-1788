@@ -94,10 +94,10 @@
             </objects>
             <point key="canvasLocation" x="1819" y="759"/>
         </scene>
-        <!--View Controller-->
+        <!--Api Request View Controller-->
         <scene sceneID="fk9-eP-a03">
             <objects>
-                <viewController id="usr-r3-Q8a" sceneMemberID="viewController">
+                <viewController id="usr-r3-Q8a" customClass="ApiRequestViewController" customModule="client_server_1788" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Geu-Yn-cPL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

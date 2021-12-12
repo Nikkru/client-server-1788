@@ -17,6 +17,7 @@
 		2E3BC51627614EE100690ADE /* DitailCashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3BC51527614EE100690ADE /* DitailCashViewController.swift */; };
 		2E3BC51A2761556D00690ADE /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3BC5192761556D00690ADE /* Session.swift */; };
 		2E6617822762B04D004B9360 /* AuthorizationVKViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6617812762B04D004B9360 /* AuthorizationVKViewController.swift */; };
+		2E73CC8627662EF100FB6EC4 /* ApiRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E73CC8527662EF100FB6EC4 /* ApiRequestViewController.swift */; };
 		816CBD0C776D29638699AEEE /* Pods_client_server_1788.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70FEE3B97FDD76BBE198B378 /* Pods_client_server_1788.framework */; };
 /* End PBXBuildFile section */
 
@@ -34,6 +35,7 @@
 		2E3BC51527614EE100690ADE /* DitailCashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DitailCashViewController.swift; sourceTree = "<group>"; };
 		2E3BC5192761556D00690ADE /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		2E6617812762B04D004B9360 /* AuthorizationVKViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationVKViewController.swift; sourceTree = "<group>"; };
+		2E73CC8527662EF100FB6EC4 /* ApiRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRequestViewController.swift; sourceTree = "<group>"; };
 		70FEE3B97FDD76BBE198B378 /* Pods_client_server_1788.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_client_server_1788.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		954799A3105721613CD10A96 /* Pods-client-server-1788.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-client-server-1788.release.xcconfig"; path = "Pods/Target Support Files/Pods-client-server-1788/Pods-client-server-1788.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -94,7 +96,6 @@
 				2E3BC4F9276147F000690ADE /* SendCashViewController.swift */,
 				2E3BC51527614EE100690ADE /* DitailCashViewController.swift */,
 				2E3BC51027614A9400690ADE /* Account.swift */,
-				2E73CC832765329B00FB6EC4 /* Services */,
 			);
 			path = "client-server";
 			sourceTree = "<group>";
@@ -114,6 +115,8 @@
 			isa = PBXGroup;
 			children = (
 				2E73CC812765327D00FB6EC4 /* Modules */,
+				2E73CC8527662EF100FB6EC4 /* ApiRequestViewController.swift */,
+				2E73CC832765329B00FB6EC4 /* Services */,
 			);
 			path = VKServise;
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 				2E3BC51627614EE100690ADE /* DitailCashViewController.swift in Sources */,
 				2E3BC4FA276147F000690ADE /* SendCashViewController.swift in Sources */,
 				2E3BC51A2761556D00690ADE /* Session.swift in Sources */,
+				2E73CC8627662EF100FB6EC4 /* ApiRequestViewController.swift in Sources */,
 				2E3BC51127614A9400690ADE /* Account.swift in Sources */,
 				2E3BC4F6276147F000690ADE /* AppDelegate.swift in Sources */,
 				2E6617822762B04D004B9360 /* AuthorizationVKViewController.swift in Sources */,
