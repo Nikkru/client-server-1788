@@ -38,8 +38,12 @@ class ApiRequestViewController: UIViewController {
         let url = baseUrl + method
         
         AF.request(url, method: .get, parameters: parameters).responseJSON { response in
-            print(response.request ?? "fall request")
-            print(response.value ?? "no value of response")
+            
+            guard let request = response.request else { return }
+            guard let data = response.value else { return }
+            
+            print("friends.get reguest: \(request)")
+            print("friends.get value: \(data)")
                   
               }
     }
@@ -59,8 +63,12 @@ class ApiRequestViewController: UIViewController {
         let url = baseUrl + method
         
         AF.request(url, method: .get, parameters: parameters).responseJSON { response in
-            print(response.request ?? "fall request")
-            print(response.value ?? "no value of response")
+            
+            guard let request = response.request else { return }
+            guard let data = response.value else { return }
+            
+            print("photos.getAll reguest: \(request)")
+            print("photos.getAll value: \(data)")
                   
               }
     }
@@ -79,8 +87,12 @@ class ApiRequestViewController: UIViewController {
         let url = baseUrl + method
         
         AF.request(url, method: .get, parameters: parameters).responseJSON { response in
-            print(response.request ?? "fall request")
-            print(response.value ?? "no value of response")
+            
+            guard let request = response.request else { return }
+            guard let data = response.value else { return }
+            
+            print("groups.get reguest: \(request)")
+            print("groups.get value: \(data)")
                   
               }
     }
@@ -101,8 +113,12 @@ class ApiRequestViewController: UIViewController {
         let url = baseUrl + method
         
         AF.request(url, method: .get, parameters: parameters).responseJSON { response in
-            print(response.request ?? "fall request")
-            print(response.value ?? "no value of response")
+            
+            guard let request = response.request else { return }
+            guard let data = response.value else { return }
+            
+            print("groups.search reguest: \(request)")
+            print("groups.search value: \(data)")
                   
               }
     }
