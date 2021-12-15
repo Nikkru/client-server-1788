@@ -40,7 +40,9 @@ final class FriendsApi {
         AF.request(url,
                    method: .get,
                    parameters: parameters).responseJSON { response in
-                    print(response.result)
+                    
+//                    print(response.result)
+                    print(response.data?.prettyJSON)
                    }
         
         completion([Friend()])
