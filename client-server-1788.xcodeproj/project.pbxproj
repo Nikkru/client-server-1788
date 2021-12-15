@@ -10,6 +10,7 @@
 		2E0EB118276A769500E67D5A /* PhotosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0EB117276A769500E67D5A /* PhotosTableViewController.swift */; };
 		2E0EB11C276A76C300E67D5A /* FriendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0EB11B276A76C300E67D5A /* FriendsTableViewController.swift */; };
 		2E0EB120276A792100E67D5A /* FriendsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0EB11F276A792100E67D5A /* FriendsApi.swift */; };
+		2E0EB124276A876400E67D5A /* Data+PrettyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0EB123276A876400E67D5A /* Data+PrettyJSON.swift */; };
 		2E3BC4F6276147F000690ADE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3BC4F5276147F000690ADE /* AppDelegate.swift */; };
 		2E3BC4F8276147F000690ADE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3BC4F7276147F000690ADE /* SceneDelegate.swift */; };
 		2E3BC4FA276147F000690ADE /* SendCashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3BC4F9276147F000690ADE /* SendCashViewController.swift */; };
@@ -29,6 +30,7 @@
 		2E0EB117276A769500E67D5A /* PhotosTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosTableViewController.swift; sourceTree = "<group>"; };
 		2E0EB11B276A76C300E67D5A /* FriendsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableViewController.swift; sourceTree = "<group>"; };
 		2E0EB11F276A792100E67D5A /* FriendsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsApi.swift; sourceTree = "<group>"; };
+		2E0EB123276A876400E67D5A /* Data+PrettyJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+PrettyJSON.swift"; sourceTree = "<group>"; };
 		2E3BC4F2276147F000690ADE /* client-server-1788.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "client-server-1788.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E3BC4F5276147F000690ADE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2E3BC4F7276147F000690ADE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -81,6 +83,14 @@
 				2E0EB117276A769500E67D5A /* PhotosTableViewController.swift */,
 			);
 			path = Photos;
+			sourceTree = "<group>";
+		};
+		2E0EB122276A86FC00E67D5A /* Extention */ = {
+			isa = PBXGroup;
+			children = (
+				2E0EB123276A876400E67D5A /* Data+PrettyJSON.swift */,
+			);
+			path = Extention;
 			sourceTree = "<group>";
 		};
 		2E3BC4E9276147F000690ADE = {
@@ -147,6 +157,7 @@
 			children = (
 				2E73CC812765327D00FB6EC4 /* Modules */,
 				2E73CC832765329B00FB6EC4 /* Services */,
+				2E0EB122276A86FC00E67D5A /* Extention */,
 			);
 			path = VKServise;
 			sourceTree = "<group>";
@@ -301,6 +312,7 @@
 				2E0EB120276A792100E67D5A /* FriendsApi.swift in Sources */,
 				2E3BC51627614EE100690ADE /* DitailCashViewController.swift in Sources */,
 				2E3BC4FA276147F000690ADE /* SendCashViewController.swift in Sources */,
+				2E0EB124276A876400E67D5A /* Data+PrettyJSON.swift in Sources */,
 				2E3BC51A2761556D00690ADE /* Session.swift in Sources */,
 				2E73CC8627662EF100FB6EC4 /* ApiRequestViewController.swift in Sources */,
 				2E0EB11C276A76C300E67D5A /* FriendsTableViewController.swift in Sources */,
