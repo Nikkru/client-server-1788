@@ -88,11 +88,89 @@
                     <connections>
                         <outlet property="webview" destination="80Q-Hy-l9O" id="4TG-XE-uWm"/>
                         <segue destination="usr-r3-Q8a" kind="show" identifier="showFriendSegue" id="LK2-Zp-cz9"/>
+                        <segue destination="Ked-Bo-KL8" kind="show" identifier="ShowTabBarSegue" id="rpV-Kz-Bsd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qru-LU-Cpc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1819" y="759"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="tMU-B3-GWu">
+            <objects>
+                <tabBarController id="Ked-Bo-KL8" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="pQf-db-BWc"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="WzQ-rN-T1Y">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="I38-jy-yLr" kind="relationship" relationship="viewControllers" id="1zj-lx-LDu"/>
+                        <segue destination="yrY-Uy-J8r" kind="relationship" relationship="viewControllers" id="7CM-zd-f6b"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wbd-RB-9K5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2732" y="759"/>
+        </scene>
+        <!--Фотографии-->
+        <scene sceneID="B9o-fO-enh">
+            <objects>
+                <tableViewController id="yrY-Uy-J8r" customClass="PhotosTableViewController" customModule="client_server_1788" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="PBj-ul-DWc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="FIY-zM-FZn">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FIY-zM-FZn" id="Gmp-II-kwI">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="yrY-Uy-J8r" id="u8y-Q7-433"/>
+                            <outlet property="delegate" destination="yrY-Uy-J8r" id="KHq-NV-1rK"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Фотографии" id="rL4-r9-nrB"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZkQ-kC-PxO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2368" y="1513"/>
+        </scene>
+        <!--Друзья-->
+        <scene sceneID="NGA-lA-Kjz">
+            <objects>
+                <tableViewController id="I38-jy-yLr" customClass="FriendsTableViewController" customModule="client_server_1788" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="j0E-LP-aHl">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="a38-T6-0Na">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="a38-T6-0Na" id="NQn-Gy-Y9d">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="I38-jy-yLr" id="hdb-al-mbd"/>
+                            <outlet property="delegate" destination="I38-jy-yLr" id="b9C-lW-654"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Друзья" id="1cD-6G-FJr"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vAw-JQ-qFH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3139" y="1513"/>
         </scene>
         <!--Api Request View Controller-->
         <scene sceneID="fk9-eP-a03">
@@ -108,7 +186,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vst-IQ-Gj3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2617" y="759"/>
+            <point key="canvasLocation" x="1558" y="1513"/>
         </scene>
         <!--Ditail Cash View Controller-->
         <scene sceneID="sKo-yp-Ml9">

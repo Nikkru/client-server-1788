@@ -83,7 +83,7 @@ extension AuthorizationVKViewController: WKNavigationDelegate {
         Session.shared.token = token
         Session.shared.userId = userId
         
-        performSegue(withIdentifier: "showFriendSegue", sender: nil)
+        performSegue(withIdentifier: "ShowTabBarSegue", sender: nil)
         
         decisionHandler(.cancel)
     }

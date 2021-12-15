@@ -26,6 +26,7 @@ class ApiRequestViewController: UIViewController {
     private func getFriendsApi() {
         
         let method = "friends.get"
+        
         let parameters: Parameters = [
             "user_id": userId,
             "order": "name",
