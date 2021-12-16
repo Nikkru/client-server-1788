@@ -27,7 +27,8 @@ struct Friend: Codable {
     let id: Int
     let lastName: String
     let photo50: String
-    let trackCode, firstName: String
+    let trackCode: String?
+    let firstName: String
 
     enum CodingKeys: String, CodingKey {
         case id

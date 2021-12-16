@@ -8,10 +8,6 @@
 import UIKit
 import Alamofire
 
-// struct Friend {
-//    var name = "Bobkin"
-//}
-
 // https://api.vk.com/method/users.get?user_id=210700286&v=5.52
 
 final class FriendsApi {
@@ -31,7 +27,7 @@ final class FriendsApi {
             "order": "name",
             "fields": "photo_50",
             "access_token": token,
-            "count": 5,
+            "count": 100,
             "v": version
         ]
         
@@ -44,10 +40,16 @@ final class FriendsApi {
                     
                     guard let jsonData = response.data else { return }
                     
-                    let friendsContainer = try? JSONDecoder().decode(FriendsContainer.self, from: jsonData)
-                    guard let friends = friendsContainer?.response.items else { return }
+                    do {
+                        let friendsContainer = try JSONDecoder().decode(FriendsContainer.self, from: jsonData)
+                         let friends = friendsContainer.response.items
+                        
+                        completion(friends)
+                    } catch {
+                        print(error)
+                    }
                     
-                    completion(friends)
+                
                    }
     }
 }

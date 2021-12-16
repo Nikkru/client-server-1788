@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 final class FriendsTableViewController: UITableViewController {
     
@@ -45,7 +46,10 @@ final class FriendsTableViewController: UITableViewController {
         let friend = friends[indexPath.row]
 
         cell.textLabel?.text = "\(friend.firstName) \(friend.lastName)"
-
-        return cell
+        
+        if let url = URL(string: friend.photo50) {
+        cell.imageView?.sd_setImage(with: url, completed: nil)
+        }
+            return cell
     }
 }
