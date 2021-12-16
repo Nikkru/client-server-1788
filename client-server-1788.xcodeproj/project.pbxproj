@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E0EB118276A769500E67D5A /* PhotosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0EB117276A769500E67D5A /* PhotosTableViewController.swift */; };
+		2E0EB11C276A76C300E67D5A /* FriendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0EB11B276A76C300E67D5A /* FriendsTableViewController.swift */; };
+		2E0EB120276A792100E67D5A /* FriendsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0EB11F276A792100E67D5A /* FriendsApi.swift */; };
 		2E3BC4F6276147F000690ADE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3BC4F5276147F000690ADE /* AppDelegate.swift */; };
 		2E3BC4F8276147F000690ADE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3BC4F7276147F000690ADE /* SceneDelegate.swift */; };
 		2E3BC4FA276147F000690ADE /* SendCashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3BC4F9276147F000690ADE /* SendCashViewController.swift */; };
@@ -17,11 +20,15 @@
 		2E3BC51627614EE100690ADE /* DitailCashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3BC51527614EE100690ADE /* DitailCashViewController.swift */; };
 		2E3BC51A2761556D00690ADE /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3BC5192761556D00690ADE /* Session.swift */; };
 		2E6617822762B04D004B9360 /* AuthorizationVKViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6617812762B04D004B9360 /* AuthorizationVKViewController.swift */; };
+		2E73CC8627662EF100FB6EC4 /* ApiRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E73CC8527662EF100FB6EC4 /* ApiRequestViewController.swift */; };
 		816CBD0C776D29638699AEEE /* Pods_client_server_1788.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70FEE3B97FDD76BBE198B378 /* Pods_client_server_1788.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		01119230A72A2E1A281BB603 /* Pods-client-server-1788.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-client-server-1788.debug.xcconfig"; path = "Pods/Target Support Files/Pods-client-server-1788/Pods-client-server-1788.debug.xcconfig"; sourceTree = "<group>"; };
+		2E0EB117276A769500E67D5A /* PhotosTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosTableViewController.swift; sourceTree = "<group>"; };
+		2E0EB11B276A76C300E67D5A /* FriendsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableViewController.swift; sourceTree = "<group>"; };
+		2E0EB11F276A792100E67D5A /* FriendsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsApi.swift; sourceTree = "<group>"; };
 		2E3BC4F2276147F000690ADE /* client-server-1788.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "client-server-1788.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E3BC4F5276147F000690ADE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2E3BC4F7276147F000690ADE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -34,6 +41,7 @@
 		2E3BC51527614EE100690ADE /* DitailCashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DitailCashViewController.swift; sourceTree = "<group>"; };
 		2E3BC5192761556D00690ADE /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		2E6617812762B04D004B9360 /* AuthorizationVKViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationVKViewController.swift; sourceTree = "<group>"; };
+		2E73CC8527662EF100FB6EC4 /* ApiRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRequestViewController.swift; sourceTree = "<group>"; };
 		70FEE3B97FDD76BBE198B378 /* Pods_client_server_1788.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_client_server_1788.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		954799A3105721613CD10A96 /* Pods-client-server-1788.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-client-server-1788.release.xcconfig"; path = "Pods/Target Support Files/Pods-client-server-1788/Pods-client-server-1788.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -50,6 +58,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2E0EB111276A761900E67D5A /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				2E6617812762B04D004B9360 /* AuthorizationVKViewController.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		2E0EB113276A763500E67D5A /* Friends */ = {
+			isa = PBXGroup;
+			children = (
+				2E73CC8527662EF100FB6EC4 /* ApiRequestViewController.swift */,
+				2E0EB11B276A76C300E67D5A /* FriendsTableViewController.swift */,
+			);
+			path = Friends;
+			sourceTree = "<group>";
+		};
+		2E0EB116276A764E00E67D5A /* Photos */ = {
+			isa = PBXGroup;
+			children = (
+				2E0EB117276A769500E67D5A /* PhotosTableViewController.swift */,
+			);
+			path = Photos;
+			sourceTree = "<group>";
+		};
 		2E3BC4E9276147F000690ADE = {
 			isa = PBXGroup;
 			children = (
@@ -94,7 +127,6 @@
 				2E3BC4F9276147F000690ADE /* SendCashViewController.swift */,
 				2E3BC51527614EE100690ADE /* DitailCashViewController.swift */,
 				2E3BC51027614A9400690ADE /* Account.swift */,
-				2E3BC5192761556D00690ADE /* Session.swift */,
 			);
 			path = "client-server";
 			sourceTree = "<group>";
@@ -113,9 +145,29 @@
 		2E6617802762AFF4004B9360 /* VKServise */ = {
 			isa = PBXGroup;
 			children = (
-				2E6617812762B04D004B9360 /* AuthorizationVKViewController.swift */,
+				2E73CC812765327D00FB6EC4 /* Modules */,
+				2E73CC832765329B00FB6EC4 /* Services */,
 			);
 			path = VKServise;
+			sourceTree = "<group>";
+		};
+		2E73CC812765327D00FB6EC4 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				2E0EB116276A764E00E67D5A /* Photos */,
+				2E0EB113276A763500E67D5A /* Friends */,
+				2E0EB111276A761900E67D5A /* Auth */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		2E73CC832765329B00FB6EC4 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				2E3BC5192761556D00690ADE /* Session.swift */,
+				2E0EB11F276A792100E67D5A /* FriendsApi.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		62BCC15F4C903D1DCB832210 /* Frameworks */ = {
@@ -246,10 +298,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E0EB120276A792100E67D5A /* FriendsApi.swift in Sources */,
 				2E3BC51627614EE100690ADE /* DitailCashViewController.swift in Sources */,
 				2E3BC4FA276147F000690ADE /* SendCashViewController.swift in Sources */,
 				2E3BC51A2761556D00690ADE /* Session.swift in Sources */,
+				2E73CC8627662EF100FB6EC4 /* ApiRequestViewController.swift in Sources */,
+				2E0EB11C276A76C300E67D5A /* FriendsTableViewController.swift in Sources */,
 				2E3BC51127614A9400690ADE /* Account.swift in Sources */,
+				2E0EB118276A769500E67D5A /* PhotosTableViewController.swift in Sources */,
 				2E3BC4F6276147F000690ADE /* AppDelegate.swift in Sources */,
 				2E6617822762B04D004B9360 /* AuthorizationVKViewController.swift in Sources */,
 				2E3BC4F8276147F000690ADE /* SceneDelegate.swift in Sources */,

@@ -13,8 +13,8 @@ final class Session {
     
     static let shared = Session()
     
-    let token = ""
-    let userId = 0
+    var token = ""
+    var userId = ""
     
     
 }
