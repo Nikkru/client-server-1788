@@ -7,9 +7,6 @@
 
 import Foundation
 
-//   let photosContainer = try? newJSONDecoder().decode(PhotosContainer.self, from: jsonData)
-
-
 // MARK: - Item
 struct PhotoDTO: Codable {
     

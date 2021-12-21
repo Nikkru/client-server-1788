@@ -7,19 +7,8 @@
 
 import Foundation
 
-// MARK: - GroupsContainer
-struct GroupsContainer: Codable {
-    let response: Response
-}
-
-// MARK: - Response
-struct Response: Codable {
-    let count: Int
-    let items: [Item]
-}
-
 // MARK: - Item
-struct Item: Codable {
+struct GroupDTO: Codable {
     let isMember, id: Int
     let photo100: String
     let isAdvertiser, isAdmin: Int
