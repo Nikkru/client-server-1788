@@ -41,10 +41,11 @@ class ApiRequestViewController: UIViewController {
         AF.request(url, method: .get, parameters: parameters).responseJSON { response in
             
             guard let request = response.request else { return }
-            guard let data = response.value else { return }
+//            guard let data = response.value else { return }
             
             print("friends.get reguest: \(request)")
-            print("friends.get value: \(data)")
+//            print("friends.get value: \(data)")
+            print(response.data?.prettyJSON)
                   
               }
     }
@@ -57,7 +58,7 @@ class ApiRequestViewController: UIViewController {
             "rev": 0,
             "fields": "photo_50",
             "access_token": token,
-            "count": 5,
+            "count": 2,
             "v": version
         ]
         
@@ -66,11 +67,11 @@ class ApiRequestViewController: UIViewController {
         AF.request(url, method: .get, parameters: parameters).responseJSON { response in
             
             guard let request = response.request else { return }
-            guard let data = response.value else { return }
+            guard let data = response.data else { return }
             
             print("photos.getAll reguest: \(request)")
-            print("photos.getAll value: \(data)")
-                  
+//            print("photos.getAll value: \(data)")
+            print(data.prettyJSON)
               }
     }
 

@@ -22,6 +22,13 @@
 		2E3BC51627614EE100690ADE /* DitailCashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3BC51527614EE100690ADE /* DitailCashViewController.swift */; };
 		2E3BC51A2761556D00690ADE /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3BC5192761556D00690ADE /* Session.swift */; };
 		2E4983E5276BA6EC00EB3C23 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 2E4983E4276BA6EC00EB3C23 /* SDWebImage */; };
+		2E4983E8276BB4A400EB3C23 /* FriendDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4983E7276BB4A400EB3C23 /* FriendDTO.swift */; };
+		2E4983EC276BB57200EB3C23 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 2E4983EB276BB57200EB3C23 /* SwiftyJSON */; };
+		2E4983F0276BBEE900EB3C23 /* PhotosApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4983EF276BBEE900EB3C23 /* PhotosApi.swift */; };
+		2E4983F6276BC3D200EB3C23 /* GroupsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4983F5276BC3D200EB3C23 /* GroupsApi.swift */; };
+		2E4983F9276BC79E00EB3C23 /* PhotoDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4983F8276BC79E00EB3C23 /* PhotoDTO.swift */; };
+		2E4983FD276BD01200EB3C23 /* Photo1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4983FC276BD01200EB3C23 /* Photo1.swift */; };
+		2E5BC44A276F69C100969561 /* GroupsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5BC449276F69C100969561 /* GroupsTableViewController.swift */; };
 		2E6617822762B04D004B9360 /* AuthorizationVKViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6617812762B04D004B9360 /* AuthorizationVKViewController.swift */; };
 		2E73CC8627662EF100FB6EC4 /* ApiRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E73CC8527662EF100FB6EC4 /* ApiRequestViewController.swift */; };
 		816CBD0C776D29638699AEEE /* Pods_client_server_1788.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70FEE3B97FDD76BBE198B378 /* Pods_client_server_1788.framework */; };
@@ -45,6 +52,12 @@
 		2E3BC51027614A9400690ADE /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		2E3BC51527614EE100690ADE /* DitailCashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DitailCashViewController.swift; sourceTree = "<group>"; };
 		2E3BC5192761556D00690ADE /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		2E4983E7276BB4A400EB3C23 /* FriendDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendDTO.swift; sourceTree = "<group>"; };
+		2E4983EF276BBEE900EB3C23 /* PhotosApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosApi.swift; sourceTree = "<group>"; };
+		2E4983F5276BC3D200EB3C23 /* GroupsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsApi.swift; sourceTree = "<group>"; };
+		2E4983F8276BC79E00EB3C23 /* PhotoDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDTO.swift; sourceTree = "<group>"; };
+		2E4983FC276BD01200EB3C23 /* Photo1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo1.swift; sourceTree = "<group>"; };
+		2E5BC449276F69C100969561 /* GroupsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsTableViewController.swift; sourceTree = "<group>"; };
 		2E6617812762B04D004B9360 /* AuthorizationVKViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationVKViewController.swift; sourceTree = "<group>"; };
 		2E73CC8527662EF100FB6EC4 /* ApiRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRequestViewController.swift; sourceTree = "<group>"; };
 		70FEE3B97FDD76BBE198B378 /* Pods_client_server_1788.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_client_server_1788.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -56,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E4983EC276BB57200EB3C23 /* SwiftyJSON in Frameworks */,
 				2E4983E5276BA6EC00EB3C23 /* SDWebImage in Frameworks */,
 				816CBD0C776D29638699AEEE /* Pods_client_server_1788.framework in Frameworks */,
 			);
@@ -86,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				2E0EB117276A769500E67D5A /* PhotosTableViewController.swift */,
+				2E4983EE276BBE7000EB3C23 /* Models */,
 			);
 			path = Photos;
 			sourceTree = "<group>";
@@ -102,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				2E0EB127276A8E0200E67D5A /* Friend.swift */,
+				2E4983E7276BB4A400EB3C23 /* FriendDTO.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -165,6 +181,31 @@
 			path = Sources;
 			sourceTree = "<group>";
 		};
+		2E4983EE276BBE7000EB3C23 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2E4983F8276BC79E00EB3C23 /* PhotoDTO.swift */,
+				2E4983FC276BD01200EB3C23 /* Photo1.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2E4983F3276BC38200EB3C23 /* Groups */ = {
+			isa = PBXGroup;
+			children = (
+				2E4983F4276BC39700EB3C23 /* Models */,
+				2E5BC449276F69C100969561 /* GroupsTableViewController.swift */,
+			);
+			path = Groups;
+			sourceTree = "<group>";
+		};
+		2E4983F4276BC39700EB3C23 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		2E6617802762AFF4004B9360 /* VKServise */ = {
 			isa = PBXGroup;
 			children = (
@@ -178,6 +219,7 @@
 		2E73CC812765327D00FB6EC4 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				2E4983F3276BC38200EB3C23 /* Groups */,
 				2E0EB113276A763500E67D5A /* Friends */,
 				2E0EB116276A764E00E67D5A /* Photos */,
 				2E0EB111276A761900E67D5A /* Auth */,
@@ -190,6 +232,8 @@
 			children = (
 				2E3BC5192761556D00690ADE /* Session.swift */,
 				2E0EB11F276A792100E67D5A /* FriendsApi.swift */,
+				2E4983EF276BBEE900EB3C23 /* PhotosApi.swift */,
+				2E4983F5276BC3D200EB3C23 /* GroupsApi.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -231,6 +275,7 @@
 			name = "client-server-1788";
 			packageProductDependencies = (
 				2E4983E4276BA6EC00EB3C23 /* SDWebImage */,
+				2E4983EB276BB57200EB3C23 /* SwiftyJSON */,
 			);
 			productName = "client-server-1788";
 			productReference = 2E3BC4F2276147F000690ADE /* client-server-1788.app */;
@@ -261,6 +306,7 @@
 			mainGroup = 2E3BC4E9276147F000690ADE;
 			packageReferences = (
 				2E4983E3276BA6EC00EB3C23 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				2E4983EA276BB57200EB3C23 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 			);
 			productRefGroup = 2E3BC4F3276147F000690ADE /* Products */;
 			projectDirPath = "";
@@ -332,14 +378,20 @@
 				2E3BC51627614EE100690ADE /* DitailCashViewController.swift in Sources */,
 				2E3BC4FA276147F000690ADE /* SendCashViewController.swift in Sources */,
 				2E0EB124276A876400E67D5A /* Data+PrettyJSON.swift in Sources */,
+				2E4983F6276BC3D200EB3C23 /* GroupsApi.swift in Sources */,
 				2E3BC51A2761556D00690ADE /* Session.swift in Sources */,
 				2E73CC8627662EF100FB6EC4 /* ApiRequestViewController.swift in Sources */,
 				2E0EB11C276A76C300E67D5A /* FriendsTableViewController.swift in Sources */,
 				2E3BC51127614A9400690ADE /* Account.swift in Sources */,
 				2E0EB118276A769500E67D5A /* PhotosTableViewController.swift in Sources */,
+				2E4983F9276BC79E00EB3C23 /* PhotoDTO.swift in Sources */,
+				2E4983F0276BBEE900EB3C23 /* PhotosApi.swift in Sources */,
+				2E4983FD276BD01200EB3C23 /* Photo1.swift in Sources */,
+				2E4983E8276BB4A400EB3C23 /* FriendDTO.swift in Sources */,
 				2E3BC4F6276147F000690ADE /* AppDelegate.swift in Sources */,
 				2E6617822762B04D004B9360 /* AuthorizationVKViewController.swift in Sources */,
 				2E0EB128276A8E0200E67D5A /* Friend.swift in Sources */,
+				2E5BC44A276F69C100969561 /* GroupsTableViewController.swift in Sources */,
 				2E3BC4F8276147F000690ADE /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -554,6 +606,14 @@
 				minimumVersion = 5.12.1;
 			};
 		};
+		2E4983EA276BB57200EB3C23 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -561,6 +621,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2E4983E3276BA6EC00EB3C23 /* XCRemoteSwiftPackageReference "SDWebImage" */;
 			productName = SDWebImage;
+		};
+		2E4983EB276BB57200EB3C23 /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2E4983EA276BB57200EB3C23 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

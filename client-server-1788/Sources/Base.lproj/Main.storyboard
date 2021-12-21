@@ -108,11 +108,29 @@
                     <connections>
                         <segue destination="I38-jy-yLr" kind="relationship" relationship="viewControllers" id="1zj-lx-LDu"/>
                         <segue destination="yrY-Uy-J8r" kind="relationship" relationship="viewControllers" id="7CM-zd-f6b"/>
+                        <segue destination="sNo-1q-mqw" kind="relationship" relationship="viewControllers" id="pJ4-8e-4FN"/>
+                        <segue destination="2nF-cs-ncc" kind="relationship" relationship="viewControllers" id="nVY-uS-2Hj"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wbd-RB-9K5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2732" y="759"/>
+        </scene>
+        <!--Api-->
+        <scene sceneID="tsp-5A-NIh">
+            <objects>
+                <viewController id="sNo-1q-mqw" customClass="ApiRequestViewController" customModule="client_server_1788" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LbQ-RQ-atB">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="YDo-uU-lH0"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Api" id="eI3-3Z-SOG"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OUi-Qn-19H" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3682" y="767"/>
         </scene>
         <!--Фотографии-->
         <scene sceneID="B9o-fO-enh">
@@ -171,6 +189,35 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vAw-JQ-qFH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3139" y="1513"/>
+        </scene>
+        <!--Groups-->
+        <scene sceneID="eFI-Kc-CnK">
+            <objects>
+                <tableViewController id="2nF-cs-ncc" customClass="GroupsTableViewController" customModule="client_server_1788" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="M5z-EF-U8P">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Wv5-2A-eWf">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Wv5-2A-eWf" id="49C-cv-Imd">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="2nF-cs-ncc" id="1dx-i1-niX"/>
+                            <outlet property="delegate" destination="2nF-cs-ncc" id="wJG-Qv-9at"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Groups" id="ppM-x1-II7"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lsv-ja-5o3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3928" y="1513"/>
         </scene>
         <!--Api Request View Controller-->
         <scene sceneID="fk9-eP-a03">

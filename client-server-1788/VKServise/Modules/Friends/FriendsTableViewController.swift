@@ -12,14 +12,14 @@ final class FriendsTableViewController: UITableViewController {
     
     
     private var friendsApi = FriendsApi()
-    private var friends = [Friend]()
+    private var friends = [FriendDTO]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         
-        friendsApi.getFriends { [weak self] friends in
+        friendsApi.getFriends3 { [weak self] friends in
             
             guard let self = self else { return }
             
@@ -43,13 +43,14 @@ final class FriendsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         
-        let friend = friends[indexPath.row]
-
+        let friend: FriendDTO = friends[indexPath.row]
+        
         cell.textLabel?.text = "\(friend.firstName) \(friend.lastName)"
         
-        if let url = URL(string: friend.photo50) {
-        cell.imageView?.sd_setImage(with: url, completed: nil)
+        if let url = URL(string: friend.photo100) {
+            cell.imageView?.sd_setImage(with: url, completed: nil)
         }
-            return cell
+        
+        return cell
     }
 }

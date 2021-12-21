@@ -3,9 +3,6 @@
 //  client-server-1788
 //
 //  Created by Nikolai Krusser on 15.12.2021.
-//
-
-import Foundation
 
 //   let friendsContainer = try? newJSONDecoder().decode(FriendsContainer.self, from: jsonData)
 
