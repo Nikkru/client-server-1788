@@ -47,6 +47,7 @@ class PhotosTableViewController: UITableViewController {
         
         cell.textLabel?.text = String(photo.id)
         
+        // не получается подгрузить картинки по url в ячейки
         if let url = URL(string: photo.sizes.first!.url) {
             cell.imageView?.sd_setImage(with: url, completed: nil)
         }

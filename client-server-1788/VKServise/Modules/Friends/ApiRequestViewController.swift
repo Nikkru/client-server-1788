@@ -7,6 +7,7 @@
 
 import UIKit
 import Alamofire
+import SwiftyJSON
 
 class ApiRequestViewController: UIViewController {
     
@@ -18,8 +19,8 @@ class ApiRequestViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        getFriendsApi()
-        getPhotosApi()
+//        getFriendsApi()
+//        getPhotosApi()
         getGroupsApi()
         searchGroupsApi()
     }
@@ -90,11 +91,13 @@ class ApiRequestViewController: UIViewController {
         
         AF.request(url, method: .get, parameters: parameters).responseJSON { response in
             
-            guard let request = response.request else { return }
-            guard let data = response.value else { return }
+            print("RESPONSE.DATA: \(response.data?.prettyJSON)")
             
-            print("groups.get reguest: \(request)")
-            print("groups.get value: \(data)")
+//            guard let request = response.request else { return }
+//            guard let data = response.value else { return }
+//            
+//            print("groups.get reguest: \(request)")
+//            print("groups.get value: \(data)")
                   
               }
     }
