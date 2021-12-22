@@ -42,6 +42,7 @@ final class PhotosApi {
        
                         let itemsData = try JSON(jsonData)["response"]["items"].rawData()
                         let photos = try JSONDecoder().decode([PhotoDTO].self, from: itemsData)
+                        
                         completion(photos)
                     } catch {
                         print(error)

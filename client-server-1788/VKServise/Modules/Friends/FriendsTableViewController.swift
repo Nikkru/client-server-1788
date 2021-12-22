@@ -10,7 +10,6 @@ import SDWebImage
 
 final class FriendsTableViewController: UITableViewController {
     
-    
     private var friendsApi = FriendsApi()
     private var friends = [FriendDTO]()
     
