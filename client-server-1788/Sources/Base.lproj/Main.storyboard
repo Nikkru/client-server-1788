@@ -110,6 +110,7 @@
                         <segue destination="yrY-Uy-J8r" kind="relationship" relationship="viewControllers" id="7CM-zd-f6b"/>
                         <segue destination="sNo-1q-mqw" kind="relationship" relationship="viewControllers" id="pJ4-8e-4FN"/>
                         <segue destination="2nF-cs-ncc" kind="relationship" relationship="viewControllers" id="nVY-uS-2Hj"/>
+                        <segue destination="7oL-iz-Pyg" kind="relationship" relationship="viewControllers" id="eAK-b1-Cmz"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wbd-RB-9K5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -130,7 +131,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OUi-Qn-19H" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3682" y="767"/>
+            <point key="canvasLocation" x="2732" y="88"/>
         </scene>
         <!--Фотографии-->
         <scene sceneID="B9o-fO-enh">
@@ -312,6 +313,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uKh-4k-ulZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1044.9275362318842" y="759.375"/>
+        </scene>
+        <!--Storage-->
+        <scene sceneID="z5d-CS-uLx">
+            <objects>
+                <viewController id="7oL-iz-Pyg" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JOC-pd-8Z6">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="ELW-E3-cBC"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Storage" id="kez-UC-chs"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cxZ-yF-rKo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3626" y="88"/>
         </scene>
     </scenes>
     <resources>
