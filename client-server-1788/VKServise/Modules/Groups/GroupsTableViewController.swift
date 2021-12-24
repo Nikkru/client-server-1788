@@ -11,12 +11,12 @@ import SDWebImage
 class GroupsTableViewController: UITableViewController {
     
     private var groupsApi = GroupsApi()
-    private var groups = [GroupDTO]()
+    private var groups = [GroupDAO]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "GroupCell")
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         
         groupsApi.getGroups { [weak self] groups in
             guard let self = self else { return }
@@ -24,12 +24,7 @@ class GroupsTableViewController: UITableViewController {
             self.tableView.reloadData()
         }
     }
-//    groupsApi.getGroups { [weak self] groups in
-//
-//        guard let self = self else { return }
-//
-//        self.groups = groups
-//        self.tableView.reloadData()
+
     // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -43,11 +38,11 @@ class GroupsTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "GroupCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         
-        let group: GroupDTO = groups[indexPath.row]
+        let group: GroupDAO = groups[indexPath.row]
         
-        cell.textLabel?.text = group.screenName
+        cell.textLabel?.text = group.name
         
         return cell
     }

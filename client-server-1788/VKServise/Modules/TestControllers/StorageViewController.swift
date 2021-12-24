@@ -30,7 +30,19 @@ class StorageViewController: UIViewController {
     }
     
     func useRealm() {
+        let student = StudentDAO()
+        student.name = "Boris"
+        student.group = "1788"
         
+        // Хранилище
+        let realm = try! Realm()
+        
+        realm.beginWrite()
+        realm.add(student)
+        try! realm.commitWrite()
+        
+        let students = realm.objects(StudentDAO.self)
+        students.forEach { print($0.name, $0.group) }
     }
    
 }

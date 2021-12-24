@@ -11,13 +11,14 @@ import SDWebImage
 class PhotosTableViewController: UITableViewController {
     
     private var photosApi = PhotosApi()
-    private var photos = [PhotoDTO]()
-
+    private var photos = [PhotoDAO]()
+    var imageView = UIImageView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "PhotoCell")
-
+        
         photosApi.getPhotos { [weak self] photos in
             
             guard let self = self else { return }
@@ -26,30 +27,43 @@ class PhotosTableViewController: UITableViewController {
             self.tableView.reloadData()
         }
     }
-
-    // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
     
+    // MARK: - Table view data source
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        
         return 1
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-
+        
         return photos.count
     }
-   
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PhotoCell", for: indexPath)
-
-        let photo: PhotoDTO = photos[indexPath.row]
+        let photo: PhotoDAO = photos[indexPath.row]
+        var content = cell.defaultContentConfiguration()
         
-        cell.textLabel?.text = String(photo.id)
-        
-        // не получается подгрузить картинки по url в ячейки
         if let url = URL(string: photo.sizes.first!.url) {
-            cell.imageView?.sd_setImage(with: url, completed: nil)
+            
+            DispatchQueue.global().async { [weak self] in
+                do {
+                    let imageData = try Data(contentsOf: url)
+                    DispatchQueue.main.async {
+                        self!.imageView.image = UIImage(data: imageData)}
+                    print("Адрес картинки: \(url)")
+                } catch {
+                    print(error.localizedDescription)
+                }
+            }
         }
+        
+        content.text = String(photo.id)
+        content.image = imageView.image
+        content.imageProperties.cornerRadius = tableView.rowHeight / 2
+        
+        cell.contentConfiguration = content
         
         return cell
     }
