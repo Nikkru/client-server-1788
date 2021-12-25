@@ -11,7 +11,7 @@ import SDWebImage
 final class FriendsTableViewController: UITableViewController {
     
     private var friendsApi = FriendsApi()
-    private var friends = [FriendDAO]()
+    private var friends = [FriendsDAO]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,7 +42,7 @@ final class FriendsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         
-        let friend: FriendDAO = friends[indexPath.row]
+        let friend: FriendsDAO = friends[indexPath.row]
         
         cell.textLabel?.text = "\(friend.firstName) \(friend.lastName)"
         

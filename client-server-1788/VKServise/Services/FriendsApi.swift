@@ -52,7 +52,7 @@ final class FriendsApi {
                    }
     }
     
-    func getFriends3(completion: @escaping([FriendDAO])->()) {
+    func getFriends3(completion: @escaping([FriendsDAO])->()) {
         
         let baseUrl = "https://api.vk.com/method/"
         let token = Session.shared.token
@@ -80,7 +80,7 @@ final class FriendsApi {
                     do {
        
                         let itemsData = try JSON(jsonData)["response"]["items"].rawData()
-                        let friends = try JSONDecoder().decode([FriendDAO].self, from: itemsData)
+                        let friends = try JSONDecoder().decode([FriendsDAO].self, from: itemsData)
                         
                         completion(friends)
                     } catch {
