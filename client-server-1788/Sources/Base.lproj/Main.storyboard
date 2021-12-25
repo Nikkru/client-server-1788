@@ -317,7 +317,7 @@
         <!--Storage-->
         <scene sceneID="z5d-CS-uLx">
             <objects>
-                <viewController id="7oL-iz-Pyg" customClass="StorageViewController" customModule="client_server_1788" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="7oL-iz-Pyg" customClass="RealmViewController" customModule="client_server_1788" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JOC-pd-8Z6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
