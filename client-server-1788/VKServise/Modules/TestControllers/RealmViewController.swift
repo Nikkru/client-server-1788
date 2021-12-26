@@ -9,7 +9,6 @@ import UIKit
 import RealmSwift
 
 @objcMembers
-
 class PersonDAO: Object {
     dynamic var name = ""
     dynamic var age = 0
@@ -46,7 +45,7 @@ class RealmViewController: UIViewController {
         print(mainRealm.configuration.fileURL)
         
         let newPerson = mainRealm.objects(PersonDAO.self)
-        newPerson.forEach { print($0.gender, $0.gender, $0.age)}
+        newPerson.forEach { print($0.name, $0.gender, $0.age)}
         
         mainRealm.beginWrite()
         mainRealm.delete(person)

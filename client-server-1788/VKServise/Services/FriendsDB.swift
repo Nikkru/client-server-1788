@@ -35,7 +35,7 @@ final class FriendsDB {
         Realm.Configuration.defaultConfiguration = Realm.Configuration(schemaVersion: 2)
     }
     
-    func save(_ items: FriendsDAO) {
+    func save(_ items: [FriendsDAO]) {
         
 //        Если в каждом методе ижет свой Realm, можно создавать объект ассинхронно через try!
         let realm = try! Realm()
@@ -43,6 +43,8 @@ final class FriendsDB {
         try! realm.write {
             realm.add(items)
         }
+        guard  let url = realm.configuration.fileURL else { return }
+        print(url)
     }
     
     func fetch() -> Results<FriendsDAO> {
