@@ -3,10 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E0EB118276A769500E67D5A /* PhotosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0EB117276A769500E67D5A /* PhotosTableViewController.swift */; };
+		2E0EB11C276A76C300E67D5A /* FriendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0EB11B276A76C300E67D5A /* FriendsTableViewController.swift */; };
+		2E0EB120276A792100E67D5A /* FriendsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0EB11F276A792100E67D5A /* FriendsApi.swift */; };
+		2E0EB124276A876400E67D5A /* Data+PrettyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0EB123276A876400E67D5A /* Data+PrettyJSON.swift */; };
+		2E0EB128276A8E0200E67D5A /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0EB127276A8E0200E67D5A /* Friend.swift */; };
 		2E3BC4F6276147F000690ADE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3BC4F5276147F000690ADE /* AppDelegate.swift */; };
 		2E3BC4F8276147F000690ADE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3BC4F7276147F000690ADE /* SceneDelegate.swift */; };
 		2E3BC4FA276147F000690ADE /* SendCashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3BC4F9276147F000690ADE /* SendCashViewController.swift */; };
@@ -16,12 +21,30 @@
 		2E3BC51127614A9400690ADE /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3BC51027614A9400690ADE /* Account.swift */; };
 		2E3BC51627614EE100690ADE /* DitailCashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3BC51527614EE100690ADE /* DitailCashViewController.swift */; };
 		2E3BC51A2761556D00690ADE /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3BC5192761556D00690ADE /* Session.swift */; };
+		2E4983E5276BA6EC00EB3C23 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 2E4983E4276BA6EC00EB3C23 /* SDWebImage */; };
+		2E4983E8276BB4A400EB3C23 /* FriendDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4983E7276BB4A400EB3C23 /* FriendDTO.swift */; };
+		2E4983EC276BB57200EB3C23 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 2E4983EB276BB57200EB3C23 /* SwiftyJSON */; };
+		2E4983F0276BBEE900EB3C23 /* PhotosApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4983EF276BBEE900EB3C23 /* PhotosApi.swift */; };
+		2E4983F6276BC3D200EB3C23 /* GroupsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4983F5276BC3D200EB3C23 /* GroupsApi.swift */; };
+		2E4983F9276BC79E00EB3C23 /* PhotoDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4983F8276BC79E00EB3C23 /* PhotoDTO.swift */; };
+		2E4983FD276BD01200EB3C23 /* Photo1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4983FC276BD01200EB3C23 /* Photo1.swift */; };
+		2E5057C027734BFC00E84A97 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2E5057BF27734BFC00E84A97 /* RealmSwift */; };
+		2E5057C527734D5000E84A97 /* StorageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5057C427734D5000E84A97 /* StorageViewController.swift */; };
+		2E56A3CB27763C95009E8AE5 /* RealmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E56A3CA27763C95009E8AE5 /* RealmViewController.swift */; };
+		2E5BC44A276F69C100969561 /* GroupsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5BC449276F69C100969561 /* GroupsTableViewController.swift */; };
 		2E6617822762B04D004B9360 /* AuthorizationVKViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6617812762B04D004B9360 /* AuthorizationVKViewController.swift */; };
+		2E73CC8627662EF100FB6EC4 /* ApiRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E73CC8527662EF100FB6EC4 /* ApiRequestViewController.swift */; };
+		2E793DCD2771C25E00B397D7 /* GroupDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E793DCC2771C25E00B397D7 /* GroupDTO.swift */; };
 		816CBD0C776D29638699AEEE /* Pods_client_server_1788.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70FEE3B97FDD76BBE198B378 /* Pods_client_server_1788.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		01119230A72A2E1A281BB603 /* Pods-client-server-1788.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-client-server-1788.debug.xcconfig"; path = "Pods/Target Support Files/Pods-client-server-1788/Pods-client-server-1788.debug.xcconfig"; sourceTree = "<group>"; };
+		2E0EB117276A769500E67D5A /* PhotosTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosTableViewController.swift; sourceTree = "<group>"; };
+		2E0EB11B276A76C300E67D5A /* FriendsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableViewController.swift; sourceTree = "<group>"; };
+		2E0EB11F276A792100E67D5A /* FriendsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsApi.swift; sourceTree = "<group>"; };
+		2E0EB123276A876400E67D5A /* Data+PrettyJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+PrettyJSON.swift"; sourceTree = "<group>"; };
+		2E0EB127276A8E0200E67D5A /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
 		2E3BC4F2276147F000690ADE /* client-server-1788.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "client-server-1788.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E3BC4F5276147F000690ADE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2E3BC4F7276147F000690ADE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -33,7 +56,17 @@
 		2E3BC51027614A9400690ADE /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		2E3BC51527614EE100690ADE /* DitailCashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DitailCashViewController.swift; sourceTree = "<group>"; };
 		2E3BC5192761556D00690ADE /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		2E4983E7276BB4A400EB3C23 /* FriendDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendDTO.swift; sourceTree = "<group>"; };
+		2E4983EF276BBEE900EB3C23 /* PhotosApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosApi.swift; sourceTree = "<group>"; };
+		2E4983F5276BC3D200EB3C23 /* GroupsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsApi.swift; sourceTree = "<group>"; };
+		2E4983F8276BC79E00EB3C23 /* PhotoDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDTO.swift; sourceTree = "<group>"; };
+		2E4983FC276BD01200EB3C23 /* Photo1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo1.swift; sourceTree = "<group>"; };
+		2E5057C427734D5000E84A97 /* StorageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageViewController.swift; sourceTree = "<group>"; };
+		2E56A3CA27763C95009E8AE5 /* RealmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmViewController.swift; sourceTree = "<group>"; };
+		2E5BC449276F69C100969561 /* GroupsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsTableViewController.swift; sourceTree = "<group>"; };
 		2E6617812762B04D004B9360 /* AuthorizationVKViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationVKViewController.swift; sourceTree = "<group>"; };
+		2E73CC8527662EF100FB6EC4 /* ApiRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRequestViewController.swift; sourceTree = "<group>"; };
+		2E793DCC2771C25E00B397D7 /* GroupDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupDTO.swift; sourceTree = "<group>"; };
 		70FEE3B97FDD76BBE198B378 /* Pods_client_server_1788.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_client_server_1788.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		954799A3105721613CD10A96 /* Pods-client-server-1788.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-client-server-1788.release.xcconfig"; path = "Pods/Target Support Files/Pods-client-server-1788/Pods-client-server-1788.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -43,6 +76,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E5057C027734BFC00E84A97 /* RealmSwift in Frameworks */,
+				2E4983EC276BB57200EB3C23 /* SwiftyJSON in Frameworks */,
+				2E4983E5276BA6EC00EB3C23 /* SDWebImage in Frameworks */,
 				816CBD0C776D29638699AEEE /* Pods_client_server_1788.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -50,6 +86,49 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2E0EB111276A761900E67D5A /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				2E6617812762B04D004B9360 /* AuthorizationVKViewController.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		2E0EB113276A763500E67D5A /* Friends */ = {
+			isa = PBXGroup;
+			children = (
+				2E0EB126276A8DC900E67D5A /* Models */,
+				2E0EB11B276A76C300E67D5A /* FriendsTableViewController.swift */,
+			);
+			path = Friends;
+			sourceTree = "<group>";
+		};
+		2E0EB116276A764E00E67D5A /* Photos */ = {
+			isa = PBXGroup;
+			children = (
+				2E0EB117276A769500E67D5A /* PhotosTableViewController.swift */,
+				2E4983EE276BBE7000EB3C23 /* Models */,
+			);
+			path = Photos;
+			sourceTree = "<group>";
+		};
+		2E0EB122276A86FC00E67D5A /* Extention */ = {
+			isa = PBXGroup;
+			children = (
+				2E0EB123276A876400E67D5A /* Data+PrettyJSON.swift */,
+			);
+			path = Extention;
+			sourceTree = "<group>";
+		};
+		2E0EB126276A8DC900E67D5A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2E0EB127276A8E0200E67D5A /* Friend.swift */,
+				2E4983E7276BB4A400EB3C23 /* FriendDTO.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		2E3BC4E9276147F000690ADE = {
 			isa = PBXGroup;
 			children = (
@@ -94,7 +173,6 @@
 				2E3BC4F9276147F000690ADE /* SendCashViewController.swift */,
 				2E3BC51527614EE100690ADE /* DitailCashViewController.swift */,
 				2E3BC51027614A9400690ADE /* Account.swift */,
-				2E3BC5192761556D00690ADE /* Session.swift */,
 			);
 			path = "client-server";
 			sourceTree = "<group>";
@@ -110,12 +188,73 @@
 			path = Sources;
 			sourceTree = "<group>";
 		};
+		2E4983EE276BBE7000EB3C23 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2E4983F8276BC79E00EB3C23 /* PhotoDTO.swift */,
+				2E4983FC276BD01200EB3C23 /* Photo1.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2E4983F3276BC38200EB3C23 /* Groups */ = {
+			isa = PBXGroup;
+			children = (
+				2E5BC449276F69C100969561 /* GroupsTableViewController.swift */,
+				2E4983F4276BC39700EB3C23 /* Models */,
+			);
+			path = Groups;
+			sourceTree = "<group>";
+		};
+		2E4983F4276BC39700EB3C23 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2E793DCC2771C25E00B397D7 /* GroupDTO.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2E5057C227734D0000E84A97 /* TestControllers */ = {
+			isa = PBXGroup;
+			children = (
+				2E73CC8527662EF100FB6EC4 /* ApiRequestViewController.swift */,
+				2E5057C427734D5000E84A97 /* StorageViewController.swift */,
+				2E56A3CA27763C95009E8AE5 /* RealmViewController.swift */,
+			);
+			path = TestControllers;
+			sourceTree = "<group>";
+		};
 		2E6617802762AFF4004B9360 /* VKServise */ = {
 			isa = PBXGroup;
 			children = (
-				2E6617812762B04D004B9360 /* AuthorizationVKViewController.swift */,
+				2E73CC812765327D00FB6EC4 /* Modules */,
+				2E73CC832765329B00FB6EC4 /* Services */,
+				2E0EB122276A86FC00E67D5A /* Extention */,
 			);
 			path = VKServise;
+			sourceTree = "<group>";
+		};
+		2E73CC812765327D00FB6EC4 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				2E5057C227734D0000E84A97 /* TestControllers */,
+				2E4983F3276BC38200EB3C23 /* Groups */,
+				2E0EB113276A763500E67D5A /* Friends */,
+				2E0EB116276A764E00E67D5A /* Photos */,
+				2E0EB111276A761900E67D5A /* Auth */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		2E73CC832765329B00FB6EC4 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				2E3BC5192761556D00690ADE /* Session.swift */,
+				2E0EB11F276A792100E67D5A /* FriendsApi.swift */,
+				2E4983EF276BBEE900EB3C23 /* PhotosApi.swift */,
+				2E4983F5276BC3D200EB3C23 /* GroupsApi.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		62BCC15F4C903D1DCB832210 /* Frameworks */ = {
@@ -153,6 +292,11 @@
 			dependencies = (
 			);
 			name = "client-server-1788";
+			packageProductDependencies = (
+				2E4983E4276BA6EC00EB3C23 /* SDWebImage */,
+				2E4983EB276BB57200EB3C23 /* SwiftyJSON */,
+				2E5057BF27734BFC00E84A97 /* RealmSwift */,
+			);
 			productName = "client-server-1788";
 			productReference = 2E3BC4F2276147F000690ADE /* client-server-1788.app */;
 			productType = "com.apple.product-type.application";
@@ -180,6 +324,11 @@
 				Base,
 			);
 			mainGroup = 2E3BC4E9276147F000690ADE;
+			packageReferences = (
+				2E4983E3276BA6EC00EB3C23 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				2E4983EA276BB57200EB3C23 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				2E5057BE27734BFC00E84A97 /* XCRemoteSwiftPackageReference "realm-swift" */,
+			);
 			productRefGroup = 2E3BC4F3276147F000690ADE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -246,12 +395,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E0EB120276A792100E67D5A /* FriendsApi.swift in Sources */,
 				2E3BC51627614EE100690ADE /* DitailCashViewController.swift in Sources */,
 				2E3BC4FA276147F000690ADE /* SendCashViewController.swift in Sources */,
+				2E0EB124276A876400E67D5A /* Data+PrettyJSON.swift in Sources */,
+				2E4983F6276BC3D200EB3C23 /* GroupsApi.swift in Sources */,
+				2E793DCD2771C25E00B397D7 /* GroupDTO.swift in Sources */,
 				2E3BC51A2761556D00690ADE /* Session.swift in Sources */,
+				2E73CC8627662EF100FB6EC4 /* ApiRequestViewController.swift in Sources */,
+				2E0EB11C276A76C300E67D5A /* FriendsTableViewController.swift in Sources */,
 				2E3BC51127614A9400690ADE /* Account.swift in Sources */,
+				2E0EB118276A769500E67D5A /* PhotosTableViewController.swift in Sources */,
+				2E4983F9276BC79E00EB3C23 /* PhotoDTO.swift in Sources */,
+				2E56A3CB27763C95009E8AE5 /* RealmViewController.swift in Sources */,
+				2E4983F0276BBEE900EB3C23 /* PhotosApi.swift in Sources */,
+				2E4983FD276BD01200EB3C23 /* Photo1.swift in Sources */,
+				2E4983E8276BB4A400EB3C23 /* FriendDTO.swift in Sources */,
 				2E3BC4F6276147F000690ADE /* AppDelegate.swift in Sources */,
 				2E6617822762B04D004B9360 /* AuthorizationVKViewController.swift in Sources */,
+				2E5057C527734D5000E84A97 /* StorageViewController.swift in Sources */,
+				2E0EB128276A8E0200E67D5A /* Friend.swift in Sources */,
+				2E5BC44A276F69C100969561 /* GroupsTableViewController.swift in Sources */,
 				2E3BC4F8276147F000690ADE /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -456,6 +620,51 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2E4983E3276BA6EC00EB3C23 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.12.1;
+			};
+		};
+		2E4983EA276BB57200EB3C23 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
+		2E5057BE27734BFC00E84A97 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.20.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2E4983E4276BA6EC00EB3C23 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2E4983E3276BA6EC00EB3C23 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+		2E4983EB276BB57200EB3C23 /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2E4983EA276BB57200EB3C23 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+		2E5057BF27734BFC00E84A97 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2E5057BE27734BFC00E84A97 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2E3BC4EA276147F000690ADE /* Project object */;
 }
