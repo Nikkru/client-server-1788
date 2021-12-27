@@ -7,11 +7,13 @@
 
 import UIKit
 import SDWebImage
+import RealmSwift
 
 class GroupsTableViewController: UITableViewController {
     
     private var groupsApi = GroupsApi()
-    private var groups = [GroupDAO]()
+    private var groupsdDB = GroupsDB()
+    private var groups: Results<GroupsDAO>?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,8 +22,12 @@ class GroupsTableViewController: UITableViewController {
         
         groupsApi.getGroups { [weak self] groups in
             guard let self = self else { return }
-            self.groups = groups
-            self.tableView.reloadData()
+            
+//            self.groups = groups
+//            self.tableView.reloadData()
+            
+            self.groupsdDB.save(groups)
+            self.groups = self.groupsdDB.fetch()
         }
     }
 
@@ -34,15 +40,17 @@ class GroupsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
+        guard let groups = groups else { return 0}
         return groups.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         
-        let group: GroupDAO = groups[indexPath.row]
+        if let group = groups?[indexPath.row] {
         
         cell.textLabel?.text = group.name
+        }
         
         return cell
     }

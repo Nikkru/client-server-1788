@@ -11,7 +11,7 @@ import SwiftyJSON
 
 final class GroupsApi {
     
-    func getGroups(completion: @escaping([GroupDAO])->()) {
+    func getGroups(completion: @escaping([GroupsDAO])->()) {
         
         let baseUrl = "https://api.vk.com/method/"
         let token = Session.shared.token
@@ -38,7 +38,7 @@ final class GroupsApi {
                     guard let jsonData = response.data else { return }
                     do {
                         let itemsData = try JSON(jsonData)["response"]["items"].rawData()
-                        let groups = try JSONDecoder().decode([GroupDAO].self, from: itemsData)
+                        let groups = try JSONDecoder().decode([GroupsDAO].self, from: itemsData)
                         completion(groups)
                     } catch {
                         print(error)
