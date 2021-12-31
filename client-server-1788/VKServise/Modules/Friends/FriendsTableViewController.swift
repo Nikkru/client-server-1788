@@ -53,7 +53,9 @@ final class FriendsTableViewController: UITableViewController {
         cell.textLabel?.text = "\(friend.firstName) \(friend.lastName)"
         
             if let url = URL(string: friend.photo100) {
-            cell.imageView?.sd_setImage(with: url, completed: nil)
+            cell.imageView?.sd_setImage(with: url, completed:  { image, _, _, _ in
+                tableView.reloadRows(at: [indexPath], with: .automatic)
+            })
         }
         }
         return cell

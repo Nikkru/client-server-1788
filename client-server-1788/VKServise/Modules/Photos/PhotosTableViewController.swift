@@ -43,27 +43,30 @@ class PhotosTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PhotoCell", for: indexPath)
         let photo: PhotoDAO = photos[indexPath.row]
-        var content = cell.defaultContentConfiguration()
+//        var content = cell.defaultContentConfiguration()
+        cell.textLabel?.text = String(photo.id)
         
         if let url = URL(string: photo.sizes.first!.url) {
             
-            DispatchQueue.global().async { [weak self] in
-                do {
-                    let imageData = try Data(contentsOf: url)
-                    DispatchQueue.main.async {
-                        self!.imageView.image = UIImage(data: imageData)}
-                    print("Адрес картинки: \(url)")
-                } catch {
-                    print(error.localizedDescription)
-                }
+            cell.imageView?.sd_setImage(with: url) { (image, _, _, _) in
+                        tableView.reloadRows(at: [indexPath], with: .automatic)
+//            DispatchQueue.global().async { [weak self] in
+//                do {
+//                    let imageData = try Data(contentsOf: url)
+//                    DispatchQueue.main.async {
+//                        self!.imageView.image = UIImage(data: imageData)}
+//                    print("Адрес картинки: \(url)")
+//                } catch {
+//                    print(error.localizedDescription)
+//                }
             }
         }
-        
-        content.text = String(photo.id)
-        content.image = imageView.image
-        content.imageProperties.cornerRadius = tableView.rowHeight / 2
-        
-        cell.contentConfiguration = content
+//
+//        content.text = String(photo.id)
+//        content.image = imageView.image
+//        content.imageProperties.cornerRadius = tableView.rowHeight / 2
+//
+//        cell.contentConfiguration = content
         
         return cell
     }

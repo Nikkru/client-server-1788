@@ -28,6 +28,8 @@ class GroupsTableViewController: UITableViewController {
             
             self.groupsdDB.save(groups)
             self.groups = self.groupsdDB.fetch()
+            
+            self.tableView.reloadData()
         }
     }
 
@@ -50,6 +52,12 @@ class GroupsTableViewController: UITableViewController {
         if let group = groups?[indexPath.row] {
         
         cell.textLabel?.text = group.name
+            
+            if let url = URL(string: group.photo100) {
+                         cell.imageView?.sd_setImage(with: url, completed: { (image, _, _, _) in
+                             tableView.reloadRows(at: [indexPath], with: .automatic)
+                         })
+            }
         }
         
         return cell
