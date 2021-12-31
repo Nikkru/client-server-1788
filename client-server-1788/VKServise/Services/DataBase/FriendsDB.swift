@@ -54,6 +54,13 @@ final class FriendsDB {
         return friends
     }
     
+    func deleteAll() {
+        let realm = try! Realm()
+        try! realm.write{
+            realm.deleteAll()
+        }
+    }
+    
     func delete(_ item: FriendsDAO) {
         let realm = try! Realm()
         

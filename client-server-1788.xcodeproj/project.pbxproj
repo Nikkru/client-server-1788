@@ -256,13 +256,29 @@
 			isa = PBXGroup;
 			children = (
 				2E3BC5192761556D00690ADE /* Session.swift */,
+				2E7FBB8A277F48080021525B /* Api */,
+				2E7FBB8C277F48180021525B /* DataBase */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		2E7FBB8A277F48080021525B /* Api */ = {
+			isa = PBXGroup;
+			children = (
 				2E0EB11F276A792100E67D5A /* FriendsApi.swift */,
 				2E4983EF276BBEE900EB3C23 /* PhotosApi.swift */,
 				2E4983F5276BC3D200EB3C23 /* GroupsApi.swift */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		2E7FBB8C277F48180021525B /* DataBase */ = {
+			isa = PBXGroup;
+			children = (
 				2ED555542777ACC70057514E /* FriendsDB.swift */,
 				2E5479E4277997E600EA9D18 /* GroupsDB.swift */,
 			);
-			path = Services;
+			path = DataBase;
 			sourceTree = "<group>";
 		};
 		62BCC15F4C903D1DCB832210 /* Frameworks */ = {
