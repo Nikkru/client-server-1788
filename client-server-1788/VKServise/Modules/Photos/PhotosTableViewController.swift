@@ -7,12 +7,15 @@
 
 import UIKit
 import SDWebImage
+import RealmSwift
 
 class PhotosTableViewController: UITableViewController {
     
     private var photosApi = PhotosApi()
-    private var photos = [PhotoDAO]()
-    var imageView = UIImageView()
+    private var photosDB = PhotosDB()
+    private var photos: Results<PhotosDAO>?
+    private var token: NotificationToken?
+    private var imageView = UIImageView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +26,12 @@ class PhotosTableViewController: UITableViewController {
             
             guard let self = self else { return }
             
-            self.photos = photos
+//            self.photos = photos
+            
+            self.photosDB.save(photos)
+            self.photos = self.photosDB.fetch()
+            
+            
             self.tableView.reloadData()
         }
     }
@@ -37,12 +45,14 @@ class PhotosTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
+        guard let photos = photos else { return 0 }
         return photos.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PhotoCell", for: indexPath)
-        let photo: PhotoDAO = photos[indexPath.row]
+       
+        if let photo = photos?[indexPath.row] {
 //        var content = cell.defaultContentConfiguration()
         cell.textLabel?.text = String(photo.id)
         
@@ -58,7 +68,7 @@ class PhotosTableViewController: UITableViewController {
 //                    print("Адрес картинки: \(url)")
 //                } catch {
 //                    print(error.localizedDescription)
-//                }
+                }
             }
         }
 //

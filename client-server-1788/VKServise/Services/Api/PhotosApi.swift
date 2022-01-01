@@ -11,7 +11,7 @@ import SwiftyJSON
 
 final class PhotosApi {
     
-    func getPhotos(completion: @escaping([PhotoDAO])->()) {
+    func getPhotos(completion: @escaping([PhotosDAO])->()) {
         
         let baseUrl = "https://api.vk.com/method/"
         let token = Session.shared.token
@@ -41,7 +41,7 @@ final class PhotosApi {
                     do {
                         
                         let itemsData = try JSON(jsonData)["response"]["items"].rawData()
-                        let photos = try JSONDecoder().decode([PhotoDAO].self, from: itemsData)
+                        let photos = try JSONDecoder().decode([PhotosDAO].self, from: itemsData)
                         
                         completion(photos)
                     } catch {
