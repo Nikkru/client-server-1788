@@ -14,6 +14,7 @@ class GroupsTableViewController: UITableViewController {
     private var groupsApi = GroupsApi()
     private var groupsdDB = GroupsDB()
     private var groups: Results<GroupsDAO>?
+    private var token: NotificationToken?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +30,26 @@ class GroupsTableViewController: UITableViewController {
             self.groupsdDB.save(groups)
             self.groups = self.groupsdDB.fetch()
             
-            self.tableView.reloadData()
+            self.token = self.groups?.observe(on: .main, { [weak self] changes in
+                 
+                 guard let self = self else { return }
+                 
+                 switch changes {
+                 
+                 case .initial: self.tableView.reloadData()
+                 case .update(_, let deletions, let insertions, let modifications):
+                     self.tableView.beginUpdates()
+                     self.tableView.insertRows(at: insertions.map({IndexPath(row: $0, section: $0)}), with: .automatic)
+                     self.tableView.deleteRows(at: deletions.map({IndexPath(row: $0, section: $0)}), with: .automatic)
+                     self.tableView.reloadRows(at: modifications.map({IndexPath(row: $0, section: $0)}), with: .automatic)
+                     self.tableView.endUpdates()
+                     
+                 case .error(let error):
+                     print("An error occurred: \(error)")
+                 }
+             })
+            
+//            self.tableView.reloadData()
         }
     }
 

@@ -26,12 +26,9 @@ final class FriendsTableViewController: UITableViewController {
         friendsApi.getFriends3 { [weak self] friends in
             guard let self = self else { return }
             
-//            self.friends = friends
-//            self.friendsDB.save(friends)
             self.friendsDB.save(friends)
             self.friends = self.friendsDB.fetch()
             
-//            self.tableView.reloadData()
             self.token = self.friends?.observe(on: .main, { [weak self] changes in
                  
                  guard let self = self else { return }

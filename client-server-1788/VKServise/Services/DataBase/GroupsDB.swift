@@ -58,8 +58,15 @@ final class GroupsDB {
     func fetch() -> Results<GroupsDAO> {
         let realm = try! Realm()
         
-        let friends: Results<GroupsDAO> = realm.objects(GroupsDAO.self)
-        return friends
+        let groups: Results<GroupsDAO> = realm.objects(GroupsDAO.self)
+        return groups
+    }
+    
+    func deleteAll() {
+        let realm = try! Realm()
+        try! realm.write{
+            realm.deleteAll()
+        }
     }
     
     func delete(_ item: GroupsDAO) {
