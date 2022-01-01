@@ -21,6 +21,8 @@ class GroupsTableViewController: UITableViewController {
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         
+//        groupsdDB.deleteAll()
+        
         groupsApi.getGroups { [weak self] groups in
             guard let self = self else { return }
             

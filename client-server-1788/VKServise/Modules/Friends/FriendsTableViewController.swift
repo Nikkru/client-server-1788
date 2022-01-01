@@ -62,19 +62,19 @@ final class FriendsTableViewController: UITableViewController {
         guard let friends = friends else { return 0 }
         return friends.count
     }
-
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         
         if let friend = friends?[indexPath.row] {
-        
-        cell.textLabel?.text = "\(friend.firstName) \(friend.lastName)"
-        
+            
+            cell.textLabel?.text = "\(friend.firstName) \(friend.lastName)"
+            
             if let url = URL(string: friend.photo100) {
-            cell.imageView?.sd_setImage(with: url, completed:  { image, _, _, _ in
-                tableView.reloadRows(at: [indexPath], with: .automatic)
-            })
-        }
+                cell.imageView?.sd_setImage(with: url, completed:  { image, _, _, _ in
+                    tableView.reloadRows(at: [indexPath], with: .automatic)
+                })
+            }
         }
         return cell
     }
