@@ -39,11 +39,11 @@ struct SizeDTO: Codable {
 class PhotoDAO: Object, Codable {
     @objc dynamic var text: String?
     @objc dynamic var albumID = 0
-    @objc dynamic var id = 0
+    @Persisted var id = 0
     @objc dynamic var date = 0
     @objc dynamic var postID = 0
     @objc dynamic var lat: Double = 0
-    var sizes: [SizeDAO]
+    @Persisted var sizes: List<SizeDAO>
     @objc dynamic var ownerID = 0
     @objc dynamic var long: Double = 0
     
