@@ -27,7 +27,6 @@
 		2E4983F0276BBEE900EB3C23 /* PhotosApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4983EF276BBEE900EB3C23 /* PhotosApi.swift */; };
 		2E4983F6276BC3D200EB3C23 /* GroupsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4983F5276BC3D200EB3C23 /* GroupsApi.swift */; };
 		2E4983F9276BC79E00EB3C23 /* PhotoDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4983F8276BC79E00EB3C23 /* PhotoDTO.swift */; };
-		2E4983FD276BD01200EB3C23 /* Photo1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4983FC276BD01200EB3C23 /* Photo1.swift */; };
 		2E5057C027734BFC00E84A97 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2E5057BF27734BFC00E84A97 /* RealmSwift */; };
 		2E5057C527734D5000E84A97 /* StorageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5057C427734D5000E84A97 /* StorageViewController.swift */; };
 		2E5479E5277997E600EA9D18 /* GroupsDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5479E4277997E600EA9D18 /* GroupsDB.swift */; };
@@ -64,7 +63,6 @@
 		2E4983EF276BBEE900EB3C23 /* PhotosApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosApi.swift; sourceTree = "<group>"; };
 		2E4983F5276BC3D200EB3C23 /* GroupsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsApi.swift; sourceTree = "<group>"; };
 		2E4983F8276BC79E00EB3C23 /* PhotoDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDTO.swift; sourceTree = "<group>"; };
-		2E4983FC276BD01200EB3C23 /* Photo1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo1.swift; sourceTree = "<group>"; };
 		2E5057C427734D5000E84A97 /* StorageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageViewController.swift; sourceTree = "<group>"; };
 		2E5479E4277997E600EA9D18 /* GroupsDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsDB.swift; sourceTree = "<group>"; };
 		2E56A3CA27763C95009E8AE5 /* RealmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmViewController.swift; sourceTree = "<group>"; };
@@ -200,7 +198,6 @@
 			isa = PBXGroup;
 			children = (
 				2E4983F8276BC79E00EB3C23 /* PhotoDTO.swift */,
-				2E4983FC276BD01200EB3C23 /* Photo1.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -440,7 +437,6 @@
 				2E56A3CB27763C95009E8AE5 /* RealmViewController.swift in Sources */,
 				2E4983F0276BBEE900EB3C23 /* PhotosApi.swift in Sources */,
 				2ED555552777ACC70057514E /* FriendsDB.swift in Sources */,
-				2E4983FD276BD01200EB3C23 /* Photo1.swift in Sources */,
 				2E4983E8276BB4A400EB3C23 /* FriendDTO.swift in Sources */,
 				2E3BC4F6276147F000690ADE /* AppDelegate.swift in Sources */,
 				2E6617822762B04D004B9360 /* AuthorizationVKViewController.swift in Sources */,
