@@ -281,7 +281,7 @@
         <!--Login View Controller-->
         <scene sceneID="6sh-Sd-P3z">
             <objects>
-                <viewController id="d11-B8-KtL" customClass="LoginViewController" customModule="client_server_1788" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="d11-B8-KtL" customClass="LoginViewController" customModule="client_server_1788" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zyT-nk-78t">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -341,7 +341,7 @@
         <!--Home View Controller-->
         <scene sceneID="PoO-ZP-6t8">
             <objects>
-                <viewController id="yXG-UG-eE6" customClass="HomeViewController" customModule="client_server_1788" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeViewController" id="yXG-UG-eE6" customClass="HomeViewController" customModule="client_server_1788" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kpe-QC-fmI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
