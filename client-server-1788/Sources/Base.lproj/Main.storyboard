@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="til-77-Puc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="d11-B8-KtL">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -277,6 +277,106 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sGc-le-Sds" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1818.840579710145" y="87.723214285714278"/>
+        </scene>
+        <!--Login View Controller-->
+        <scene sceneID="6sh-Sd-P3z">
+            <objects>
+                <viewController id="d11-B8-KtL" customClass="LoginViewController" customModule="client_server_1788" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zyT-nk-78t">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="8Wd-lD-HYh">
+                                <rect key="frame" x="107" y="111" width="200" height="203"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pdn-4X-uWR">
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tef-39-8sg">
+                                        <rect key="frame" x="0.0" y="59" width="200" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="Qtj-pa-NzT"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tRl-HT-BqV">
+                                        <rect key="frame" x="23" y="118" width="154" height="30"/>
+                                        <state key="normal" title="Sign in (Авторизация)"/>
+                                        <connections>
+                                            <action selector="signInAction:" destination="d11-B8-KtL" eventType="touchUpInside" id="zHR-j8-4bk"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DLL-Yh-2zl">
+                                        <rect key="frame" x="20.5" y="173" width="159" height="30"/>
+                                        <state key="normal" title="Sign up (Регистрация)"/>
+                                        <connections>
+                                            <action selector="signUpAction:" destination="d11-B8-KtL" eventType="touchUpInside" id="HXO-m9-jCS"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Tef-39-8sg" firstAttribute="width" secondItem="pdn-4X-uWR" secondAttribute="width" id="0sM-Gd-bwJ"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Oej-Fv-JSS"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="8Wd-lD-HYh" firstAttribute="centerX" secondItem="zyT-nk-78t" secondAttribute="centerX" id="ELa-AW-eSV"/>
+                            <constraint firstItem="8Wd-lD-HYh" firstAttribute="top" secondItem="Oej-Fv-JSS" secondAttribute="top" constant="67" id="PVW-Wy-hkP"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="emailTextFIeld" destination="pdn-4X-uWR" id="SRt-LL-tae"/>
+                        <outlet property="passwordTextField" destination="Tef-39-8sg" id="iCA-cL-MGi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I7S-pK-twe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="128.98550724637681" y="-556.47321428571422"/>
+        </scene>
+        <!--Home View Controller-->
+        <scene sceneID="PoO-ZP-6t8">
+            <objects>
+                <viewController id="yXG-UG-eE6" customClass="HomeViewController" customModule="client_server_1788" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kpe-QC-fmI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ak5-2M-8jk">
+                                <rect key="frame" x="102.5" y="171" width="209" height="88"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XhJ-aF-BPK">
+                                        <rect key="frame" x="0.0" y="0.0" width="209" height="30"/>
+                                        <state key="normal" title="Sign Out (Выход из аккаунта)"/>
+                                        <connections>
+                                            <action selector="signOutAction:" destination="yXG-UG-eE6" eventType="touchUpInside" id="TKB-Vv-OPv"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="13I-ay-U2H">
+                                        <rect key="frame" x="0.0" y="58" width="209" height="30"/>
+                                        <state key="normal" title="Add City (Realtime Database)"/>
+                                        <connections>
+                                            <action selector="addCityAction:" destination="yXG-UG-eE6" eventType="touchUpInside" id="I38-gE-nnU"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="H5G-J3-B6s"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Ak5-2M-8jk" firstAttribute="centerX" secondItem="kpe-QC-fmI" secondAttribute="centerX" id="6Sp-6g-tS8"/>
+                            <constraint firstItem="Ak5-2M-8jk" firstAttribute="top" secondItem="H5G-J3-B6s" secondAttribute="top" constant="127" id="fES-KH-ohS"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mcj-Ze-dvD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="870" y="-556"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="9fm-AI-wF5">
