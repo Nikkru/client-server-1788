@@ -13,15 +13,22 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var emailTextFIeld: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
+    private var token: AuthStateDidChangeListenerHandle!
+    
     private let authServise = Auth.auth()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        token = authServise.addStateDidChangeListener({ (auth, user) in
+            
+            guard user != nil else { return }
+            self.showHomeViewController()
+        })
     }
     
 
-    @IBAction func signInAction(_ sender: Any) {
+    @IBAction func signInAction(_ sender: Any?) {
         
         guard let email = emailTextFIeld.text,
               emailTextFIeld.hasText,
@@ -42,7 +49,27 @@ class LoginViewController: UIViewController {
             self.showHomeViewController()
         }
     }
+    
     @IBAction func signUpAction(_ sender: Any) {
+        
+        guard let email = emailTextFIeld.text,
+              emailTextFIeld.hasText,
+              let password = passwordTextField.text,
+              passwordTextField.hasText
+        else {
+            showAlert(title: "Ошибка на клиенте", text: "Не ввели логин или пароль")
+            return
+        }
+        
+        authServise.createUser(withEmail: email, password: password) { authResult, error in
+            
+            if let error = error {
+                self.showAlert(title: "Ошибка на сервере", text: error.localizedDescription)
+                return
+            }
+            
+            self.signInAction(nil)
+        }
     }
 
     private func showHomeViewController() {
