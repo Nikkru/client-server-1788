@@ -7,6 +7,7 @@
 
 import UIKit
 import WebKit
+import Firebase
 
 class AuthorizationVKViewController: UIViewController {
 
@@ -16,6 +17,8 @@ class AuthorizationVKViewController: UIViewController {
             webview.navigationDelegate = self
         }
     }
+    let ref = Database.database().reference(withPath: "sessions")
+    var sessions: [SessionFirebase] = []
     
     private let appId = "8023112"
 //    private let appId = "7822904"
@@ -82,6 +85,10 @@ extension AuthorizationVKViewController: WKNavigationDelegate {
         
         Session.shared.token = token
         Session.shared.userId = userId
+//        SessionFirebase.init(token: token, userId: userId)
+        let session = SessionFirebase(token: token, userId: userId)
+        let sessionContainerRef = self.ref.child(session.token)
+        sessionContainerRef.setValue(session.toAnyObject())
         
         performSegue(withIdentifier: "ShowTabBarSegue", sender: nil)
         

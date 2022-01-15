@@ -30,6 +30,7 @@
 		2E5057C027734BFC00E84A97 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2E5057BF27734BFC00E84A97 /* RealmSwift */; };
 		2E5057C527734D5000E84A97 /* StorageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5057C427734D5000E84A97 /* StorageViewController.swift */; };
 		2E5479E5277997E600EA9D18 /* GroupsDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5479E4277997E600EA9D18 /* GroupsDB.swift */; };
+		2E54F79F27935B5900489B44 /* SessionFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E54F79E27935B5900489B44 /* SessionFirebase.swift */; };
 		2E56A3CB27763C95009E8AE5 /* RealmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E56A3CA27763C95009E8AE5 /* RealmViewController.swift */; };
 		2E5BC44A276F69C100969561 /* GroupsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5BC449276F69C100969561 /* GroupsTableViewController.swift */; };
 		2E6617822762B04D004B9360 /* AuthorizationVKViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6617812762B04D004B9360 /* AuthorizationVKViewController.swift */; };
@@ -71,6 +72,7 @@
 		2E4983F8276BC79E00EB3C23 /* PhotoDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDTO.swift; sourceTree = "<group>"; };
 		2E5057C427734D5000E84A97 /* StorageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageViewController.swift; sourceTree = "<group>"; };
 		2E5479E4277997E600EA9D18 /* GroupsDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsDB.swift; sourceTree = "<group>"; };
+		2E54F79E27935B5900489B44 /* SessionFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionFirebase.swift; sourceTree = "<group>"; };
 		2E56A3CA27763C95009E8AE5 /* RealmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmViewController.swift; sourceTree = "<group>"; };
 		2E5BC449276F69C100969561 /* GroupsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsTableViewController.swift; sourceTree = "<group>"; };
 		2E6617812762B04D004B9360 /* AuthorizationVKViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationVKViewController.swift; sourceTree = "<group>"; };
@@ -289,6 +291,7 @@
 				2E3BC5192761556D00690ADE /* Session.swift */,
 				2E7FBB8A277F48080021525B /* Api */,
 				2E7FBB8C277F48180021525B /* DataBase */,
+				2E54F79E27935B5900489B44 /* SessionFirebase.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -474,6 +477,7 @@
 				2E6AFE062790B3AF004CDEDF /* LoginViewController.swift in Sources */,
 				2E56A3CB27763C95009E8AE5 /* RealmViewController.swift in Sources */,
 				2E4983F0276BBEE900EB3C23 /* PhotosApi.swift in Sources */,
+				2E54F79F27935B5900489B44 /* SessionFirebase.swift in Sources */,
 				2ED555552777ACC70057514E /* FriendsDB.swift in Sources */,
 				2E4983E8276BB4A400EB3C23 /* FriendDTO.swift in Sources */,
 				2E3BC4F6276147F000690ADE /* AppDelegate.swift in Sources */,
