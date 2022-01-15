@@ -11,6 +11,10 @@ import Firebase
 class HomeViewController: UIViewController {
     
     let authService = Auth.auth()
+    // ссылка на контейнер
+    let ref = Database.database().reference(withPath: "cities")
+    
+    var cities: [FirebaseCity] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +27,9 @@ class HomeViewController: UIViewController {
     }
     @IBAction func addCityAction(_ sender: Any) {
         
-        
+        let city = FirebaseCity(name: "Moscow", zipcode: 195000)
+        let cityContainerRef = self.ref.child(city.name)
+        cityContainerRef.setValue(city.toAnyObject())
     }
  
     private func showLoginViewController() {
