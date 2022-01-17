@@ -10,10 +10,9 @@ import Firebase
 
 class SessionFirebase {
     
-    static let shared = SessionFirebase(snapshot: DataSnapshot())
-    
     let token: String
     let userId: String
+    
     let ref: DatabaseReference?
     
     init(token: String, userId: String) {

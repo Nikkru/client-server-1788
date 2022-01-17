@@ -41,6 +41,7 @@ class HomeViewController: UIViewController {
     @IBAction func addCityAction(_ sender: Any) {
         
         let city = FirebaseCity(name: "Moscow", zipcode: 195000)
+        // подкаталог по имени города
         let cityContainerRef = self.ref.child(city.name)
         cityContainerRef.setValue(city.toAnyObject())
     }

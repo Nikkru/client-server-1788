@@ -186,6 +186,7 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Друзья" id="1cD-6G-FJr"/>
+                    <navigationItem key="navigationItem" title="Друзья" id="922-Xt-gqp"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vAw-JQ-qFH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

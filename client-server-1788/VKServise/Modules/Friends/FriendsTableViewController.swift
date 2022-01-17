@@ -8,6 +8,7 @@
 import UIKit
 import SDWebImage
 import RealmSwift
+import Firebase
 
 final class FriendsTableViewController: UITableViewController {
     
@@ -15,6 +16,9 @@ final class FriendsTableViewController: UITableViewController {
     private var friendsDB = FriendsDB()
     private var friends: Results<FriendsDAO>?
     private var token: NotificationToken?
+    
+    let ref = Database.database().reference()
+    var friendsFB: [FriendFB] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +28,7 @@ final class FriendsTableViewController: UITableViewController {
         friendsDB.deleteAll()
         
         friendsApi.getFriends3 { [weak self] friends in
+            
             guard let self = self else { return }
             
             self.friendsDB.save(friends)
@@ -32,7 +37,6 @@ final class FriendsTableViewController: UITableViewController {
             self.token = self.friends?.observe(on: .main, { [weak self] changes in
                  
                  guard let self = self else { return }
-                 
                  switch changes {
                  
                  case .initial: self.tableView.reloadData()
@@ -51,7 +55,6 @@ final class FriendsTableViewController: UITableViewController {
     }
     
     // MARK: - Table view data source
-    
     override func numberOfSections(in tableView: UITableView) -> Int {
         
         return 1
@@ -76,6 +79,35 @@ final class FriendsTableViewController: UITableViewController {
                 })
             }
         }
+        addFriendsInFB(friends: friends, token: Session.shared.token, indexPath: indexPath)
         return cell
+    }
+}
+
+// MARK: - upload to Firebase
+extension FriendsTableViewController {
+    
+    func addFriendsInFB(friends: Results<FriendsDAO>?, token: String, indexPath: IndexPath) {
+        
+        guard let friendsDB = friends else { return }
+        //        let friendFB: FriendFB?
+        //        for i in friendsDB {
+        //            let friend = FriendFB(id: i.id,
+        //                                  firstName: i.firstName,
+        //                                  lastName: i.lastName,
+        //                                  photo100: i.photo100,
+        //                                  photo50: i.photo50)
+        ////            self.friendsFB.append(friend)
+        //            let friendContainerRef = self.ref.child(token).child(String(friend.id))
+        //            friendContainerRef.setValue(friend.toAnyObject())
+        //        }
+        let friend = FriendFB(id: friendsDB[indexPath.row].id,
+                              firstName: friendsDB[indexPath.row].firstName,
+                              lastName: friendsDB[indexPath.row].lastName,
+                              photo100: friendsDB[indexPath.row].photo100,
+                              photo50: friendsDB[indexPath.row].photo50)
+        
+        let friendContainerRef = self.ref.child("session: \(token)").child("friends").child(String(friend.id))
+        friendContainerRef.setValue(friend.toAnyObject())
     }
 }
