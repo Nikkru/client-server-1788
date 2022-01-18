@@ -129,7 +129,7 @@ extension GroupsTableViewController {
                             type: groupsDB[indexPath.row].type,
                             isClosed: groupsDB[indexPath.row].isClosed)
         
-        let groupContainerRef = self.ref.child("session: \(token)").child("groups").child(String(group.name))
+        let groupContainerRef = self.ref.child("session: \(token)").child("groups").child(String(group.id))
         groupContainerRef.setValue(group.toAnyObject())
         //        }
     }

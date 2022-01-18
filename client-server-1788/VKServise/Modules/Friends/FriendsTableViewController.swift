@@ -35,22 +35,22 @@ final class FriendsTableViewController: UITableViewController {
             self.friends = self.friendsDB.fetch()
             
             self.token = self.friends?.observe(on: .main, { [weak self] changes in
-                 
-                 guard let self = self else { return }
-                 switch changes {
-                 
-                 case .initial: self.tableView.reloadData()
-                 case .update(_, let deletions, let insertions, let modifications):
-                     self.tableView.beginUpdates()
-                     self.tableView.insertRows(at: insertions.map({IndexPath(row: $0, section: $0)}), with: .automatic)
-                     self.tableView.deleteRows(at: deletions.map({IndexPath(row: $0, section: $0)}), with: .automatic)
-                     self.tableView.reloadRows(at: modifications.map({IndexPath(row: $0, section: $0)}), with: .automatic)
-                     self.tableView.endUpdates()
-                     
-                 case .error(let error):
-                     print(error)
-                 }
-             })
+                
+                guard let self = self else { return }
+                switch changes {
+                
+                case .initial: self.tableView.reloadData()
+                case .update(_, let deletions, let insertions, let modifications):
+                    self.tableView.beginUpdates()
+                    self.tableView.insertRows(at: insertions.map({IndexPath(row: $0, section: $0)}), with: .automatic)
+                    self.tableView.deleteRows(at: deletions.map({IndexPath(row: $0, section: $0)}), with: .automatic)
+                    self.tableView.reloadRows(at: modifications.map({IndexPath(row: $0, section: $0)}), with: .automatic)
+                    self.tableView.endUpdates()
+                    
+                case .error(let error):
+                    print(error)
+                }
+            })
         }
     }
     
@@ -59,9 +59,9 @@ final class FriendsTableViewController: UITableViewController {
         
         return 1
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-  
+        
         guard let friends = friends else { return 0 }
         return friends.count
     }
