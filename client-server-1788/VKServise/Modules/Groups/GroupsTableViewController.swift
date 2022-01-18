@@ -8,13 +8,18 @@
 import UIKit
 import SDWebImage
 import RealmSwift
+import Firebase
 
 class GroupsTableViewController: UITableViewController {
     
     private var groupsApi = GroupsApi()
     private var groupsdDB = GroupsDB()
     private var groups: Results<GroupsDAO>?
+    private var groupsDAO: [GroupsDAO] = []
     private var token: NotificationToken?
+    
+    let ref = Database.database().reference()
+    var groupsFB: [GroupFB] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +31,7 @@ class GroupsTableViewController: UITableViewController {
         groupsApi.getGroups { [weak self] groups in
             guard let self = self else { return }
             
-            //            self.groups = groups
+            self.groupsDAO = groups
             //            self.tableView.reloadData()
             
             self.groupsdDB.save(groups)
@@ -50,8 +55,21 @@ class GroupsTableViewController: UITableViewController {
                     print("An error occurred: \(error)")
                 }
             })
+        } upLoad: { groups in
+            //            guard let groupsDB = groups else { return }
             
-            //            self.tableView.reloadData()
+            for i in groups {
+                let group = GroupFB(id: i.id,
+                                    name: i.name,
+                                    screenName: i.screenName,
+                                    photo100: i.photo100,
+                                    photo50: i.photo50,
+                                    type: i.type,
+                                    isClosed: i.isClosed)
+                self.groupsFB.append(group)
+                let groupContainerRef = self.ref.child("userId").child("groups").child(String(group.id))
+                groupContainerRef.setValue(group.toAnyObject())
+            }
         }
     }
     
@@ -81,7 +99,38 @@ class GroupsTableViewController: UITableViewController {
                 })
             }
         }
-        
+        addGroupsInFB(groups: groups, token: Session.shared.token, indexPath: indexPath)
         return cell
+    }
+}
+
+// MARK: - upload to Firebase database
+extension GroupsTableViewController {
+    
+    func addGroupsInFB(groups: Results<GroupsDAO>?, token: String, indexPath: IndexPath) {
+        
+        guard let groupsDB = groups else { return }
+        
+        //        for i in groupsDB {
+        //            let group = GroupFB(id: i.id,
+        //                                name: i.name,
+        //                                screenName: i.screenName,
+        //                                photo100: i.photo100,
+        //                                photo50: i.photo50,
+        //                                type: i.type,
+        //                                isClosed: i.isClosed)
+        //            self.groupsFB.append(group)
+        
+        let group = GroupFB(id: groupsDB[indexPath.row].id,
+                            name: groupsDB[indexPath.row].name,
+                            screenName: groupsDB[indexPath.row].screenName,
+                            photo100: groupsDB[indexPath.row].photo100,
+                            photo50: groupsDB[indexPath.row].photo50,
+                            type: groupsDB[indexPath.row].type,
+                            isClosed: groupsDB[indexPath.row].isClosed)
+        
+        let groupContainerRef = self.ref.child("session: \(token)").child("groups").child(String(group.name))
+        groupContainerRef.setValue(group.toAnyObject())
+        //        }
     }
 }
