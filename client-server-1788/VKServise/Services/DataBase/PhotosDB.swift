@@ -12,11 +12,11 @@ import RealmSwift
 class PhotosDAO: Object, Codable {
     
     @Persisted var text: String?
-    @Persisted var id = 0
-    @Persisted var date = 0
-    @Persisted var postID = 0
+    @Persisted var id: Int
+    @Persisted var date: Int
+    @Persisted var postID: Int
     @Persisted var sizes: List<SizeDAO>
-    @Persisted var ownerID = 0
+    @Persisted var ownerID: Int
     
     let lat: Double = 0
     let long: Double = 0
@@ -32,8 +32,8 @@ class PhotosDAO: Object, Codable {
 }
 class SizeDAO: Object, Codable {
 
-    @Persisted var url: String = ""
-    @Persisted var type: String = ""
+    @Persisted var url: String
+    @Persisted var type: String
     
     let width: Int
     let height: Int

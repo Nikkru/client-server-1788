@@ -34,6 +34,7 @@ struct GroupDTO: Codable {
 
 // MARK: - Model for storage
 class GroupDAO: Object, Codable {
+    
     @objc dynamic var isMember = 0
     @objc dynamic var id = 0
     @objc dynamic var isAdvertiser = 0
