@@ -182,3 +182,45 @@ class Reposts: Object, Codable {
 class Views: Object, Codable {
     @Persisted var count: Int
 }
+
+final class NewsFeedDB {
+    init() {
+        
+        Realm.Configuration.defaultConfiguration = Realm.Configuration(schemaVersion: 5)
+    }
+    
+    func save(_ items: [NewsFeed]) {
+        
+   //        Если в каждом методе ижет свой Realm, можно создавать объект ассинхронно через try!
+        let realm = try! Realm()
+        
+        try! realm.write {
+            realm.add(items)
+        }
+        guard  let url = realm.configuration.fileURL else { return }
+        print(url)
+    }
+    
+    func fetch() -> Results<NewsFeed> {
+        let realm = try! Realm()
+        
+        let groups: Results<NewsFeed> = realm.objects(NewsFeed.self)
+        return groups
+    }
+    
+    func deleteAll() {
+        let realm = try! Realm()
+        try! realm.write{
+            realm.deleteAll()
+        }
+    }
+    
+    func delete(_ item: NewsFeed) {
+        let realm = try! Realm()
+        
+        try! realm.write {
+            realm.delete(item)
+        }
+    }
+}
+
