@@ -43,6 +43,7 @@ final class GroupsDB {
         
         Realm.Configuration.defaultConfiguration = Realm.Configuration(schemaVersion: 3)
     }
+    
     func save(_ items: [GroupsDAO]) {
         
 //        Если в каждом методе ижет свой Realm, можно создавать объект ассинхронно через try!
