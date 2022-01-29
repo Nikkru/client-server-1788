@@ -1,16 +1,16 @@
 //
-//  AuthorNewsFeedCell.swift
+//  AuthorNewCell.swift
 //  client-server-1788
 //
-//  Created by Nikolai Krusser on 26.01.2022.
+//  Created by Nikolai Krusser on 29.01.2022.
 //
-
 import UIKit
 
-class AuthorNewsFeedCell: UITableViewCell {
+class AuthorNewFeedCell: UITableViewCell {
 
     @IBOutlet weak var AuthorFeedLabel: UILabel!
     @IBOutlet weak var DateFeedLabel: UILabel!
+    @IBOutlet weak var AuthorImge: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,3 +24,4 @@ class AuthorNewsFeedCell: UITableViewCell {
     }
 
 }
+

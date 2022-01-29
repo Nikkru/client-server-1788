@@ -89,7 +89,7 @@ class Size: Object, Codable {
     @Persisted var width: Int
 }
 
-class SizeType: Object,Codable {
+class SizeType: Object, Codable {
     
     @Persisted var littera: String
     
