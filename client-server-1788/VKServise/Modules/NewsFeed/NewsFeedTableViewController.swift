@@ -8,34 +8,30 @@
 import UIKit
 
 class NewsFeedTableViewController: UITableViewController {
-
+    
     var new: New?
     private var news: [New] = []
-    
-//    var news = ["Donald", "Popeye", "Jerri", "Scrooge", "Eric Cartman", "Lisa Simpson"]
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         let new1 = New(date: 280222, text: "Hello, Friend!", comments: 10, likes: 12, reposts: 13, photo: "", author: "BBC", shared: 10)
         news.append(new1)
         let new2 = New(date: 280222, text: "", comments: 20, likes: 22, reposts: 23, photo: "fox", author: "FOX", shared: 14)
         news.append(new2)
-
     }
-
+    
     // MARK: - Table view data source
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return news.count
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return 4
     }
-
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -75,11 +71,28 @@ class NewsFeedTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        var height: CGFloat = 80.0
+        let new = news[indexPath.section]
+        var height: CGFloat!
         
-    
-        
+        switch indexPath.row {
+        case 0:
+            if new.text == "" {
+                height = 0.0
+            } else { height = 80.0 }
+        case 1:
+            if new.photo == "" {
+                height = 0.0
+            } else { height = 80.0 }
+        case 2:
+            height = 60
+        case 3:
+            height = 44
+            
+        default:
+            break
+        }
+
         return height
     }
-
+    
 }

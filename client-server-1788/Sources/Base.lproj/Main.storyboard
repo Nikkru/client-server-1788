@@ -227,20 +227,20 @@
         <scene sceneID="zA4-gl-FI9">
             <objects>
                 <tableViewController id="abN-0b-0rX" customClass="NewsFeedTableViewController" customModule="client_server_1788" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="BcX-oJ-Cte">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="BcX-oJ-Cte">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TextNewsFeedCell" rowHeight="96" id="r6v-im-V3J" customClass="TextNewsFeedCell" customModule="client_server_1788" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="96"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TextNewsFeedCell" rowHeight="0.0" id="r6v-im-V3J" customClass="TextNewsFeedCell" customModule="client_server_1788" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="1.1920928955078125e-07"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="r6v-im-V3J" id="ld4-KQ-3yn">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="96"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="1.1920928955078125e-07"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="text" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oec-bn-Zih">
-                                            <rect key="frame" x="192.5" y="38" width="29" height="20.5"/>
+                                            <rect key="frame" x="192.5" y="-10.5" width="29" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -256,16 +256,16 @@
                                     <outlet property="textFeedLabel" destination="Oec-bn-Zih" id="Kpi-kL-PYL"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PhotoNewsFeedCell" rowHeight="98" id="W8U-pO-Fgy" customClass="PhotoNewsFeedCell" customModule="client_server_1788" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="124" width="414" height="98"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PhotoNewsFeedCell" id="W8U-pO-Fgy" customClass="PhotoNewsFeedCell" customModule="client_server_1788" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28.00000011920929" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="W8U-pO-Fgy" id="rZF-Qu-NIZ">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="98"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wsa-m7-gUw">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="98"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wsa-m7-gUw">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                                         </imageView>
                                     </subviews>
                                     <color key="backgroundColor" systemColor="systemBlueColor"/>
@@ -275,7 +275,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AuthorNewFeedCell" rowHeight="44" id="JbK-H8-cRn" customClass="AuthorNewFeedCell" customModule="client_server_1788" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="222" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="72.00000011920929" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JbK-H8-cRn" id="9WR-Nb-JWX">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
@@ -290,7 +290,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yzf-S5-wC4">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yzf-S5-wC4">
                                                     <rect key="frame" x="171" y="0.0" width="50" height="44"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="94v-1q-gBC">
@@ -320,27 +320,27 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LikeNewsFeedCell" id="jaM-4W-hXO" customClass="LikeNewsFeedCell" customModule="client_server_1788" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="266" width="414" height="22.5"/>
+                                <rect key="frame" x="0.0" y="116.00000011920929" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jaM-4W-hXO" id="caf-GX-frs">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="22.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="37" translatesAutoresizingMaskIntoConstraints="NO" id="dJO-rH-zMh">
-                                            <rect key="frame" x="20" y="0.0" width="374" height="22.5"/>
+                                            <rect key="frame" x="20" y="0.0" width="374" height="44"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="left" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="PcT-3X-V9u">
-                                                    <rect key="frame" x="0.0" y="0.0" width="90" height="22.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="90" height="44"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cm1-Dn-kNZ">
-                                                            <rect key="frame" x="0.0" y="0.0" width="74.5" height="22.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="74.5" height="44"/>
                                                             <color key="tintColor" red="1" green="0.42317499330000002" blue="0.92684501249999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <state key="normal" title="Button">
                                                                 <imageReference key="image" image="heart.fill" catalog="system" symbolScale="default"/>
                                                             </state>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="521-xZ-2Vq">
-                                                            <rect key="frame" x="79.5" y="0.0" width="10.5" height="22.5"/>
+                                                            <rect key="frame" x="79.5" y="0.0" width="10.5" height="44"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -348,17 +348,17 @@
                                                     </subviews>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="WU3-yq-atb">
-                                                    <rect key="frame" x="127" y="0.0" width="120" height="22.5"/>
+                                                    <rect key="frame" x="127" y="0.0" width="120" height="44"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F4v-D3-k0Z">
-                                                            <rect key="frame" x="0.0" y="0.0" width="104.5" height="22.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="104.5" height="44"/>
                                                             <color key="tintColor" systemColor="systemBlueColor"/>
                                                             <state key="normal" title="Button">
                                                                 <imageReference key="image" image="message.fill" catalog="system" symbolScale="default"/>
                                                             </state>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ifh-HA-aua">
-                                                            <rect key="frame" x="109.5" y="0.0" width="10.5" height="22.5"/>
+                                                            <rect key="frame" x="109.5" y="0.0" width="10.5" height="44"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -366,17 +366,17 @@
                                                     </subviews>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="zUq-sc-HWv">
-                                                    <rect key="frame" x="284" y="0.0" width="90" height="22.5"/>
+                                                    <rect key="frame" x="284" y="0.0" width="90" height="44"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cp8-gw-dUk">
-                                                            <rect key="frame" x="0.0" y="0.0" width="74.5" height="22.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="74.5" height="44"/>
                                                             <color key="tintColor" systemColor="systemBlueColor"/>
                                                             <state key="normal" title="Button">
                                                                 <imageReference key="image" image="square.and.arrow.up.fill" catalog="system" symbolScale="default"/>
                                                             </state>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jfR-Gu-3eB">
-                                                            <rect key="frame" x="79.5" y="0.0" width="10.5" height="22.5"/>
+                                                            <rect key="frame" x="79.5" y="0.0" width="10.5" height="44"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
