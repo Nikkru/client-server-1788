@@ -11,7 +11,7 @@ import SwiftyJSON
 
 final class GroupsApi {
     
-    func getGroups(completion: @escaping([GroupsDAO])->(), upLoad: ([GroupsDAO])->()) {
+    func getGroups(completion: @escaping([GroupsDAO])->()) {
         
         let baseUrl = "https://api.vk.com/method/"
         let token = Session.shared.token

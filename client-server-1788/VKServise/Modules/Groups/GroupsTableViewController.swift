@@ -26,21 +26,19 @@ class GroupsTableViewController: UITableViewController {
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         
-//        удаляем страрые группы
+        //        удаляем страрые группы
         groups = groupsdDB.fetch()
-        groupsdDB.deleteAll()
+        groupsdDB.delete(groups!)
         
         groupsApi.getGroups { [weak self] groups in
             guard let self = self else { return }
             
-//            self.groupsDAO = groups
-            //            self.tableView.reloadData()
-//            save list of groups
+            //            save list of groups
             self.groupsdDB.save(groups)
-//            load list of groups
+            //            load list of groups
             self.groups = self.groupsdDB.fetch()
             
-//            automatic reload table by change BD in Realm
+            //            automatic reload table by change BD in Realm
             self.token = self.groups?.observe(on: .main, { [weak self] changes in
                 
                 guard let self = self else { return }
@@ -59,21 +57,6 @@ class GroupsTableViewController: UITableViewController {
                     print("An error occurred: \(error)")
                 }
             })
-        } upLoad: { groups in
-            //            guard let groupsDB = groups else { return }
-            
-            for i in groups {
-                let group = GroupFB(id: i.id,
-                                    name: i.name,
-                                    screenName: i.screenName,
-                                    photo100: i.photo100,
-                                    photo50: i.photo50,
-                                    type: i.type,
-                                    isClosed: i.isClosed)
-                self.groupsFB.append(group)
-                let groupContainerRef = self.ref.child("userId").child("groups").child(String(group.id))
-                groupContainerRef.setValue(group.toAnyObject())
-            }
         }
     }
     
@@ -103,7 +86,7 @@ class GroupsTableViewController: UITableViewController {
                 })
             }
         }
-        addGroupsInFB(groups: groups, token: Session.shared.token, indexPath: indexPath)
+        //        addGroupsInFB(groups: groups, token: Session.shared.token, indexPath: indexPath)
         return cell
     }
 }
@@ -125,6 +108,5 @@ extension GroupsTableViewController {
         
         let groupContainerRef = self.ref.child("session: \(token)").child("groups").child(String(group.id))
         groupContainerRef.setValue(group.toAnyObject())
-        //        }
     }
 }
