@@ -61,7 +61,6 @@ class GroupsTableViewController: UITableViewController {
     }
     
     // MARK: - Table view data source
-    
     override func numberOfSections(in tableView: UITableView) -> Int {
         
         return 1
@@ -86,7 +85,7 @@ class GroupsTableViewController: UITableViewController {
                 })
             }
         }
-                addGroupsInFB(groups: groups, token: Session.shared.token, indexPath: indexPath)
+        addGroupsInFB(groups: groups, token: Session.shared.token, indexPath: indexPath)
         return cell
     }
 }
