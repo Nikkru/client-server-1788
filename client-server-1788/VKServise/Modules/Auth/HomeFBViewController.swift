@@ -19,19 +19,6 @@ class HomeFBViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//        ref.observe(.value, with: { snapshot in
-//
-//            print(snapshot.value as Any)
-//
-//            var cities: [FirebaseCity] = []
-//            for child in snapshot.children {
-//                if let snapshot = child as? DataSnapshot, let city = FirebaseCity(snapshot: snapshot) {
-//                    cities.append(city)
-//                }
-//            }
-////            self.cities = cities
-////            let _ = self.cities.map { print($0.name, $0.zipcode)}
-//        })
     }
     @IBAction func signOutAction(_ sender: Any) {
         

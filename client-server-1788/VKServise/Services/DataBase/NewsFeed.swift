@@ -19,11 +19,6 @@ struct NewsResponse: Codable {
 }
 
 // MARK: - Model for storage
-
-//class Feed: Codable{
-//    
-//}
-
 class NewsFeed: Object, Codable {
     
     @Persisted var items: List<Item>

@@ -45,7 +45,6 @@ final class PhotosDB {
         Realm.Configuration.defaultConfiguration = Realm.Configuration(schemaVersion: 4)
     }
     
-    
     func save(_ items: [PhotosDAO]) {
         
 //        Если в каждом методе ижет свой Realm, можно создавать объект ассинхронно через try!
