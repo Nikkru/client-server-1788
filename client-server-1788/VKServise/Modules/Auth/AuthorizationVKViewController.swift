@@ -11,18 +11,19 @@ import Firebase
 
 class AuthorizationVKViewController: UIViewController {
     
+    //  устанавливаем название папки для сохранения данных по Пользователю
+    let ref = Database.database().reference(withPath: "LoggedUsers")
+    var sessions: [SessionFirebase] = []
+    
+    private let appId = "8023112"
+    //    private let appId = "7822904"
+    
     @IBOutlet weak var webview: WKWebView!
     {
         didSet{
             webview.navigationDelegate = self
         }
     }
-    
-    let ref = Database.database().reference(withPath: "sessions")
-    var sessions: [SessionFirebase] = []
-    
-    private let appId = "8023112"
-    //    private let appId = "7822904"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,7 +52,6 @@ class AuthorizationVKViewController: UIViewController {
         
         webview.load(request)
     }
-    
 }
 
 extension AuthorizationVKViewController: WKNavigationDelegate {
@@ -66,6 +66,7 @@ extension AuthorizationVKViewController: WKNavigationDelegate {
             decisionHandler(.allow)
             return
         }
+        
         //  разбиваем строку ответа на массив строк
         let params = fragment
             .components(separatedBy: "&")
@@ -86,10 +87,11 @@ extension AuthorizationVKViewController: WKNavigationDelegate {
         
         Session.shared.token = token
         Session.shared.userId = userId
-        //        SessionFirebase.init(token: token, userId: userId)
-        let session = SessionFirebase(token: token, userId: userId)
-        let sessionContainerRef = self.ref.child(session.token)
-        sessionContainerRef.setValue(session.toAnyObject())
+        
+        //добавляем пользователя в Firebase
+        let userFB = UserFB(id: Int(userId) ?? -1, addedGroups: [])
+        let usersContainerRef = ref.child(userId)
+        usersContainerRef.setValue(userFB.toAnyObject())
         
         performSegue(withIdentifier: "ShowTabBarSegue", sender: nil)
         

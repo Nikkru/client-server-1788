@@ -22,7 +22,7 @@ final class GroupsApi {
             "user_id": userId,
             "extended": 1,
             "access_token": token,
-            "count": 15,
+            "count": 20,
             "v": version
         ]
         

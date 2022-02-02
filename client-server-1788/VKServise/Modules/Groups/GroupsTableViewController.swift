@@ -86,7 +86,7 @@ class GroupsTableViewController: UITableViewController {
                 })
             }
         }
-        //        addGroupsInFB(groups: groups, token: Session.shared.token, indexPath: indexPath)
+                addGroupsInFB(groups: groups, token: Session.shared.token, indexPath: indexPath)
         return cell
     }
 }

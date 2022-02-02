@@ -56,6 +56,7 @@
 		2EAF8F6527A57CC10006E371 /* New.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAF8F6427A57CC10006E371 /* New.swift */; };
 		2EB46F7D2780B8D000271A72 /* PhotosDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB46F7C2780B8D000271A72 /* PhotosDB.swift */; };
 		2ED555552777ACC70057514E /* FriendsDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED555542777ACC70057514E /* FriendsDB.swift */; };
+		2EEDC92127AAF7C100FA02B5 /* UserFB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EEDC92027AAF7C100FA02B5 /* UserFB.swift */; };
 		2EFB1D0127A7E91E00E02682 /* NewsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFB1D0027A7E91E00E02682 /* NewsApi.swift */; };
 		816CBD0C776D29638699AEEE /* Pods_client_server_1788.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70FEE3B97FDD76BBE198B378 /* Pods_client_server_1788.framework */; };
 /* End PBXBuildFile section */
@@ -107,6 +108,7 @@
 		2EAF8F6427A57CC10006E371 /* New.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = New.swift; sourceTree = "<group>"; };
 		2EB46F7C2780B8D000271A72 /* PhotosDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosDB.swift; sourceTree = "<group>"; };
 		2ED555542777ACC70057514E /* FriendsDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsDB.swift; sourceTree = "<group>"; };
+		2EEDC92027AAF7C100FA02B5 /* UserFB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFB.swift; sourceTree = "<group>"; };
 		2EFB1D0027A7E91E00E02682 /* NewsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsApi.swift; sourceTree = "<group>"; };
 		70FEE3B97FDD76BBE198B378 /* Pods_client_server_1788.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_client_server_1788.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		954799A3105721613CD10A96 /* Pods-client-server-1788.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-client-server-1788.release.xcconfig"; path = "Pods/Target Support Files/Pods-client-server-1788/Pods-client-server-1788.release.xcconfig"; sourceTree = "<group>"; };
@@ -364,6 +366,7 @@
 				2E5479E4277997E600EA9D18 /* GroupsDB.swift */,
 				2EB46F7C2780B8D000271A72 /* PhotosDB.swift */,
 				2E762492279959BF00EEE98E /* NewsFeed.swift */,
+				2EEDC92027AAF7C100FA02B5 /* UserFB.swift */,
 			);
 			path = DataBase;
 			sourceTree = "<group>";
@@ -520,6 +523,7 @@
 				2E4983F6276BC3D200EB3C23 /* GroupsApi.swift in Sources */,
 				2E793DCD2771C25E00B397D7 /* GroupDTO.swift in Sources */,
 				2E3BC51A2761556D00690ADE /* Session.swift in Sources */,
+				2EEDC92127AAF7C100FA02B5 /* UserFB.swift in Sources */,
 				2E2C04BC27A16D5E00AC529B /* TextNewsFeedCell.swift in Sources */,
 				2E5479E5277997E600EA9D18 /* GroupsDB.swift in Sources */,
 				2E73CC8627662EF100FB6EC4 /* ApiRequestViewController.swift in Sources */,
