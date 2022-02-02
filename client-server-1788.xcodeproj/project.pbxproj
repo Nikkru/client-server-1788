@@ -56,6 +56,7 @@
 		2EAF8F6527A57CC10006E371 /* New.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAF8F6427A57CC10006E371 /* New.swift */; };
 		2EB46F7D2780B8D000271A72 /* PhotosDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB46F7C2780B8D000271A72 /* PhotosDB.swift */; };
 		2ED555552777ACC70057514E /* FriendsDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED555542777ACC70057514E /* FriendsDB.swift */; };
+		2EFB1D0127A7E91E00E02682 /* NewsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFB1D0027A7E91E00E02682 /* NewsApi.swift */; };
 		816CBD0C776D29638699AEEE /* Pods_client_server_1788.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70FEE3B97FDD76BBE198B378 /* Pods_client_server_1788.framework */; };
 /* End PBXBuildFile section */
 
@@ -106,6 +107,7 @@
 		2EAF8F6427A57CC10006E371 /* New.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = New.swift; sourceTree = "<group>"; };
 		2EB46F7C2780B8D000271A72 /* PhotosDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosDB.swift; sourceTree = "<group>"; };
 		2ED555542777ACC70057514E /* FriendsDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsDB.swift; sourceTree = "<group>"; };
+		2EFB1D0027A7E91E00E02682 /* NewsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsApi.swift; sourceTree = "<group>"; };
 		70FEE3B97FDD76BBE198B378 /* Pods_client_server_1788.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_client_server_1788.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		954799A3105721613CD10A96 /* Pods-client-server-1788.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-client-server-1788.release.xcconfig"; path = "Pods/Target Support Files/Pods-client-server-1788/Pods-client-server-1788.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -350,6 +352,7 @@
 				2E0EB11F276A792100E67D5A /* FriendsApi.swift */,
 				2E4983EF276BBEE900EB3C23 /* PhotosApi.swift */,
 				2E4983F5276BC3D200EB3C23 /* GroupsApi.swift */,
+				2EFB1D0027A7E91E00E02682 /* NewsApi.swift */,
 			);
 			path = Api;
 			sourceTree = "<group>";
@@ -540,6 +543,7 @@
 				2E4983E8276BB4A400EB3C23 /* FriendDTO.swift in Sources */,
 				2E3BC4F6276147F000690ADE /* AppDelegate.swift in Sources */,
 				2E6617822762B04D004B9360 /* AuthorizationVKViewController.swift in Sources */,
+				2EFB1D0127A7E91E00E02682 /* NewsApi.swift in Sources */,
 				2EAF8F6527A57CC10006E371 /* New.swift in Sources */,
 				2E5057C527734D5000E84A97 /* StorageViewController.swift in Sources */,
 				2E0EB128276A8E0200E67D5A /* Friend.swift in Sources */,

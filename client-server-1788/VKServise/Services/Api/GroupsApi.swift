@@ -29,21 +29,22 @@ final class GroupsApi {
         let method = "groups.get"
         let url = baseUrl + method
         
-        AF.request(url,
-                   method: .get,
-                   parameters: parameters).responseJSON { response in
-                    
-                    print("GROUPS RESPONSE.DATA: \(response.data?.prettyJSON)")
-                    
-                    guard let jsonData = response.data else { return }
-                    do {
-                        let itemsData = try JSON(jsonData)["response"]["items"].rawData()
-                        let groups = try JSONDecoder().decode([GroupsDAO].self, from: itemsData)
-                        completion(groups)
-                    } catch {
-                        print(error)
-                    }
-                   }
+        AF.request(
+            url,
+            method: .get,
+            parameters: parameters).responseJSON { response in
+                
+                print("GROUPS RESPONSE.DATA: \(String(describing: response.data?.prettyJSON))")
+                
+                guard let jsonData = response.data else { return }
+                do {
+                    let itemsData = try JSON(jsonData)["response"]["items"].rawData()
+                    let groups = try JSONDecoder().decode([GroupsDAO].self, from: itemsData)
+                    completion(groups)
+                } catch {
+                    print(error)
+                }
+            }
     }
 }
 

@@ -8,7 +8,22 @@
 import Foundation
 import RealmSwift
 
+struct Feed: Codable {
+    let response: NewsResponse
+}
+
+struct NewsResponse: Codable {
+    let items: [Item]
+    let profiles: [Profile]
+    let groups: [Group]
+}
+
 // MARK: - Model for storage
+
+//class Feed: Codable{
+//    
+//}
+
 class NewsFeed: Object, Codable {
     
     @Persisted var items: List<Item>
@@ -42,6 +57,18 @@ class Item: Object, Codable {
     @Persisted var shortTextRate: Double
     @Persisted var carouselOffset: Int
     @Persisted var views: Views?
+}
+
+class Profile: Object, Codable {
+    @Persisted var photo_50: String
+    @Persisted var photo_100: String
+    @Persisted var screen_name: String?
+}
+
+class Group: Object, Codable {
+    @Persisted var photo_50: String
+    @Persisted var id: Int
+    @Persisted var name: String
 }
 
 class Attachment: Object, Codable {
@@ -184,6 +211,7 @@ class Views: Object, Codable {
 }
 
 final class NewsFeedDB {
+    
     init() {
         
         Realm.Configuration.defaultConfiguration = Realm.Configuration(schemaVersion: 5)

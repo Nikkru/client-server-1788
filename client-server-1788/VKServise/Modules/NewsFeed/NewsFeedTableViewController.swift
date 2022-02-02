@@ -11,6 +11,7 @@ class NewsFeedTableViewController: UITableViewController {
     
     var new: New?
     private var news: [New] = []
+    private var newsApi = NewsApi()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +20,8 @@ class NewsFeedTableViewController: UITableViewController {
         news.append(new1)
         let new2 = New(date: 280222, text: "", comments: 20, likes: 22, reposts: 23, photo: "fox", author: "FOX", shared: 14)
         news.append(new2)
+        
+//        newsApi.getNews()
     }
     
     // MARK: - Table view data source

@@ -40,7 +40,7 @@ class AuthorizationVKViewController: UIViewController {
             URLQueryItem(name: "client_id", value: appId),
             URLQueryItem(name: "redirect_uri", value: "https://oauth.vk.com/blank.html"),
             URLQueryItem(name: "display", value: "mobile"),
-            URLQueryItem(name: "scope", value: "262150"),
+            URLQueryItem(name: "scope", value: "401502"),
             URLQueryItem(name: "response_type", value: "token"),
             URLQueryItem(name: "state", value: "1234567"),
             URLQueryItem(name: "revoke", value: "1"),

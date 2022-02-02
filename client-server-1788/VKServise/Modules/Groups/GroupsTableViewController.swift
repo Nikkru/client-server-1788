@@ -26,17 +26,21 @@ class GroupsTableViewController: UITableViewController {
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         
-        //        groupsdDB.deleteAll()
+//        удаляем страрые группы
+        groups = groupsdDB.fetch()
+        groupsdDB.deleteAll()
         
         groupsApi.getGroups { [weak self] groups in
             guard let self = self else { return }
             
-            self.groupsDAO = groups
+//            self.groupsDAO = groups
             //            self.tableView.reloadData()
-            
+//            save list of groups
             self.groupsdDB.save(groups)
+//            load list of groups
             self.groups = self.groupsdDB.fetch()
             
+//            automatic reload table by change BD in Realm
             self.token = self.groups?.observe(on: .main, { [weak self] changes in
                 
                 guard let self = self else { return }
@@ -110,16 +114,6 @@ extension GroupsTableViewController {
     func addGroupsInFB(groups: Results<GroupsDAO>?, token: String, indexPath: IndexPath) {
         
         guard let groupsDB = groups else { return }
-        
-        //        for i in groupsDB {
-        //            let group = GroupFB(id: i.id,
-        //                                name: i.name,
-        //                                screenName: i.screenName,
-        //                                photo100: i.photo100,
-        //                                photo50: i.photo50,
-        //                                type: i.type,
-        //                                isClosed: i.isClosed)
-        //            self.groupsFB.append(group)
         
         let group = GroupFB(id: groupsDB[indexPath.row].id,
                             name: groupsDB[indexPath.row].name,
