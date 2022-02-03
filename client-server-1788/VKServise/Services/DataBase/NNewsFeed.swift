@@ -9,7 +9,13 @@ import Foundation
 
 // MARK: - NNewsFeed
 struct NNewsFeed: Codable {
-    let response: NResponse
+    let response: NNewsResponse
+}
+
+struct NNewsResponse: Codable {
+    let items: [NItem]
+    let profiles: [NProfile]
+    let groups: [NGroup]
 }
 
 // MARK: - Response
@@ -58,6 +64,18 @@ struct NItem: Codable {
         case carouselOffset = "carousel_offset"
         case views
     }
+}
+
+struct NProfile: Codable {
+    let photo_50: String
+   let photo_100: String
+    let screen_name: String?
+}
+
+struct NGroup: Codable {
+    let photo_50: String
+    let id: Int
+    let name: String
 }
 
 // MARK: - Attachment
