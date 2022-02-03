@@ -62,7 +62,7 @@ class NewsFeedTableViewController: UITableViewController {
         case 3:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "LikeNewsFeedCell", for: indexPath) as? LikeNewsFeedCell else { return returnCell }
             cell.CountLikeLabel.text = String(new.likes ?? 0)
-            cell.CountCommentLabel.text = String(new.comments ?? 0)
+            cell.CountCommentLabel.text = String(new.comments )
             cell.CountSharedLabel.text = String(new.shared ?? 0)
             returnCell = cell
         default:
