@@ -38,7 +38,7 @@ final class NewsApi {
             parameters: parameters
         ).responseJSON { response in
             
-            print("RESPONSE.DATA: \(String(describing: response.data?.prettyJSON))")
+            print("RESPONSE.DATA FROM NEWSFEED: \(String(describing: response.data?.prettyJSON))")
             
             guard let jsonData = response.data else { return }
             
