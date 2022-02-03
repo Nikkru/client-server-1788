@@ -330,17 +330,23 @@
                                             <rect key="frame" x="20" y="0.0" width="374" height="44"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="left" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="PcT-3X-V9u">
-                                                    <rect key="frame" x="0.0" y="0.0" width="90" height="44"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="95" height="44"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cm1-Dn-kNZ">
-                                                            <rect key="frame" x="0.0" y="0.0" width="74.5" height="44"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="30" height="44"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="30" id="JY0-nx-3ha"/>
+                                                            </constraints>
                                                             <color key="tintColor" red="1" green="0.42317499330000002" blue="0.92684501249999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <state key="normal" title="Button">
                                                                 <imageReference key="image" image="heart.fill" catalog="system" symbolScale="default"/>
                                                             </state>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="521-xZ-2Vq">
-                                                            <rect key="frame" x="79.5" y="0.0" width="10.5" height="44"/>
+                                                            <rect key="frame" x="35" y="0.0" width="60" height="44"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" relation="lessThanOrEqual" constant="60" id="TNe-XQ-Pec"/>
+                                                            </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -348,17 +354,23 @@
                                                     </subviews>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="WU3-yq-atb">
-                                                    <rect key="frame" x="127" y="0.0" width="120" height="44"/>
+                                                    <rect key="frame" x="132" y="0.0" width="110" height="44"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F4v-D3-k0Z">
-                                                            <rect key="frame" x="0.0" y="0.0" width="104.5" height="44"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="30" height="44"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="30" id="FLv-Cd-NeL"/>
+                                                            </constraints>
                                                             <color key="tintColor" systemColor="systemBlueColor"/>
                                                             <state key="normal" title="Button">
                                                                 <imageReference key="image" image="message.fill" catalog="system" symbolScale="default"/>
                                                             </state>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ifh-HA-aua">
-                                                            <rect key="frame" x="109.5" y="0.0" width="10.5" height="44"/>
+                                                            <rect key="frame" x="35" y="0.0" width="75" height="44"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" relation="lessThanOrEqual" constant="60" id="uQM-i0-gLd"/>
+                                                            </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -366,17 +378,23 @@
                                                     </subviews>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="zUq-sc-HWv">
-                                                    <rect key="frame" x="284" y="0.0" width="90" height="44"/>
+                                                    <rect key="frame" x="279" y="0.0" width="95" height="44"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cp8-gw-dUk">
-                                                            <rect key="frame" x="0.0" y="0.0" width="74.5" height="44"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="30" height="44"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="30" id="nN2-EW-fYY"/>
+                                                            </constraints>
                                                             <color key="tintColor" systemColor="systemBlueColor"/>
                                                             <state key="normal" title="Button">
                                                                 <imageReference key="image" image="square.and.arrow.up.fill" catalog="system" symbolScale="default"/>
                                                             </state>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jfR-Gu-3eB">
-                                                            <rect key="frame" x="79.5" y="0.0" width="10.5" height="44"/>
+                                                            <rect key="frame" x="35" y="0.0" width="60" height="44"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" relation="lessThanOrEqual" constant="60" id="4E8-4x-yTv"/>
+                                                            </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>

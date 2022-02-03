@@ -23,13 +23,11 @@ class PhotosTableViewController: UITableViewController {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "PhotoCell")
         
         //    photosDB.deleteAll()
-        
         photosApi.getPhotos { [weak self] photos in
             
             guard let self = self else { return }
             
             //            self.photos = photos
-            
             self.photosDB.save(photos)
             self.photos = self.photosDB.fetch()
             
@@ -50,7 +48,6 @@ class PhotosTableViewController: UITableViewController {
                     print("An error occurred: \(error)")
                 }
             })
-            //            self.tableView.reloadData()
         }
     }
     

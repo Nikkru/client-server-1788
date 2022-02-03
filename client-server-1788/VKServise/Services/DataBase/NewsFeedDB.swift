@@ -8,14 +8,23 @@
 import Foundation
 import RealmSwift
 
-struct Feed: Codable {
-    let response: NewsResponse
+class Feed: Object, Codable {
+    @Persisted var response: NewsResponse
 }
 
-struct NewsResponse: Codable {
-    let items: [Item]
-    let profiles: [Profile]
-    let groups: [Group]
+class NewsResponse: Object, Codable {
+    
+    override init() {}
+    
+    @Persisted var items: List<Item>
+    @Persisted var profiles: List<Profile>
+    @Persisted var groups: List<Group>
+    
+    init(items: List<Item>, profiles: List<Profile>, groups: List<Group>) {
+        self.items = items
+        self.profiles = profiles
+        self.groups = groups
+    }
 }
 
 // MARK: - Model for storage
@@ -238,7 +247,7 @@ final class NewsFeedDB {
         }
     }
     
-    func delete(_ item: NewsFeed) {
+    func delete(_ item: Results<NewsFeed>) {
         let realm = try! Realm()
         
         try! realm.write {

@@ -90,17 +90,7 @@ extension FriendsTableViewController {
     func addFriendsInFB(friends: Results<FriendsDAO>?, token: String, indexPath: IndexPath) {
         
         guard let friendsDB = friends else { return }
-        //        let friendFB: FriendFB?
-        //        for i in friendsDB {
-        //            let friend = FriendFB(id: i.id,
-        //                                  firstName: i.firstName,
-        //                                  lastName: i.lastName,
-        //                                  photo100: i.photo100,
-        //                                  photo50: i.photo50)
-        ////            self.friendsFB.append(friend)
-        //            let friendContainerRef = self.ref.child(token).child(String(friend.id))
-        //            friendContainerRef.setValue(friend.toAnyObject())
-        //        }
+        
         let friend = FriendFB(id: friendsDB[indexPath.row].id,
                               firstName: friendsDB[indexPath.row].firstName,
                               lastName: friendsDB[indexPath.row].lastName,
