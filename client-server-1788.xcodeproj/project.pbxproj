@@ -38,7 +38,6 @@
 		2E547F002793F46B009BA373 /* LoginFBViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E547EFF2793F46B009BA373 /* LoginFBViewController.swift */; };
 		2E547F032793F47C009BA373 /* HomeFBViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E547F022793F47C009BA373 /* HomeFBViewController.swift */; };
 		2E54F79F27935B5900489B44 /* SessionFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E54F79E27935B5900489B44 /* SessionFirebase.swift */; };
-		2E56A3CB27763C95009E8AE5 /* RealmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E56A3CA27763C95009E8AE5 /* RealmViewController.swift */; };
 		2E5BC44A276F69C100969561 /* GroupsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5BC449276F69C100969561 /* GroupsTableViewController.swift */; };
 		2E6617822762B04D004B9360 /* AuthorizationVKViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6617812762B04D004B9360 /* AuthorizationVKViewController.swift */; };
 		2E6AFDF72790AF3D004CDEDF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2E6AFDF62790AF3D004CDEDF /* GoogleService-Info.plist */; };
@@ -94,7 +93,6 @@
 		2E547EFF2793F46B009BA373 /* LoginFBViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFBViewController.swift; sourceTree = "<group>"; };
 		2E547F022793F47C009BA373 /* HomeFBViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFBViewController.swift; sourceTree = "<group>"; };
 		2E54F79E27935B5900489B44 /* SessionFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionFirebase.swift; sourceTree = "<group>"; };
-		2E56A3CA27763C95009E8AE5 /* RealmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmViewController.swift; sourceTree = "<group>"; };
 		2E5BC449276F69C100969561 /* GroupsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsTableViewController.swift; sourceTree = "<group>"; };
 		2E6617812762B04D004B9360 /* AuthorizationVKViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationVKViewController.swift; sourceTree = "<group>"; };
 		2E6AFDF62790AF3D004CDEDF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -173,9 +171,9 @@
 		2E0EB126276A8DC900E67D5A /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				2E0EB127276A8E0200E67D5A /* Friend.swift */,
 				2E4983E7276BB4A400EB3C23 /* FriendDTO.swift */,
 				2E53E293279476E000B2D2E9 /* FriendFB.swift */,
+				2E59593527AD629F0080307B /* Zip */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -269,7 +267,7 @@
 		2E4AC3BF27A40BC8006926A0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				2EAF8F6127A5681E0006E371 /* AuthorNewCell.swift */,
+				2E59593727AD62C40080307B /* Cell */,
 				2EAF8F6427A57CC10006E371 /* New.swift */,
 			);
 			path = Models;
@@ -281,9 +279,35 @@
 				2E6AFDFF2790B321004CDEDF /* lesson-8 */,
 				2E73CC8527662EF100FB6EC4 /* ApiRequestViewController.swift */,
 				2E5057C427734D5000E84A97 /* StorageViewController.swift */,
-				2E56A3CA27763C95009E8AE5 /* RealmViewController.swift */,
 			);
 			path = TestControllers;
+			sourceTree = "<group>";
+		};
+		2E59593327AD623F0080307B /* Zip */ = {
+			isa = PBXGroup;
+			children = (
+				2E762492279959BF00EEE98E /* NewsFeed.swift */,
+			);
+			path = Zip;
+			sourceTree = "<group>";
+		};
+		2E59593527AD629F0080307B /* Zip */ = {
+			isa = PBXGroup;
+			children = (
+				2E0EB127276A8E0200E67D5A /* Friend.swift */,
+			);
+			path = Zip;
+			sourceTree = "<group>";
+		};
+		2E59593727AD62C40080307B /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				2EAF8F6127A5681E0006E371 /* AuthorNewCell.swift */,
+				2E2C04BB27A16D5E00AC529B /* TextNewsFeedCell.swift */,
+				2E2C04BE27A16D7F00AC529B /* PhotoNewsFeedCell.swift */,
+				2E2C04C427A16DC100AC529B /* LikeNewsFeedCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		2E6617802762AFF4004B9360 /* VKServise */ = {
@@ -342,9 +366,6 @@
 			isa = PBXGroup;
 			children = (
 				2E4AC3BF27A40BC8006926A0 /* Models */,
-				2E2C04BB27A16D5E00AC529B /* TextNewsFeedCell.swift */,
-				2E2C04BE27A16D7F00AC529B /* PhotoNewsFeedCell.swift */,
-				2E2C04C427A16DC100AC529B /* LikeNewsFeedCell.swift */,
 				2E2C04C727A16F8200AC529B /* NewsFeedTableViewController.swift */,
 			);
 			path = NewsFeed;
@@ -367,9 +388,9 @@
 				2ED555542777ACC70057514E /* FriendsDB.swift */,
 				2E5479E4277997E600EA9D18 /* GroupsDB.swift */,
 				2EB46F7C2780B8D000271A72 /* PhotosDB.swift */,
-				2E762492279959BF00EEE98E /* NewsFeed.swift */,
 				2EEDC92027AAF7C100FA02B5 /* UserFB.swift */,
 				2E9D1CF227AC406B00F07404 /* NNewsFeed.swift */,
+				2E59593327AD623F0080307B /* Zip */,
 			);
 			path = DataBase;
 			sourceTree = "<group>";
@@ -543,7 +564,6 @@
 				2E0EB118276A769500E67D5A /* PhotosTableViewController.swift in Sources */,
 				2E4983F9276BC79E00EB3C23 /* PhotoDTO.swift in Sources */,
 				2E6AFE062790B3AF004CDEDF /* LoginViewController.swift in Sources */,
-				2E56A3CB27763C95009E8AE5 /* RealmViewController.swift in Sources */,
 				2E4983F0276BBEE900EB3C23 /* PhotosApi.swift in Sources */,
 				2EAF8F6227A5681E0006E371 /* AuthorNewCell.swift in Sources */,
 				2E54F79F27935B5900489B44 /* SessionFirebase.swift in Sources */,
