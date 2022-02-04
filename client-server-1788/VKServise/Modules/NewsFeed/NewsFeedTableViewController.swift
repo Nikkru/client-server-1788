@@ -105,9 +105,9 @@ class NewsFeedTableViewController: UITableViewController {
                 height = 0.0
             } else { height = 80.0 }
         case 2:
-            height = 60
-        case 3:
             height = 44
+        case 3:
+            height = 30
             
         default:
             break
