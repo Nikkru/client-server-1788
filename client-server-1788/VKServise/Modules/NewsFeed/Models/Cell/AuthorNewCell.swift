@@ -5,12 +5,13 @@
 //  Created by Nikolai Krusser on 29.01.2022.
 //
 import UIKit
+import SDWebImage
 
 class AuthorNewFeedCell: UITableViewCell {
 
-    @IBOutlet weak var AuthorFeedLabel: UILabel!
-    @IBOutlet weak var DateFeedLabel: UILabel!
-    @IBOutlet weak var AuthorImge: UIImageView!
+    @IBOutlet weak var authorNewsFeedLabel: UILabel!
+    @IBOutlet weak var dateNewsFeedLabel: UILabel!
+    @IBOutlet weak var authorImage: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,6 +23,13 @@ class AuthorNewFeedCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+//    func config(authorName: String, authorAvatar: String, dateNews: String) {
+//        
+//        self.authorNewsFeedLabel.text = authorName
+//        self.authorImage.sd_setImage(with: URL(string: authorAvatar))
+//        self.dateNewsFeedLabel.text = dateNews
+//    }
 
 }
 

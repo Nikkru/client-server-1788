@@ -7,13 +7,24 @@
 
 import UIKit
 
+enum NewsCellTipe: Int, CaseIterable {
+    case autor = 0
+    case text
+    case photo
+    case likeCount
+}
+
 class NewsFeedTableViewController: UITableViewController {
     
     private var new: New?
     private var news: [New] = []
     
     private var newsApi = NewsApi()
-    private var newsfeeds: [NNewsFeed] = []
+    //    private var newsfeeds: [NNewsFeed] = []
+    private var newsfeeds = NNewsFeed(response: .init(
+                                        items: [],
+                                        profiles: [],
+                                        groups: []))
     
     private var vkItemsArray: [NItem] = []
     private var vkProfilesArray: [NProfile] = []
@@ -31,7 +42,6 @@ class NewsFeedTableViewController: UITableViewController {
         newsApi.getNews { [weak self] feed in
             guard let self = self else { return }
             
-//            self.newsfeeds = feed
             guard let itemsArray = (feed?.response.items) else { return }
             self.vkItemsArray = itemsArray
             guard let profilesArray = (feed?.response.profiles) else { return }
@@ -40,6 +50,8 @@ class NewsFeedTableViewController: UITableViewController {
             self.vkGroupsArray = groupsArray
             
         }
+        
+        tableView.reloadData()
     }
     
     // MARK: - Table view data source
@@ -55,6 +67,12 @@ class NewsFeedTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+//        let item = newsfeeds.response.items[indexPath.section]
+//        let profile = newsfeeds.response.profiles[indexPath.section]
+//        let group = newsfeeds.response.groups[indexPath.section]
+        
+//        let newsCellType = NewsCellTipe(rawValue: indexPath.row)
         
         var returnCell: UITableViewCell!
         let new = news[indexPath.section]
@@ -72,9 +90,9 @@ class NewsFeedTableViewController: UITableViewController {
             
         case 2:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "AuthorNewFeedCell", for: indexPath) as? AuthorNewFeedCell else { return returnCell }
-            cell.AuthorFeedLabel.text = new.author
-            cell.AuthorImge.image = UIImage(named: new.photo ?? "heart")
-            cell.DateFeedLabel.text = String(new.date)
+            cell.authorNewsFeedLabel.text = new.author
+            cell.authorImage.image = UIImage(named: new.photo ?? "heart")
+            cell.dateNewsFeedLabel.text = String(new.date)
             returnCell = cell
             
         case 3:

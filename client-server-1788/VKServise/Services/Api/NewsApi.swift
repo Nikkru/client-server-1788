@@ -27,8 +27,8 @@ final class NewsApi {
             "filters": "post, group, photo, wall_photo, note",
             "start_time": 1643529965,
             "access_token": token,
-            "count": 2,
-            "max_photos": 2,
+            "count": 10,
+            "max_photos": 5,
             "v": version
         ]
         
