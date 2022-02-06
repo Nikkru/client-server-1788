@@ -7,10 +7,10 @@
 
 import UIKit
 
-enum NewsCellTipe: Int, CaseIterable {
-    case autor = 0
-    case text
+enum NewsCellType: Int, CaseIterable {
+    case text = 0
     case photo
+    case autor
     case likeCount
 }
 
@@ -63,7 +63,7 @@ class NewsFeedTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 4
+        return NewsCellType.allCases.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -72,7 +72,7 @@ class NewsFeedTableViewController: UITableViewController {
 //        let profile = newsfeeds.response.profiles[indexPath.section]
 //        let group = newsfeeds.response.groups[indexPath.section]
         
-        let newsCellType = NewsCellTipe(rawValue: indexPath.row)
+        let newsCellType = NewsCellType(rawValue: indexPath.row)
         
         var returnCell: UITableViewCell!
         let new = news[indexPath.section]
@@ -112,7 +112,7 @@ class NewsFeedTableViewController: UITableViewController {
         
         let new = news[indexPath.section]
         var height: CGFloat!
-        let newsCellType = NewsCellTipe(rawValue: indexPath.row)
+        let newsCellType = NewsCellType(rawValue: indexPath.row)
         
         switch newsCellType {
         case .text:

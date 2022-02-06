@@ -24,11 +24,11 @@ final class NewsApi {
         
         let parameters: Parameters = [
             "user_id": userId,
-            "filters": "post, group, photo, wall_photo, note",
+            "filters": "post, group, photo",
             "start_time": 1643529965,
             "access_token": token,
-            "count": 10,
-            "max_photos": 5,
+            "count": 3,
+            "max_photos": 2,
             "v": version
         ]
         
