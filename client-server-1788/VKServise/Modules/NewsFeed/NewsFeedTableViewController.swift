@@ -72,30 +72,30 @@ class NewsFeedTableViewController: UITableViewController {
 //        let profile = newsfeeds.response.profiles[indexPath.section]
 //        let group = newsfeeds.response.groups[indexPath.section]
         
-//        let newsCellType = NewsCellTipe(rawValue: indexPath.row)
+        let newsCellType = NewsCellTipe(rawValue: indexPath.row)
         
         var returnCell: UITableViewCell!
         let new = news[indexPath.section]
         
-        switch indexPath.row {
-        case 0:
+        switch newsCellType {
+        case .text:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "TextNewsFeedCell", for: indexPath) as? TextNewsFeedCell else { return returnCell }
             cell.textFeedLabel.text = new.text
             returnCell = cell
             
-        case 1:
+        case .photo:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "PhotoNewsFeedCell", for: indexPath) as? PhotoNewsFeedCell else { return returnCell }
             cell.photoFeedImageView.image = UIImage(named: new.photo ?? "heart.fill")
             returnCell = cell
             
-        case 2:
+        case .autor:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "AuthorNewFeedCell", for: indexPath) as? AuthorNewFeedCell else { return returnCell }
             cell.authorNewsFeedLabel.text = new.author
             cell.authorImage.image = UIImage(named: new.photo ?? "heart")
             cell.dateNewsFeedLabel.text = String(new.date)
             returnCell = cell
             
-        case 3:
+        case .likeCount:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "LikeNewsFeedCell", for: indexPath) as? LikeNewsFeedCell else { return returnCell }
             cell.CountLikeLabel.text = String(new.likes ?? 0)
             cell.CountCommentLabel.text = String(new.comments )
@@ -112,19 +112,20 @@ class NewsFeedTableViewController: UITableViewController {
         
         let new = news[indexPath.section]
         var height: CGFloat!
+        let newsCellType = NewsCellTipe(rawValue: indexPath.row)
         
-        switch indexPath.row {
-        case 0:
+        switch newsCellType {
+        case .text:
             if new.text == "" {
                 height = 0.0
             } else { height = 80.0 }
-        case 1:
+        case .photo:
             if new.photo == "" {
                 height = 0.0
             } else { height = 80.0 }
-        case 2:
+        case .autor:
             height = 44
-        case 3:
+        case .likeCount:
             height = 30
             
         default:
