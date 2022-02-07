@@ -32,7 +32,8 @@ class NewsFeedTableViewController: UITableViewController {
             
             self.newsfeeds = feed!
             
-            print (self.newsfeeds.response.items)
+            print("")
+            print ("\(self.newsfeeds.response.items)")
         }
         
         tableView.reloadData()
@@ -88,9 +89,6 @@ class NewsFeedTableViewController: UITableViewController {
             
             cell.config(authorName: "\(profile.firstName) \(profile.lastName)", authorAvatar: profile.photo50, dateNews: String(item.date))
             
-//            cell.authorNewsFeedLabel.text = new.author
-//            cell.authorImage.image = UIImage(named: new.photo ?? "heart")
-//            cell.dateNewsFeedLabel.text = String(new.date)
             returnCell = cell
             
         case .likeCount:
@@ -98,9 +96,6 @@ class NewsFeedTableViewController: UITableViewController {
             
             cell.config(countLikes: item.likes.count, countComments: item.comments.count, countShared: item.reposts.count)
             
-//            cell.CountLikeLabel.text = String(new.likes ?? 0)
-//            cell.CountCommentLabel.text = String(new.comments )
-//            cell.CountSharedLabel.text = String(new.shared ?? 0)
             returnCell = cell
             
         default:
