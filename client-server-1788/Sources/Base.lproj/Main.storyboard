@@ -396,12 +396,12 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="CommentNewsButton" destination="F4v-D3-k0Z" id="WDP-Yg-2pm"/>
-                                    <outlet property="CountCommentLabel" destination="Ifh-HA-aua" id="dte-1a-eZm"/>
-                                    <outlet property="CountLikeLabel" destination="521-xZ-2Vq" id="Sxo-YZ-Gi1"/>
-                                    <outlet property="CountSharedLabel" destination="jfR-Gu-3eB" id="2YG-DA-zQW"/>
-                                    <outlet property="LikeNewsButton" destination="cm1-Dn-kNZ" id="2cz-NU-r8J"/>
-                                    <outlet property="SharedNewsButton" destination="cp8-gw-dUk" id="vSV-yi-Bg3"/>
+                                    <outlet property="commentNewsButton" destination="F4v-D3-k0Z" id="WDP-Yg-2pm"/>
+                                    <outlet property="countCommentLabel" destination="Ifh-HA-aua" id="dte-1a-eZm"/>
+                                    <outlet property="countLikeLabel" destination="521-xZ-2Vq" id="Sxo-YZ-Gi1"/>
+                                    <outlet property="countSharedLabel" destination="jfR-Gu-3eB" id="2YG-DA-zQW"/>
+                                    <outlet property="likeNewsButton" destination="cm1-Dn-kNZ" id="2cz-NU-r8J"/>
+                                    <outlet property="sharedNewsButton" destination="cp8-gw-dUk" id="vSV-yi-Bg3"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

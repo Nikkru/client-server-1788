@@ -21,5 +21,10 @@ class TextNewsFeedCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    func config(text: String) {
+        
+        self.textFeedLabel.text = text
+    }
 
 }

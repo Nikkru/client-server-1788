@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class PhotoNewsFeedCell: UITableViewCell {
 
@@ -21,4 +22,9 @@ class PhotoNewsFeedCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    func config(urlAuthorPhoto: String) {
+        
+        self.photoFeedImageView.sd_setImage(with: URL(string: urlAuthorPhoto))
+    }
+    
 }

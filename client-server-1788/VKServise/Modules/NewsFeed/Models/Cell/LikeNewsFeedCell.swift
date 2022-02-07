@@ -9,12 +9,12 @@ import UIKit
 
 class LikeNewsFeedCell: UITableViewCell {
 
-    @IBOutlet weak var LikeNewsButton: UIButton!
-    @IBOutlet weak var CommentNewsButton: UIButton!
-    @IBOutlet weak var SharedNewsButton: UIButton!
-    @IBOutlet weak var CountLikeLabel: UILabel!
-    @IBOutlet weak var CountCommentLabel: UILabel!
-    @IBOutlet weak var CountSharedLabel: UILabel!
+    @IBOutlet weak var likeNewsButton: UIButton!
+    @IBOutlet weak var commentNewsButton: UIButton!
+    @IBOutlet weak var sharedNewsButton: UIButton!
+    @IBOutlet weak var countLikeLabel: UILabel!
+    @IBOutlet weak var countCommentLabel: UILabel!
+    @IBOutlet weak var countSharedLabel: UILabel!
     
     
     override func awakeFromNib() {
@@ -28,4 +28,11 @@ class LikeNewsFeedCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    func config(countLikes: Int, countComments: Int, countShared: Int) {
+        
+        self.countLikeLabel.text = String(countLikes)
+        self.countCommentLabel.text = String(countComments)
+        self.countSharedLabel.text = String(countShared)
+    }
+    
 }
