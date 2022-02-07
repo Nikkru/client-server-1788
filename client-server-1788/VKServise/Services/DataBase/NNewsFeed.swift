@@ -67,9 +67,49 @@ struct NItem: Codable {
 }
 
 struct NProfile: Codable {
-    let photo_50: String
-   let photo_100: String
-    let screen_name: String?
+    let id: Int
+    let isClosed: Bool
+    let online, onlineMobile, sex: Int
+    let canAccessClosed: Bool
+    let onlineApp: Int
+    let firstName: String
+    let photo50: String
+    let lastName: String
+    let photo100: String
+    let screenName: String
+    let onlineInfo: OnlineInfo
+
+    enum CodingKeys: String, CodingKey {
+        case id
+        case isClosed = "is_closed"
+        case online
+        case onlineMobile = "online_mobile"
+        case sex
+        case canAccessClosed = "can_access_closed"
+        case onlineApp = "online_app"
+        case firstName = "first_name"
+        case photo50 = "photo_50"
+        case lastName = "last_name"
+        case photo100 = "photo_100"
+        case screenName = "screen_name"
+        case onlineInfo = "online_info"
+    }
+}
+
+// MARK: - OnlineInfo
+struct OnlineInfo: Codable {
+    let appID: Int
+    let isMobile: Bool
+    let lastSeen: Int
+    let isOnline, visible: Bool
+
+    enum CodingKeys: String, CodingKey {
+        case appID = "app_id"
+        case isMobile = "is_mobile"
+        case lastSeen = "last_seen"
+        case isOnline = "is_online"
+        case visible
+    }
 }
 
 struct NGroup: Codable {

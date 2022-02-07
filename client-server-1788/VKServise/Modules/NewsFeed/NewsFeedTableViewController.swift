@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 enum NewsCellType: Int, CaseIterable {
     case text = 0
@@ -20,7 +21,6 @@ class NewsFeedTableViewController: UITableViewController {
     private var news: [New] = []
     
     private var newsApi = NewsApi()
-    //    private var newsfeeds: [NNewsFeed] = []
     private var newsfeeds = NNewsFeed(response: .init(
                                         items: [],
                                         profiles: [],
@@ -40,25 +40,28 @@ class NewsFeedTableViewController: UITableViewController {
         news.append(new2)
         
         newsApi.getNews { [weak self] feed in
+            
             guard let self = self else { return }
             
-            guard let itemsArray = (feed?.response.items) else { return }
-            self.vkItemsArray = itemsArray
-            guard let profilesArray = (feed?.response.profiles) else { return }
-            self.vkProfilesArray = profilesArray
-            guard let groupsArray = (feed?.response.groups)  else { return }
-            self.vkGroupsArray = groupsArray
+            self.newsfeeds = feed!
+            print (self.newsfeeds.response.items)
             
+//            guard let itemsArray = (feed?.response.items) else { return }
+//            self.vkItemsArray = itemsArray
+//            guard let profilesArray = (feed?.response.profiles) else { return }
+//            self.vkProfilesArray = profilesArray
+//            guard let groupsArray = (feed?.response.groups)  else { return }
+//            self.vkGroupsArray = groupsArray
         }
         
         tableView.reloadData()
     }
     
     // MARK: - Table view data source
-    
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return news.count
+ 
+//        return news.count
+        return newsfeeds.response.items.count
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -68,9 +71,9 @@ class NewsFeedTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-//        let item = newsfeeds.response.items[indexPath.section]
-//        let profile = newsfeeds.response.profiles[indexPath.section]
-//        let group = newsfeeds.response.groups[indexPath.section]
+        let item = newsfeeds.response.items[indexPath.section]
+        let profile = newsfeeds.response.profiles[indexPath.section]
+        let group = newsfeeds.response.groups[indexPath.section]
         
         let newsCellType = NewsCellType(rawValue: indexPath.row)
         
@@ -90,9 +93,12 @@ class NewsFeedTableViewController: UITableViewController {
             
         case .autor:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "AuthorNewFeedCell", for: indexPath) as? AuthorNewFeedCell else { return returnCell }
-            cell.authorNewsFeedLabel.text = new.author
-            cell.authorImage.image = UIImage(named: new.photo ?? "heart")
-            cell.dateNewsFeedLabel.text = String(new.date)
+            
+            cell.config(authorName: "\(profile.firstName) \(profile.lastName)", authorAvatar: profile.photo50, dateNews: String(item.date))
+            
+//            cell.authorNewsFeedLabel.text = new.author
+//            cell.authorImage.image = UIImage(named: new.photo ?? "heart")
+//            cell.dateNewsFeedLabel.text = String(new.date)
             returnCell = cell
             
         case .likeCount:
@@ -101,8 +107,9 @@ class NewsFeedTableViewController: UITableViewController {
             cell.CountCommentLabel.text = String(new.comments )
             cell.CountSharedLabel.text = String(new.shared ?? 0)
             returnCell = cell
+            
         default:
-            break
+            return UITableViewCell()
         }
         
         return returnCell
@@ -111,21 +118,34 @@ class NewsFeedTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         let new = news[indexPath.section]
+        
         var height: CGFloat!
+        
+        let item = newsfeeds.response.items[indexPath.section]
+        let profile = newsfeeds.response.profiles[indexPath.section]
+        let group = newsfeeds.response.groups[indexPath.section]
         let newsCellType = NewsCellType(rawValue: indexPath.row)
         
         switch newsCellType {
+        
         case .text:
-            if new.text == "" {
+            
+            if item.text == "" {
                 height = 0.0
             } else { height = 80.0 }
+            
         case .photo:
-            if new.photo == "" {
+            
+            if item.attachments[0].photo?.sizes[0].url == "" {
                 height = 0.0
             } else { height = 80.0 }
+            
         case .autor:
+            
             height = 44
+            
         case .likeCount:
+            
             height = 30
             
         default:

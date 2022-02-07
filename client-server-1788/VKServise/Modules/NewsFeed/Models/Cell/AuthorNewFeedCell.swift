@@ -24,12 +24,12 @@ class AuthorNewFeedCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-//    func config(authorName: String, authorAvatar: String, dateNews: String) {
-//        
-//        self.authorNewsFeedLabel.text = authorName
-//        self.authorImage.sd_setImage(with: URL(string: authorAvatar))
-//        self.dateNewsFeedLabel.text = dateNews
-//    }
+    func config(authorName: String, authorAvatar: String, dateNews: String) {
+        
+        self.authorNewsFeedLabel.text = authorName
+        self.authorImage.sd_setImage(with: URL(string: authorAvatar))
+        self.dateNewsFeedLabel.text = dateNews
+    }
 
 }
 

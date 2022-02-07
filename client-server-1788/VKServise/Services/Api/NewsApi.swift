@@ -12,7 +12,6 @@ import SwiftyJSON
 final class NewsApi {
     
     func getNews(completion: @escaping(NNewsFeed?)->()) {
-        //        func getNews() {
         
         let baseUrl = "https://api.vk.com/method/"
         let token = Session.shared.token
@@ -98,6 +97,7 @@ final class NewsApi {
                     items: vkItemsArray,
                     profiles: vkProfilesArray,
                     groups: vkGroupsArray)
+                
                 let feed = NNewsFeed(response: response)
                 
                 completion(feed)

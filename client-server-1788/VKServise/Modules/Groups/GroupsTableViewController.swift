@@ -33,12 +33,13 @@ class GroupsTableViewController: UITableViewController {
         groupsApi.getGroups { [weak self] groups in
             guard let self = self else { return }
             
-            //            save list of groups
+            // save list of groups
             self.groupsdDB.save(groups)
-            //            load list of groups
+            
+            // load list of groups
             self.groups = self.groupsdDB.fetch()
             
-            //            automatic reload table by change BD in Realm
+            // automatic reload table by change BD in Realm
             self.token = self.groups?.observe(on: .main, { [weak self] changes in
                 
                 guard let self = self else { return }
