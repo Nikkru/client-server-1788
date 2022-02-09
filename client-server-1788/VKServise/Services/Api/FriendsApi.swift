@@ -8,10 +8,13 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import PromiseKit
 
 // https://api.vk.com/method/users.get?user_id=210700286&v=5.52
 
 final class FriendsApi {
+    
+//    func getFriendsPromise()
     
     func getFriends3(completion: @escaping([FriendsDAO])->()) {
         

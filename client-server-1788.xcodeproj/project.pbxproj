@@ -57,6 +57,9 @@
 		2EB46F7D2780B8D000271A72 /* PhotosDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB46F7C2780B8D000271A72 /* PhotosDB.swift */; };
 		2ED555552777ACC70057514E /* FriendsDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED555542777ACC70057514E /* FriendsDB.swift */; };
 		2EEDC92127AAF7C100FA02B5 /* UserFB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EEDC92027AAF7C100FA02B5 /* UserFB.swift */; };
+		2EF7A5F527B2F13C0063A931 /* HashService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF7A5F427B2F13C0063A931 /* HashService.swift */; };
+		2EF7A5F927B3059B0063A931 /* PromiseKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2EF7A5F827B3059B0063A931 /* PromiseKit */; };
+		2EF7A5FC27B309300063A931 /* PromisePostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF7A5FB27B309300063A931 /* PromisePostService.swift */; };
 		2EFB1D0127A7E91E00E02682 /* NewsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFB1D0027A7E91E00E02682 /* NewsApi.swift */; };
 		816CBD0C776D29638699AEEE /* Pods_client_server_1788.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70FEE3B97FDD76BBE198B378 /* Pods_client_server_1788.framework */; };
 /* End PBXBuildFile section */
@@ -109,6 +112,8 @@
 		2EB46F7C2780B8D000271A72 /* PhotosDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosDB.swift; sourceTree = "<group>"; };
 		2ED555542777ACC70057514E /* FriendsDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsDB.swift; sourceTree = "<group>"; };
 		2EEDC92027AAF7C100FA02B5 /* UserFB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFB.swift; sourceTree = "<group>"; };
+		2EF7A5F427B2F13C0063A931 /* HashService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashService.swift; sourceTree = "<group>"; };
+		2EF7A5FB27B309300063A931 /* PromisePostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromisePostService.swift; sourceTree = "<group>"; };
 		2EFB1D0027A7E91E00E02682 /* NewsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsApi.swift; sourceTree = "<group>"; };
 		70FEE3B97FDD76BBE198B378 /* Pods_client_server_1788.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_client_server_1788.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		954799A3105721613CD10A96 /* Pods-client-server-1788.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-client-server-1788.release.xcconfig"; path = "Pods/Target Support Files/Pods-client-server-1788/Pods-client-server-1788.release.xcconfig"; sourceTree = "<group>"; };
@@ -120,6 +125,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2E5057C027734BFC00E84A97 /* RealmSwift in Frameworks */,
+				2EF7A5F927B3059B0063A931 /* PromiseKit in Frameworks */,
 				2E6AFDFB2790AFED004CDEDF /* FirebaseAuth in Frameworks */,
 				2E4983EC276BB57200EB3C23 /* SwiftyJSON in Frameworks */,
 				2E7FBB88277F472C0021525B /* SwiftKeychainWrapper in Frameworks */,
@@ -356,8 +362,10 @@
 			children = (
 				2E3BC5192761556D00690ADE /* Session.swift */,
 				2E54F79E27935B5900489B44 /* SessionFirebase.swift */,
+				2EF7A5FB27B309300063A931 /* PromisePostService.swift */,
 				2E7FBB8A277F48080021525B /* Api */,
 				2E7FBB8C277F48180021525B /* DataBase */,
+				2EF7A5F427B2F13C0063A931 /* HashService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -437,6 +445,7 @@
 				2E7FBB87277F472C0021525B /* SwiftKeychainWrapper */,
 				2E6AFDFA2790AFED004CDEDF /* FirebaseAuth */,
 				2E6AFDFC2790AFED004CDEDF /* FirebaseDatabase */,
+				2EF7A5F827B3059B0063A931 /* PromiseKit */,
 			);
 			productName = "client-server-1788";
 			productReference = 2E3BC4F2276147F000690ADE /* client-server-1788.app */;
@@ -471,6 +480,7 @@
 				2E5057BE27734BFC00E84A97 /* XCRemoteSwiftPackageReference "realm-swift" */,
 				2E7FBB86277F472C0021525B /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */,
 				2E6AFDF92790AFED004CDEDF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				2EF7A5F727B3059B0063A931 /* XCRemoteSwiftPackageReference "PromiseKit" */,
 			);
 			productRefGroup = 2E3BC4F3276147F000690ADE /* Products */;
 			projectDirPath = "";
@@ -556,6 +566,7 @@
 				2E547F032793F47C009BA373 /* HomeFBViewController.swift in Sources */,
 				2E0EB11C276A76C300E67D5A /* FriendsTableViewController.swift in Sources */,
 				2E53E294279476E000B2D2E9 /* FriendFB.swift in Sources */,
+				2EF7A5F527B2F13C0063A931 /* HashService.swift in Sources */,
 				2E3BC51127614A9400690ADE /* Account.swift in Sources */,
 				2E6AFE092790B3BC004CDEDF /* HomeViewController.swift in Sources */,
 				2E547F002793F46B009BA373 /* LoginFBViewController.swift in Sources */,
@@ -567,6 +578,7 @@
 				2E4983F0276BBEE900EB3C23 /* PhotosApi.swift in Sources */,
 				2EAF8F6227A5681E0006E371 /* AuthorNewFeedCell.swift in Sources */,
 				2E54F79F27935B5900489B44 /* SessionFirebase.swift in Sources */,
+				2EF7A5FC27B309300063A931 /* PromisePostService.swift in Sources */,
 				2ED555552777ACC70057514E /* FriendsDB.swift in Sources */,
 				2E4983E8276BB4A400EB3C23 /* FriendDTO.swift in Sources */,
 				2E3BC4F6276147F000690ADE /* AppDelegate.swift in Sources */,
@@ -825,6 +837,14 @@
 				minimumVersion = 4.0.1;
 			};
 		};
+		2EF7A5F727B3059B0063A931 /* XCRemoteSwiftPackageReference "PromiseKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mxcl/PromiseKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.16.3;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -857,6 +877,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2E7FBB86277F472C0021525B /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */;
 			productName = SwiftKeychainWrapper;
+		};
+		2EF7A5F827B3059B0063A931 /* PromiseKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2EF7A5F727B3059B0063A931 /* XCRemoteSwiftPackageReference "PromiseKit" */;
+			productName = PromiseKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

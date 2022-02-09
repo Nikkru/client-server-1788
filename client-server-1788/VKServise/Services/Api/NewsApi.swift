@@ -31,11 +31,7 @@ final class NewsApi {
             "v": version
         ]
         
-        AF.request(
-            url,
-            method:  .get,
-            parameters: parameters
-        ).responseJSON { response in
+        AF.request(url,method: .get, parameters: parameters).responseJSON { response in
             
             print("RESPONSE.DATA FROM NEWSFEED: \(String(describing: response.data?.prettyJSON))")
             
