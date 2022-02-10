@@ -28,7 +28,7 @@ final class FriendsTableViewController: UITableViewController {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         
         firstly {
-            friendsApi.getFriendsWithPromise2()
+            friendsApi.getFriendsWithPromise()
         }.done { friends in
             print(friends)
             self.friendArray = friends
