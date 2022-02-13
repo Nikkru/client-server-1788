@@ -40,6 +40,7 @@
 		2E54F79F27935B5900489B44 /* SessionFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E54F79E27935B5900489B44 /* SessionFirebase.swift */; };
 		2E5BC44A276F69C100969561 /* GroupsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5BC449276F69C100969561 /* GroupsTableViewController.swift */; };
 		2E6617822762B04D004B9360 /* AuthorizationVKViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6617812762B04D004B9360 /* AuthorizationVKViewController.swift */; };
+		2E6A0B7D27B8177B003A9348 /* FriendsOperationQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6A0B7C27B8177B003A9348 /* FriendsOperationQueue.swift */; };
 		2E6AFDF72790AF3D004CDEDF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2E6AFDF62790AF3D004CDEDF /* GoogleService-Info.plist */; };
 		2E6AFDFB2790AFED004CDEDF /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 2E6AFDFA2790AFED004CDEDF /* FirebaseAuth */; };
 		2E6AFDFD2790AFED004CDEDF /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 2E6AFDFC2790AFED004CDEDF /* FirebaseDatabase */; };
@@ -98,6 +99,7 @@
 		2E54F79E27935B5900489B44 /* SessionFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionFirebase.swift; sourceTree = "<group>"; };
 		2E5BC449276F69C100969561 /* GroupsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsTableViewController.swift; sourceTree = "<group>"; };
 		2E6617812762B04D004B9360 /* AuthorizationVKViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationVKViewController.swift; sourceTree = "<group>"; };
+		2E6A0B7C27B8177B003A9348 /* FriendsOperationQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsOperationQueue.swift; sourceTree = "<group>"; };
 		2E6AFDF62790AF3D004CDEDF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2E6AFE052790B3AF004CDEDF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		2E6AFE082790B3BC004CDEDF /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -363,6 +365,7 @@
 				2E3BC5192761556D00690ADE /* Session.swift */,
 				2E54F79E27935B5900489B44 /* SessionFirebase.swift */,
 				2EF7A5FB27B309300063A931 /* PromisePostService.swift */,
+				2E6A0B7C27B8177B003A9348 /* FriendsOperationQueue.swift */,
 				2E7FBB8A277F48080021525B /* Api */,
 				2E7FBB8C277F48180021525B /* DataBase */,
 				2EF7A5F427B2F13C0063A931 /* HashService.swift */,
@@ -572,6 +575,7 @@
 				2E547F002793F46B009BA373 /* LoginFBViewController.swift in Sources */,
 				2E762493279959BF00EEE98E /* NewsFeed.swift in Sources */,
 				2E2C04C827A16F8200AC529B /* NewsFeedTableViewController.swift in Sources */,
+				2E6A0B7D27B8177B003A9348 /* FriendsOperationQueue.swift in Sources */,
 				2E0EB118276A769500E67D5A /* PhotosTableViewController.swift in Sources */,
 				2E4983F9276BC79E00EB3C23 /* PhotoDTO.swift in Sources */,
 				2E6AFE062790B3AF004CDEDF /* LoginViewController.swift in Sources */,

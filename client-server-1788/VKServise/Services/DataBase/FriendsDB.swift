@@ -8,6 +8,17 @@
 import Foundation
 import RealmSwift
 
+// MARK: - Friends
+struct Friends: Codable {
+    let response: Response
+}
+
+// MARK: - Response
+struct Response: Codable {
+    let count: Int
+    let items: [FriendsDAO]
+}
+
 // MARK: - Item
 class FriendsDAO: Object, Codable {
     @objc dynamic var id = 0

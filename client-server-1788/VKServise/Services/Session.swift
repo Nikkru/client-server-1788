@@ -32,5 +32,7 @@ final class Session {
         }
     }
     
+    var versionVK = "5.81"
+    
     var expiresIn = ""
 }

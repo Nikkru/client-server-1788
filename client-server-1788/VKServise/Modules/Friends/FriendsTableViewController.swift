@@ -11,13 +11,16 @@ import RealmSwift
 import Firebase
 import PromiseKit
 
+
+
 final class FriendsTableViewController: UITableViewController {
     
     private var friendsApi = FriendsApi()
     private var friendsDB = FriendsDB()
     private var friends: Results<FriendsDAO>?
-    private var friendArray: [FriendsDAO]?
     private var token: NotificationToken?
+    
+    var friendArray: [FriendsDAO]?
     
     let ref = Database.database().reference()
     var friendsFB: [FriendFB] = []
