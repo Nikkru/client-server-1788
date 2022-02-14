@@ -11,7 +11,7 @@ import SwiftyJSON
 
 final class NewsApi {
     
-    func getNews(completion: @escaping([NewsModel], [NSize])->()) {
+    func getNews(completion: @escaping([NewsModel], [NPhoto])->()) {
         
         let baseUrl = "https://api.vk.com/method/"
         let token = Session.shared.token
@@ -27,9 +27,9 @@ final class NewsApi {
             "start_time": 1643529965,
             "access_token": token,
             "return_banned":"1",
-            "count": 3,
+            "count": 100,
             "source_ids": "friends, groups, pages, following",
-            "fields": "name, photo_100, first_name, last_name",
+            "fields": "name, photo_100, first_name, last_name, photo_50",
             "max_photos": 5,
             "v": version
         ]
@@ -48,10 +48,10 @@ final class NewsApi {
             var vkProfilesArray: [NProfile] = []
             var vkGroupsArray: [NGroup] = []
             
-            let vkItemsJSONArr = json["response"]["itemse"].arrayValue
+            let vkItemsJSONArr = json["response"]["items"].arrayValue
             let vkProfilesJSONArr = json["response"]["profiles"].arrayValue
             let vkGroupsJSONArr = json["response"]["groups"].arrayValue
-
+            
             DispatchQueue.global().async(group: dispatchGroup) {
                 
                 for (index, items) in vkItemsJSONArr.enumerated() {
@@ -63,6 +63,7 @@ final class NewsApi {
                     }
                 }
                 print("items")
+                dump(vkItemsArray)
             }
             
             // decoding frofiles
@@ -76,6 +77,7 @@ final class NewsApi {
                     }
                 }
                 print("profiles")
+                dump(vkProfilesArray)
             }
             
             // decoding groups
@@ -89,12 +91,13 @@ final class NewsApi {
                     }
                 }
                 print("groups")
+                dump(vkGroupsArray)
             }
             
             dispatchGroup.notify(queue: DispatchQueue.main) {
                 
-                var response: [NewsModel] = []
-                var photo: [NPhoto] = []
+                var newsModelArray: [NewsModel] = []
+                var photoArray: [NPhoto] = []
                 
                 for item in vkItemsArray {
                     
@@ -102,18 +105,60 @@ final class NewsApi {
                         
                         let group = vkGroupsArray.first{-($0.id) == item.sourceID}
                         
-//                        let newsModel = NewsModel
+                        var newsModel = NewsModel(
+                            sourceID: item.sourceID,
+                            text: item.text,
+                            photo100: group?.photo100,
+                            name: group?.name ?? "no name",
+                            date: item.date,
+                            like: item.likes.count,
+                            comments: item.comments.count,
+                            reposts: item.reposts.count,
+                            views: item.views?.count
+                        )
+                        
+                        item.attachments.forEach {
+                            
+                            guard let post = $0.photo else { return }
+                            photoArray.append(post)
+                            print(post)
+                            
+                            newsModel.photoSizes = post.sizes
+                        }
+                        
+                        newsModelArray.append(newsModel)
+                        
+                    } else {
+                        let arrayProfiles = vkProfilesArray.first {
+                            $0.id == item.sourceID
+                        }
+                        let newsModelOther = NewsModel(
+                            sourceID: item.sourceID,
+                            text: item.text,
+                            photo100: arrayProfiles?.photo100,
+                            name: arrayProfiles?.lastName ?? "no name",
+                            date: item.date,
+                            like: item.likes.count,
+                            comments: item.comments.count,
+                            reposts: item.reposts.count,
+                            views: item.views?.count,
+                            photoUrl: nil,
+                            photoSizes: nil
+                        )
+                        
+                        item.attachments.forEach {
+                            
+                            guard let post = $0.photo else { return }
+                            photoArray.append(post)
+                            print(post)
+                            
+                            
                     }
+                        
+                        newsModelArray.append(newsModelOther)
                 }
-                
-//                let response = NNewsResponse(
-//                    items: vkItemsArray,
-//                    profiles: vkProfilesArray,
-//                    groups: vkGroupsArray)
-//
-//                let feed = NNewsFeed(response: response)
-//
-//                completion(feed)
+            }
+                completion(newsModelArray, photoArray)
             }
         }
     }

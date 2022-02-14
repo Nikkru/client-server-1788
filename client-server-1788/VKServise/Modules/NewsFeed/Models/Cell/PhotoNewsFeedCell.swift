@@ -24,7 +24,10 @@ class PhotoNewsFeedCell: UITableViewCell {
 
     func config(urlAuthorPhoto: String) {
         
-        self.photoFeedImageView.sd_setImage(with: URL(string: urlAuthorPhoto))
+        guard  let url = URL(string: urlAuthorPhoto) else { return
+            self.photoFeedImageView.image = UIImage(systemName: "person")
+        }
+        self.photoFeedImageView.sd_setImage(with: url)
     }
     
 }

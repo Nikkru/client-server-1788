@@ -24,7 +24,9 @@ class TextNewsFeedCell: UITableViewCell {
     
     func config(text: String) {
         
+        
         self.textFeedLabel.text = text
+        
     }
 
 }

@@ -12,6 +12,12 @@ struct NNewsFeed: Codable {
     let response: NNewsResponse
 }
 
+struct NNewsResponse: Codable {
+    let items: [NItem]
+    let profiles: [NProfile]
+    let groups: [NGroup]
+}
+
 // Общая модель
 struct NewsModel: Codable {
     
@@ -40,13 +46,6 @@ struct NewsModel: Codable {
     }
 }
 
-
-struct NNewsResponse: Codable {
-    let items: [NItem]
-    let profiles: [NProfile]
-    let groups: [NGroup]
-}
-
 // MARK: - Response
 struct NResponse: Codable {
     let items: [NItem]
@@ -63,67 +62,74 @@ struct NResponse: Codable {
 
 // MARK: - Item
 struct NItem: Codable {
-    let id, date, ownerID, fromID: Int
+//    let id: Int
+    let date: Int
     let sourceID: Int
-    let postType, text: String
-    let markedAsAds: Int?
+    let text: String
     let attachments: [NAttachment]
-    let postSource: NPostSource
     let comments: NComments
     let likes: NLikes
     let reposts: NReposts
-    let isFavorite: Bool
-    let donut: Donut
-    let shortTextRate: Double
-    let carouselOffset: Int
     let views: Views?
+    //        let ownerID: Int
+//    let fromID: Int
+//    let postType: String
+//    let markedAsAds: Int?
+//    let postSource: NPostSource
+//    let isFavorite: Bool
+//    let donut: Donut
+//    let shortTextRate: Double
+//    let carouselOffset: Int
+    
 
     enum CodingKeys: String, CodingKey {
-        case id, date
+//        case id
+        case date
         case sourceID = "source_id"
-        case ownerID = "owner_id"
-        case fromID = "from_id"
-        case postType = "post_type"
         case text
-        case markedAsAds = "marked_as_ads"
         case attachments
-        case postSource = "post_source"
         case comments, likes, reposts
-        case isFavorite = "is_favorite"
-        case donut
-        case shortTextRate = "short_text_rate"
-        case carouselOffset = "carousel_offset"
         case views
+//        case ownerID = "owner_id"
+//        case fromID = "from_id"
+//        case postType = "post_type"
+//        case markedAsAds = "marked_as_ads"
+//        case postSource = "post_source"
+//        case isFavorite = "is_favorite"
+//        case donut
+//        case shortTextRate = "short_text_rate"
+//        case carouselOffset = "carousel_offset"
     }
 }
 
 struct NProfile: Codable {
     let id: Int
-    let isClosed: Bool
-    let online, onlineMobile, sex: Int
-    let canAccessClosed: Bool
-    let onlineApp: Int
+//    let isClosed: Bool
+//    let online: Int
+//    let onlineMobile, sex: Int
+//    let canAccessClosed: Bool
+//    let onlineApp: Int
     let firstName: String
     let photo50: String
     let lastName: String
     let photo100: String?
-    let screenName: String
-    let onlineInfo: OnlineInfo
+//    let screenName: String
+//    let onlineInfo: OnlineInfo
 
     enum CodingKeys: String, CodingKey {
         case id
-        case isClosed = "is_closed"
-        case online
-        case onlineMobile = "online_mobile"
-        case sex
-        case canAccessClosed = "can_access_closed"
-        case onlineApp = "online_app"
+//        case isClosed = "is_closed"
+//        case online
+//        case onlineMobile = "online_mobile"
+//        case sex
+//        case canAccessClosed = "can_access_closed"
+//        case onlineApp = "online_app"
         case firstName = "first_name"
         case photo50 = "photo_50"
         case lastName = "last_name"
         case photo100 = "photo_100"
-        case screenName = "screen_name"
-        case onlineInfo = "online_info"
+//        case screenName = "screen_name"
+//        case onlineInfo = "online_info"
     }
 }
 
@@ -159,9 +165,9 @@ struct NGroup: Codable {
 
 // MARK: - Attachment
 struct NAttachment: Codable {
-    let type: NAttachmentType
+//    let type: NAttachmentType
     let photo: NPhoto?
-    let link: NLink?
+//    let link: NLink?
 }
 
 // MARK: - Link
@@ -200,10 +206,10 @@ struct NPhoto: Codable {
 
 // MARK: - Size
 struct NSize: Codable {
-    let height: Int
-    let url: String
-    let type: NSizeType
-    let width: Int
+    let height: Int?
+    let url: String?
+    let type: NSizeType?
+    let width: Int?
 }
 
 enum NSizeType: String, Codable {
@@ -227,12 +233,12 @@ enum NAttachmentType: String, Codable {
 // MARK: - Comments
 struct NComments: Codable {
     let canPost, count: Int
-    let groupsCanPost: Bool
+//    let groupsCanPost: Bool
 
     enum CodingKeys: String, CodingKey {
         case canPost = "can_post"
         case count
-        case groupsCanPost = "groups_can_post"
+//        case groupsCanPost = "groups_can_post"
     }
 }
 
