@@ -152,12 +152,11 @@ final class NewsApi {
                             photoArray.append(post)
                             print(post)
                             
-                            
-                    }
+                        }
                         
                         newsModelArray.append(newsModelOther)
+                    }
                 }
-            }
                 completion(newsModelArray, photoArray)
             }
         }
