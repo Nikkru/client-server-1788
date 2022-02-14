@@ -11,7 +11,7 @@ import SwiftyJSON
 
 final class NewsApi {
     
-    func getNews(completion: @escaping(NNewsFeed?)->()) {
+    func getNews(completion: @escaping([NewsModel], [NSize])->()) {
         
         let baseUrl = "https://api.vk.com/method/"
         let token = Session.shared.token
@@ -23,11 +23,14 @@ final class NewsApi {
         
         let parameters: Parameters = [
             "user_id": userId,
-            "filters": "post, group, photo",
+            "filters": "post, photo, photo_tag, wall_photo, friend, note ,audio ,video",
             "start_time": 1643529965,
             "access_token": token,
+            "return_banned":"1",
             "count": 3,
-            "max_photos": 2,
+            "source_ids": "friends, groups, pages, following",
+            "fields": "name, photo_100, first_name, last_name",
+            "max_photos": 5,
             "v": version
         ]
         
@@ -41,14 +44,14 @@ final class NewsApi {
             let json = JSON(jsonData)
             let dispatchGroup = DispatchGroup()
             
-            let vkItemsJSONArr = json["response"]["itemse"].arrayValue
-            let vkProfilesJSONArr = json["response"]["profiles"].arrayValue
-            let vkGroupsJSONArr = json["response"]["groups"].arrayValue
-            
             var vkItemsArray: [NItem] = []
             var vkProfilesArray: [NProfile] = []
             var vkGroupsArray: [NGroup] = []
             
+            let vkItemsJSONArr = json["response"]["itemse"].arrayValue
+            let vkProfilesJSONArr = json["response"]["profiles"].arrayValue
+            let vkGroupsJSONArr = json["response"]["groups"].arrayValue
+
             DispatchQueue.global().async(group: dispatchGroup) {
                 
                 for (index, items) in vkItemsJSONArr.enumerated() {
@@ -89,14 +92,28 @@ final class NewsApi {
             }
             
             dispatchGroup.notify(queue: DispatchQueue.main) {
-                let response = NNewsResponse(
-                    items: vkItemsArray,
-                    profiles: vkProfilesArray,
-                    groups: vkGroupsArray)
                 
-                let feed = NNewsFeed(response: response)
+                var response: [NewsModel] = []
+                var photo: [NPhoto] = []
                 
-                completion(feed)
+                for item in vkItemsArray {
+                    
+                    if item.sourceID < 0 {
+                        
+                        let group = vkGroupsArray.first{-($0.id) == item.sourceID}
+                        
+//                        let newsModel = NewsModel
+                    }
+                }
+                
+//                let response = NNewsResponse(
+//                    items: vkItemsArray,
+//                    profiles: vkProfilesArray,
+//                    groups: vkGroupsArray)
+//
+//                let feed = NNewsFeed(response: response)
+//
+//                completion(feed)
             }
         }
     }

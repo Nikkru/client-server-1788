@@ -30,42 +30,45 @@ final class FriendsTableViewController: UITableViewController {
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         
-//        firstly {
-//            friendsApi.getFriendsWithPromise()
-//        }.done { friends in
-//            print(friends)
-//            self.friendArray = friends
-//        }.catch { error in
-//            print(error.localizedDescription)
-//        }
+        let operationQueue = OperationQueue()
         
-        friendsDB.deleteAll()
-
-        friendsApi.getFriends3 { [weak self] friends in
-
-            guard let self = self else { return }
-
-            self.friendsDB.save(friends)
-            self.friends = self.friendsDB.fetch()
-
-            self.token = self.friends?.observe(on: .main, { [weak self] changes in
-
-                guard let self = self else { return }
-                switch changes {
-
-                case .initial: self.tableView.reloadData()
-                case .update(_, let deletions, let insertions, let modifications):
-                    self.tableView.beginUpdates()
-                    self.tableView.insertRows(at: insertions.map({IndexPath(row: $0, section: $0)}), with: .automatic)
-                    self.tableView.deleteRows(at: deletions.map({IndexPath(row: $0, section: $0)}), with: .automatic)
-                    self.tableView.reloadRows(at: modifications.map({IndexPath(row: $0, section: $0)}), with: .automatic)
-                    self.tableView.endUpdates()
-
-                case .error(let error):
-                    print(error)
-                }
-            })
-        }
+        let friendsMakeApiDataOperation = FriendsMakeApiDataOperation()
+        let friendsParsingOperation = FriendsParsingOperation()
+        let friendsDisplayOperation = FriendsDiaplayOperation(controller: self)
+        
+        operationQueue.addOperation(friendsMakeApiDataOperation)
+        friendsParsingOperation.addDependency(friendsMakeApiDataOperation)
+        operationQueue.addOperation(friendsParsingOperation)
+        friendsDisplayOperation.addDependency(friendsParsingOperation)
+        OperationQueue.main.addOperation(friendsDisplayOperation)
+        
+//        friendsDB.deleteAll()
+//
+//        friendsApi.getFriends3 { [weak self] friends in
+//
+//            guard let self = self else { return }
+//
+//            self.friendsDB.save(friends)
+//            self.friends = self.friendsDB.fetch()
+//
+//            self.token = self.friends?.observe(on: .main, { [weak self] changes in
+//
+//                guard let self = self else { return }
+//                switch changes {
+//
+//                case .initial: self.tableView.reloadData()
+//                case .update(_, let deletions, let insertions, let modifications):
+//                    self.tableView.beginUpdates()
+//                    self.tableView.insertRows(at: insertions.map({IndexPath(row: $0, section: $0)}), with: .automatic)
+//                    self.tableView.deleteRows(at: deletions.map({IndexPath(row: $0, section: $0)}), with: .automatic)
+//                    self.tableView.reloadRows(at: modifications.map({IndexPath(row: $0, section: $0)}), with: .automatic)
+//                    self.tableView.endUpdates()
+//
+//                case .error(let error):
+//                    print(error)
+//                }
+//            })
+//        }
     }
     
     // MARK: - Table view data source

@@ -26,17 +26,17 @@ class NewsFeedTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        newsApi.getNews { [weak self] feed in
-    
-            guard let self = self else { return }
-            
-            self.newsfeeds = feed!
-            
-            print("")
-            print ("\(self.newsfeeds.response.items)")
-        }
-        
-        tableView.reloadData()
+//        newsApi.getNews { [weak self] feed in
+//    
+//            guard let self = self else { return }
+//            
+//            self.newsfeeds = feed!
+//            
+//            print("")
+//            print ("\(self.newsfeeds.response.items)")
+//        }
+//        
+//        tableView.reloadData()
     }
     
     // MARK: - Table view data source
@@ -87,7 +87,7 @@ class NewsFeedTableViewController: UITableViewController {
         case .autor:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "AuthorNewFeedCell", for: indexPath) as? AuthorNewFeedCell else { return returnCell }
             
-            cell.config(authorName: "\(profile.firstName) \(profile.lastName)", authorAvatar: profile.photo50, dateNews: String(item.date))
+            cell.config(authorName: "\(profile.firstName) \(profile.lastName)", authorAvatar: profile.photo100!, dateNews: String(item.date))
             
             returnCell = cell
             

@@ -15,23 +15,24 @@ class FriendsMakeApiDataOperation: Operation {
         var requestConstructor = URLComponents()
         requestConstructor.scheme = "https"
         requestConstructor.host = "api.vk.com"
-        requestConstructor.path = "/metod/friends.get"
+        requestConstructor.path = "/method/friends.get"
         requestConstructor.queryItems = [
             URLQueryItem(name: "user_id", value: "\(Session.shared.userId)"),
             URLQueryItem(name: "order", value: "name"),
-            URLQueryItem(name: "fields", value: "photo_50, online"),
+            URLQueryItem(name: "fields", value: "photo_50, photo_100, online"),
             URLQueryItem(name: "access_token", value: "\(Session.shared.token)"),
             URLQueryItem(name: "v", value: "\(Session.shared.versionVK)")
         ]
         guard let url = requestConstructor.url else { return }
         guard let data = try? Data(contentsOf: url) else { return }
         self.data = data
+        print(data.prettyJSON!)
     }
 }
 
 class FriendsParsingOperation: Operation {
     
-    var friensList: [FriendsDAO]? = []
+    var friendsList: [FriendsDAO]? = []
     
     override func main() {
         
@@ -40,7 +41,7 @@ class FriendsParsingOperation: Operation {
         
         do {
             let responseData = try JSONDecoder().decode(Friends.self, from: data)
-            self.friensList = responseData.response.items
+            self.friendsList = responseData.response.items
         } catch {
             print(error)
         }
@@ -53,7 +54,7 @@ class FriendsDiaplayOperation: Operation {
     override func main() {
         
         guard let parsFriendsListData = dependencies.first as? FriendsParsingOperation,
-              let friendsList = parsFriendsListData.friensList else { return }
+              let friendsList = parsFriendsListData.friendsList else { return }
         friendsTableViewController.friendArray = friendsList
         
     }

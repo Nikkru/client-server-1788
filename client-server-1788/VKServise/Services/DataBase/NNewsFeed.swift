@@ -12,6 +12,35 @@ struct NNewsFeed: Codable {
     let response: NNewsResponse
 }
 
+// Общая модель
+struct NewsModel: Codable {
+    
+        let sourceID: Int?
+        let text: String?
+        let photo100: String?
+        let name: String
+        let date: Int?
+        let like: Int?
+        let comments: Int?
+        let reposts: Int?
+        let views: Int?
+        
+        var photoUrl: String?
+        var photoSizes: [NSize]? //photoSize.last, photoSize.first
+        var photoPost: [NPhoto]?
+    
+    enum CodingKeys: String, CodingKey {
+        
+        case sourceID = "source_ID"
+        case text, name, photoUrl
+        case photo100 = "photo_100"
+        case date, like, comments, reposts, views
+        case photoSizes
+        case photoPost
+    }
+}
+
+
 struct NNewsResponse: Codable {
     let items: [NItem]
     let profiles: [NProfile]
@@ -35,6 +64,7 @@ struct NResponse: Codable {
 // MARK: - Item
 struct NItem: Codable {
     let id, date, ownerID, fromID: Int
+    let sourceID: Int
     let postType, text: String
     let markedAsAds: Int?
     let attachments: [NAttachment]
@@ -50,6 +80,7 @@ struct NItem: Codable {
 
     enum CodingKeys: String, CodingKey {
         case id, date
+        case sourceID = "source_id"
         case ownerID = "owner_id"
         case fromID = "from_id"
         case postType = "post_type"
@@ -75,7 +106,7 @@ struct NProfile: Codable {
     let firstName: String
     let photo50: String
     let lastName: String
-    let photo100: String
+    let photo100: String?
     let screenName: String
     let onlineInfo: OnlineInfo
 
@@ -113,9 +144,17 @@ struct OnlineInfo: Codable {
 }
 
 struct NGroup: Codable {
-    let photo_50: String
+//    let photo50: String
     let id: Int
     let name: String
+    let photo100: String?
+    
+    enum CodingKeys: String, CodingKey {
+//        case photo50 = "photo_50"
+        case id, name
+        case photo100 = "photo_100"
+  
+    }
 }
 
 // MARK: - Attachment
