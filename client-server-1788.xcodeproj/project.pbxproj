@@ -284,6 +284,7 @@
 		2E5057C227734D0000E84A97 /* TestControllers */ = {
 			isa = PBXGroup;
 			children = (
+				2E5AFF1327BBCBFB004807F1 /* lesson-5 */,
 				2E6AFDFF2790B321004CDEDF /* lesson-8 */,
 				2E73CC8527662EF100FB6EC4 /* ApiRequestViewController.swift */,
 				2E5057C427734D5000E84A97 /* StorageViewController.swift */,
@@ -316,6 +317,13 @@
 				2E2C04C427A16DC100AC529B /* LikeNewsFeedCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		2E5AFF1327BBCBFB004807F1 /* lesson-5 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "lesson-5";
 			sourceTree = "<group>";
 		};
 		2E6617802762AFF4004B9360 /* VKServise */ = {

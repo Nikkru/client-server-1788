@@ -20,6 +20,8 @@ class NewsFeedTableViewController: UITableViewController {
     private var newsApi = NewsApi()
     private var newsArray: [NewsModel] = []
     
+    lazy var photoService = PhotoService(container: self.tableView)
+    
     let dateFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale(identifier: "ru_RU")
@@ -65,6 +67,7 @@ class NewsFeedTableViewController: UITableViewController {
             
             returnCell = cell
             
+// MARK:- PHOTO
         case .photo:
             guard let cell = tableView.dequeueReusableCell(
                 withIdentifier: "PhotoNewsFeedCell", for: indexPath
