@@ -26,6 +26,7 @@ class NewsFeedTableViewController: UITableViewController {
         dateFormatter.dateFormat = "d MM YYYY 'в' HH:mm"
         return dateFormatter
     }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -39,19 +40,18 @@ class NewsFeedTableViewController: UITableViewController {
     
     // MARK: - Table view data source
     override func numberOfSections(in tableView: UITableView) -> Int {
-
+        
         return newsArray.count
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-
+        
         return NewsCellType.allCases.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
-        let newsCellType = NewsCellType(rawValue: indexPath.row)
         
+        let newsCellType = NewsCellType(rawValue: indexPath.row)
         var returnCell: UITableViewCell!
         
         switch newsCellType {
@@ -67,13 +67,13 @@ class NewsFeedTableViewController: UITableViewController {
             
         case .photo:
             guard let cell = tableView.dequeueReusableCell(
-                    withIdentifier: "PhotoNewsFeedCell", for: indexPath
+                withIdentifier: "PhotoNewsFeedCell", for: indexPath
             ) as? PhotoNewsFeedCell else { return returnCell }
             
             let post = newsArray[indexPath.section]
             let photoUrl = post.photoSizes?.last?.url
             print("адрес фотографии \(String(describing: photoUrl))")
-
+            
             cell.config(urlAuthorPhoto: photoUrl ?? "")
             returnCell = cell
             
@@ -112,11 +112,11 @@ class NewsFeedTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-
+        
         var height: CGFloat!
         
         let item = newsArray[indexPath.section]
-
+        
         let newsCellType = NewsCellType(rawValue: indexPath.row)
         
         switch newsCellType {
@@ -132,8 +132,7 @@ class NewsFeedTableViewController: UITableViewController {
             if item.photoSizes?.last?.url == nil {
                 height = 0.0
             } else {
-//                tableView.estimatedRowHeight = 200
-//                height = UITableView.automaticDimension
+                
                 height = CGFloat((item.photoSizes?.last?.height)!)
             }
             
@@ -148,7 +147,7 @@ class NewsFeedTableViewController: UITableViewController {
         default:
             break
         }
-
+        
         return height
     }
     
