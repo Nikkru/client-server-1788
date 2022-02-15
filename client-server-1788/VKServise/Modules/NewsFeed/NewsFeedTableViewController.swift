@@ -32,7 +32,6 @@ class NewsFeedTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         newsApi.getNews { NNewsFeed, _ in
             self.newsArray = NNewsFeed
             
@@ -59,25 +58,25 @@ class NewsFeedTableViewController: UITableViewController {
         switch newsCellType {
         
         case .text:
-            guard let cell = tableView.dequeueReusableCell(
-                withIdentifier: "TextNewsFeedCell", for: indexPath
-            ) as? TextNewsFeedCell else { return returnCell }
+            guard let cell = tableView.dequeueReusableCell( withIdentifier: "TextNewsFeedCell", for: indexPath) as? TextNewsFeedCell else { return returnCell }
             
             cell.config(text: newsArray[indexPath.section].text ?? "")
             
             returnCell = cell
             
-// MARK:- PHOTO
+// MARK:- PHOTO С КЭШИРОВАНИЕМ ФАЙЛОВ
         case .photo:
-            guard let cell = tableView.dequeueReusableCell(
-                withIdentifier: "PhotoNewsFeedCell", for: indexPath
-            ) as? PhotoNewsFeedCell else { return returnCell }
+            guard let cell = tableView.dequeueReusableCell( withIdentifier: "PhotoNewsFeedCell", for: indexPath) as? PhotoNewsFeedCell else { return returnCell }
             
             let post = newsArray[indexPath.section]
-            let photoUrl = post.photoSizes?.last?.url
+            guard let photoUrl = post.photoSizes?.last?.url else {
+                let cell2 = UITableViewCell()
+                return cell2
+            }
             print("адрес фотографии \(String(describing: photoUrl))")
             
-            cell.config(urlAuthorPhoto: photoUrl ?? "")
+//            cell.config(urlAuthorPhoto: photoUrl ?? "")
+            cell.photoFeedImageView.image = photoService.photo(atIndexpath: indexPath, byUrl: photoUrl)
             returnCell = cell
             
         case .autor:
@@ -128,15 +127,15 @@ class NewsFeedTableViewController: UITableViewController {
             
             if item.text == nil {
                 height = 0.0
-            } else { height = UITableView.automaticDimension}
+            } else { height = UITableView.automaticDimension }
             
         case .photo:
             
             if item.photoSizes?.last?.url == nil {
                 height = 0.0
             } else {
-                
-                height = CGFloat((item.photoSizes?.last?.height)!)
+                height = UITableView.automaticDimension
+//                height = CGFloat((item.photoSizes?.last?.height)!)
             }
             
         case .autor:

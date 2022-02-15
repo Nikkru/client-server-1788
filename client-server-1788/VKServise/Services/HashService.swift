@@ -87,7 +87,7 @@ class PhotoService {
     
     //    загружает фото из сети. Это обычный Alamofire-запрос на получение данных, он проходит в глобальной очереди, загружает изображение, сохраняет его на диске и в словаре images. Кроме того, после окончания загрузки он обновляет строку в таблице, чтобы отобразить загруженное изображение.
     
-    private func loadPhoto(atIndexpath indexPath: IndexPath?, byUrl url: String) {
+    private func loadPhoto(atIndexpath indexPath: IndexPath, byUrl url: String) {
         
         AF.request(url).responseData(queue: DispatchQueue.global()) { [weak self] response in
             guard
@@ -100,13 +100,13 @@ class PhotoService {
             self?.saveImageToCache(url: url, image: image)
             
             DispatchQueue.main.async {
-                self?.container.reloadRow(atIndexpath: indexPath!)
+                self?.container.reloadRow(atIndexpath: indexPath)
             }
         }
     }
     
     //Метод photo предоставляет изображение по URL. При этом мы ищем изображение сначала в кеше оперативной памяти, потом в файловой системе; если его нигде нет, загружаем из сети. IndexPath требуется, чтобы установить загруженное изображение в нужной строке, а не в ячейке, которая в момент, когда загрузка завершится, может быть использована для совершенно другой строки.
-    func photo(atIndexpath indexPath: IndexPath?, byUrl url: String) -> UIImage? {
+    func photo(atIndexpath indexPath: IndexPath, byUrl url: String) -> UIImage? {
         
         var image: UIImage?
         if let photo = images[url] {
@@ -114,7 +114,7 @@ class PhotoService {
         } else if let photo = getImageFromCache(url: url) {
             image = photo
         } else {
-            loadPhoto(atIndexpath: nil, byUrl: url)
+            loadPhoto(atIndexpath: indexPath, byUrl: url)
         }
         return image
     }

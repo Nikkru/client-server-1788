@@ -11,6 +11,7 @@ import SDWebImage
 class PhotoNewsFeedCell: UITableViewCell {
 
     @IBOutlet weak var photoFeedImageView: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
