@@ -134,8 +134,18 @@ class NewsFeedTableViewController: UITableViewController {
             if item.photoSizes?.last?.url == nil {
                 height = 0.0
             } else {
-                height = UITableView.automaticDimension
-//                height = CGFloat((item.photoSizes?.last?.height)!)
+//                height = UITableView.automaticDimension
+                let contentSize: CGSize = self.tableView.contentSize
+                let tableWidth = contentSize.width
+                let imageHeight = CGFloat((item.photoSizes?.last?.height)!)
+                let imageWidth = CGFloat((item.photoSizes?.last?.width)!)
+                let ratio = tableWidth / imageWidth
+//                let aspectHeight =
+                if imageWidth <= tableWidth {
+                    height = imageHeight
+                } else {
+                    height = imageHeight * ratio
+                }
             }
             
         case .autor:
