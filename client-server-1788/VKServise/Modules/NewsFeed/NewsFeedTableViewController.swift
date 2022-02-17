@@ -25,7 +25,7 @@ class NewsFeedTableViewController: UITableViewController {
     let dateFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale(identifier: "ru_RU")
-        dateFormatter.dateFormat = "d MM YYYY 'в' HH:mm"
+        dateFormatter.dateFormat = "dd.MM.yyyy 'в' HH:mm"
         return dateFormatter
     }()
     
