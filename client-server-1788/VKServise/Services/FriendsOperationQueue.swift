@@ -7,6 +7,7 @@
 
 import Foundation
 
+//Параллельное программирование. NSOperation
 class FriendsMakeApiDataOperation: Operation {
     
     var data: Data?
@@ -21,18 +22,20 @@ class FriendsMakeApiDataOperation: Operation {
             URLQueryItem(name: "order", value: "name"),
             URLQueryItem(name: "fields", value: "photo_50, photo_100, online"),
             URLQueryItem(name: "access_token", value: "\(Session.shared.token)"),
+            URLQueryItem(name: "count", value: "100"),
             URLQueryItem(name: "v", value: "\(Session.shared.versionVK)")
         ]
         guard let url = requestConstructor.url else { return }
         guard let data = try? Data(contentsOf: url) else { return }
         self.data = data
-        print(data.prettyJSON!)
+        print("")
+        print("ЗАПРОС НА ДРУЗЕЙ: --------------------------- \(data.prettyJSON!)")
     }
 }
 
 class FriendsParsingOperation: Operation {
     
-    var friendsList: [FriendsDAO]? = []
+    var friendsList = [FriendsDAO]()
     
     override func main() {
         
@@ -43,7 +46,7 @@ class FriendsParsingOperation: Operation {
             let responseData = try JSONDecoder().decode(Friends.self, from: data)
             self.friendsList = responseData.response.items
         } catch {
-            print(error)
+            print(error.localizedDescription)
         }
     }
 }
@@ -51,11 +54,16 @@ class FriendsParsingOperation: Operation {
 class FriendsDiaplayOperation: Operation {
     
     var friendsTableViewController: FriendsTableViewController
+    
     override func main() {
         
+        print("3st step")
+        
         guard let parsFriendsListData = dependencies.first as? FriendsParsingOperation,
-              let friendsList = parsFriendsListData.friendsList else { return }
+              let friendsList = parsFriendsListData.friendsList as? [FriendsDAO] else { return }
+        
         friendsTableViewController.friendArray = friendsList
+        friendsTableViewController.tableView.reloadData()
         
     }
     

@@ -20,7 +20,7 @@ final class FriendsTableViewController: UITableViewController {
     private var friends: Results<FriendsDAO>?
     private var token: NotificationToken?
     
-    var friendArray: [FriendsDAO]?
+    var friendArray = [FriendsDAO]()
     
     let ref = Database.database().reference()
     var friendsFB: [FriendFB] = []
@@ -31,7 +31,6 @@ final class FriendsTableViewController: UITableViewController {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         
         let operationQueue = OperationQueue()
-        
         let friendsMakeApiDataOperation = FriendsMakeApiDataOperation()
         let friendsParsingOperation = FriendsParsingOperation()
         let friendsDisplayOperation = FriendsDiaplayOperation(controller: self)
@@ -79,23 +78,23 @@ final class FriendsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        guard let friends = friends else { return 0 }
+//        guard let friends = friends else { return 0 }
 //        guard let friends = friendArray else { return 0 }
-        return friends.count
+        return friendArray.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         
-        if let friend = friends?[indexPath.row] {
+        let friend = friendArray[indexPath.row]
+        
+        cell.textLabel?.text = "\(friend.firstName) \(friend.lastName)"
+        
+        if let url = URL(string: friend.photo100) {
+            cell.imageView?.sd_setImage(with: url, completed:  { image, _, _, _ in
+                tableView.reloadRows(at: [indexPath], with: .automatic)
+            })
             
-            cell.textLabel?.text = "\(friend.firstName) \(friend.lastName)"
-            
-            if let url = URL(string: friend.photo100) {
-                cell.imageView?.sd_setImage(with: url, completed:  { image, _, _, _ in
-                    tableView.reloadRows(at: [indexPath], with: .automatic)
-                })
-            }
         }
 //        addFriendsInFB(friends: friends, token: Session.shared.token, indexPath: indexPath)
         return cell

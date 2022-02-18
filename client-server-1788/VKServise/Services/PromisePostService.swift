@@ -5,10 +5,10 @@
 //  Created by Nikolai Krusser on 08.02.2022.
 //
 
-import Foundation
+import UIKit
 import PromiseKit
 
 class PromisePostService {
     
-    
+    let session = Session.shared
 }

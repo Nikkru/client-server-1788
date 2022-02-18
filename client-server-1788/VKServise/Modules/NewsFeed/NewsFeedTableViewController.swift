@@ -20,6 +20,7 @@ class NewsFeedTableViewController: UITableViewController {
     private var newsApi = NewsApi()
     private var newsArray: [NewsModel] = []
     
+//    переменная для кэширования фотографий
     lazy var photoService = PhotoService(container: self.tableView)
     
     let dateFormatter: DateFormatter = {
@@ -114,52 +115,53 @@ class NewsFeedTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
+
         var height: CGFloat!
-        
+
         let item = newsArray[indexPath.section]
-        
+
         let newsCellType = NewsCellType(rawValue: indexPath.row)
-        
+
         switch newsCellType {
-        
+
         case .text:
-            
+
             if item.text == nil {
                 height = 0.0
-            } else { height = UITableView.automaticDimension }
-            
+            }
+            else { height = UITableView.automaticDimension}
+
         case .photo:
-            
+
             if item.photoSizes?.last?.url == nil {
                 height = 0.0
             } else {
-//                height = UITableView.automaticDimension
-                let contentSize: CGSize = self.tableView.contentSize
-                let tableWidth = contentSize.width
-                let imageHeight = CGFloat((item.photoSizes?.last?.height)!)
-                let imageWidth = CGFloat((item.photoSizes?.last?.width)!)
-                let ratio = tableWidth / imageWidth
-//                let aspectHeight =
-                if imageWidth <= tableWidth {
-                    height = imageHeight
-                } else {
-                    height = imageHeight * ratio
-                }
+                height = UITableView.automaticDimension
+//                let contentSize: CGSize = self.tableView.contentSize
+//                let tableWidth = contentSize.width
+//                let imageHeight = CGFloat((item.photoSizes?.last?.height)!)
+//                let imageWidth = CGFloat((item.photoSizes?.last?.width)!)
+//                let ratio = tableWidth / imageWidth
+////                let aspectHeight =
+//                if imageWidth <= tableWidth {
+//                    height = imageHeight
+//                } else {
+//                    height = imageHeight * ratio
+//                }
             }
-            
+
         case .autor:
-            
-            height = 44
-            
+
+            height = 50
+
         case .likeCount:
-            
+
             height = 30
-            
+
         default:
             break
         }
-        
+
         return height
     }
     

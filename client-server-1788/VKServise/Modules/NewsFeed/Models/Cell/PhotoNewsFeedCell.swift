@@ -9,8 +9,12 @@ import UIKit
 import SDWebImage
 
 class PhotoNewsFeedCell: UITableViewCell {
-
-    @IBOutlet weak var photoFeedImageView: UIImageView!
+    
+    @IBOutlet weak var photoFeedImageView: UIImageView! {
+        didSet {
+            photoFeedImageView.translatesAutoresizingMaskIntoConstraints = false
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
