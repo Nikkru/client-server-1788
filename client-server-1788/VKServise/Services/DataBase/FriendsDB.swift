@@ -8,14 +8,6 @@
 import Foundation
 import RealmSwift
 
-struct FriendDB {
-    let id: Int
-    let lastName: String
-    let firstName: String
-    let photo100: String
-    let photo50: String
-}
-
 // MARK: - Friends
 struct Friends: Codable {
     let response: Response
