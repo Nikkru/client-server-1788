@@ -9,10 +9,10 @@ import UIKit
 
 extension UIView {
     
-    func getLabelSize(text: String, font: UIFont, instets: CGFloat) -> CGSize {
+    func getLabelSize(text: String, font: UIFont, instets: CGFloat, indent: CGFloat?) -> CGSize {
         
         // определяем максимальную ширину текста - это ширина ячейки минус отступы слева и справа
-        let maxWidth = bounds.width - instets * 2
+        let maxWidth = bounds.width - instets * 2 - (indent ?? 0)
         
         // получаем размеры блока под надпись
         // используем максимальную ширину и максимально возможную высоту
@@ -32,17 +32,22 @@ extension UIView {
         
         return size
     }
-
-    func setLabelFrame(label: UILabel, instets: CGFloat) {
+    
+    /// Автоматическая настройка ширины лейба для оптимизации таблицы
+    /// - Parameters:
+    ///   - label: название лейба
+    ///   - instets: отступы между элементами
+    ///   - indent: размер другого элемента в ячейке, если он есть
+    func setLabelFrame(label: UILabel, instets: CGFloat, indent: CGFloat?) {
         
         // получаем размер текста, передавая сам текст и шрифт
-        let labelSize = getLabelSize(text: label.text ?? "", font: label.font, instets: instets)
+        let labelSize = getLabelSize(text: label.text ?? "", font: label.font, instets: instets, indent: indent)
         
         // рассчитываем координату по оси Х
-        let labelX = (bounds.width - labelSize.width) / 2
+        let labelX = instets + (indent ?? 0)
         
         // получаем точку верхнего левого угла надписи
-        let labelOrigin =  CGPoint(x: labelX, y: instets)
+        let labelOrigin =  CGPoint(x: labelX, y: instets / 2)
         
         // получаем фрейм и устанавливаем его UILabel
         label.frame = CGRect(origin: labelOrigin, size: labelSize)

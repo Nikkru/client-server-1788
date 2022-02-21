@@ -25,7 +25,7 @@ class TextNewsFeedCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        self.setLabelFrame(label: textFeedLabel, instets: instets)
+        self.setLabelFrame(label: textFeedLabel, instets: instets, indent: nil)
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -37,6 +37,6 @@ class TextNewsFeedCell: UITableViewCell {
     func config(text: String) {
 
         self.textFeedLabel.text = text
-        self.setLabelFrame(label: textFeedLabel, instets: instets)
+        self.setLabelFrame(label: textFeedLabel, instets: instets, indent: nil)
     }
 }
