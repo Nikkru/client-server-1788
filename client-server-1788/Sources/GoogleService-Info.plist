@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>493325966607-i7im99ih2ppulr80slorj1cbmr1tq645.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.493325966607-i7im99ih2ppulr80slorj1cbmr1tq645</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDBGHdQMv5HoE-EuW9kVPCbgYqhP0fG5qE</string>
+	<key>GCM_SENDER_ID</key>
+	<string>493325966607</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>NikNik.client-server-1788</string>
+	<key>PROJECT_ID</key>
+	<string>vc-project-1788</string>
+	<key>STORAGE_BUCKET</key>
+	<string>vc-project-1788.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:493325966607:ios:a6112891db4dd72dbf727a</string>
+</dict>
+</plist>
