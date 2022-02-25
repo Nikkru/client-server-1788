@@ -31,6 +31,9 @@ struct NewsModel: Codable {
     let reposts: Int?
     let views: Int?
     
+    //         пробуем добраться до photo
+//    let attachments: [NAttachment]
+    
     var photoUrl: String?
     var photoSizes: [NSize]? //photoSize.last, photoSize.first
     var photoPost: [NPhoto]?
@@ -43,6 +46,16 @@ struct NewsModel: Codable {
         case date, like, comments, reposts, views
         case photoSizes
         case photoPost
+        
+//         пробуем добраться до photo
+//        case attachments
+    }
+//
+    //MARK: - дополнительная структура для вывода массива данных с выбранными фотографиями по типу Х
+    struct PhotoAttachment {
+        var stringUrl: String?
+        var height: Int
+        var width: Int
     }
 }
 
@@ -165,7 +178,7 @@ struct NGroup: Codable {
 
 // MARK: - Attachment
 struct NAttachment: Codable {
-    //    let type: NAttachmentType
+        let type: NAttachmentType
     let photo: NPhoto?
     //    let link: NLink?
 }
@@ -224,6 +237,8 @@ struct NPhoto: Codable {
         }
     }
 }
+
+
 
 // MARK: - Size
 struct NSize: Codable {

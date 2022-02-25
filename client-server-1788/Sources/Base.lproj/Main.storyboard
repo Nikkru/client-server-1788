@@ -258,12 +258,17 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wsa-m7-gUw">
-                                            <rect key="frame" x="10" y="10" width="394" height="0.0"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wsa-m7-gUw">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                         </imageView>
                                     </subviews>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstItem="Wsa-m7-gUw" firstAttribute="centerY" secondItem="rZF-Qu-NIZ" secondAttribute="centerY" id="LdY-53-0M4"/>
+                                        <constraint firstItem="Wsa-m7-gUw" firstAttribute="leading" secondItem="rZF-Qu-NIZ" secondAttribute="leading" id="glg-re-f6S"/>
+                                        <constraint firstItem="Wsa-m7-gUw" firstAttribute="top" secondItem="rZF-Qu-NIZ" secondAttribute="topMargin" constant="-11" id="hxp-na-K6I"/>
+                                        <constraint firstAttribute="trailing" secondItem="Wsa-m7-gUw" secondAttribute="trailing" id="sxP-aU-YaN"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="photoFeedImageView" destination="Wsa-m7-gUw" id="CR8-JS-J0U"/>

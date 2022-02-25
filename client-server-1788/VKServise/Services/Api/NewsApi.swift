@@ -120,6 +120,7 @@ final class NewsApi {
                         item.attachments.forEach {
                             
                             guard let post = $0.photo else { return }
+                            
                             photoArray.append(post)
                             print(post)
                             
@@ -150,6 +151,7 @@ final class NewsApi {
                             
                             guard let post = $0.photo else { return }
                             photoArray.append(post)
+                            print("_________________________________")
                             print(post)
                             
                         }

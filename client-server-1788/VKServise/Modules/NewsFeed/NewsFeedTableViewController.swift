@@ -71,7 +71,10 @@ class NewsFeedTableViewController: UITableViewController {
             guard let cell = tableView.dequeueReusableCell( withIdentifier: "PhotoNewsFeedCell", for: indexPath) as? PhotoNewsFeedCell else { return returnCell }
             
             let post = newsArray[indexPath.section]
-            guard let photoUrl = post.self.photoPost?.last?.url else {
+            guard let photoUrl = post.photoSizes?.last?.url else
+//            guard let photoUrl = post.photoPost?.first?.url else
+
+            {
                 let cell2 = UITableViewCell()
                 return cell2
             }
