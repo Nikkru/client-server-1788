@@ -193,6 +193,18 @@ struct NPhoto: Codable {
     let userID: Int?
     let hasTags: Bool
     
+    var height: Int {
+        return getPropperSize().height!
+    }
+    
+    var width: Int {
+        return getPropperSize().width!
+    }
+    
+    var url: String {
+        return getPropperSize().url!
+    }
+    
     enum CodingKeys: String, CodingKey {
         case albumID = "album_id"
         case date, id
@@ -201,6 +213,15 @@ struct NPhoto: Codable {
         case sizes, text
         case userID = "user_id"
         case hasTags = "has_tags"
+    }
+    
+    func getPropperSize() -> NSize {
+        if let sizeX = sizes.first(where: { $0.type?.rawValue == "x"}) {
+            return sizeX
+        } else { if let fallBackSize = sizes.last {
+            return fallBackSize
+        } else { return NSize(height: 0, url: "wrong Image", type: NSizeType(rawValue: "wrong Image"), width: 0)}
+        }
     }
 }
 

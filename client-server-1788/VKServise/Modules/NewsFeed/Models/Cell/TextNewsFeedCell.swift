@@ -17,6 +17,29 @@ class TextNewsFeedCell: UITableViewCell {
         }
     }
     
+//    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+//        super.init(style: style, reuseIdentifier: reuseIdentifier)
+//        
+//        self.setLabelFrame(label: self.textFeedLabel,
+//                           instets: 6,
+//                           indent: nil)
+//        //        The constrints for myLabel
+//        //MARK: - МЕТОД ПРИКРЕПЛЯЮЩИЙ ЛЕЙБЛ К ПРЕДСТАВЛЕНИЮ СОДЕРЖИМОГО ЯЧЕЙКИ
+//        let margins = contentView.layoutMarginsGuide
+//        NSLayoutConstraint.activate(
+//            [
+//                textFeedLabel.topAnchor.constraint(equalTo: margins.topAnchor),
+//                textFeedLabel.leadingAnchor.constraint(equalTo: margins.leadingAnchor),
+//                textFeedLabel.trailingAnchor.constraint(equalTo: margins.trailingAnchor),
+//                textFeedLabel.bottomAnchor.constraint(equalTo: margins.bottomAnchor)
+//            ])
+//
+//    }
+//
+//    required init?(coder: NSCoder) {
+//        fatalError("init(coder:) has not been implemented")
+//    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -36,6 +36,7 @@ class NewsFeedTableViewController: UITableViewController {
         newsApi.getNews { NNewsFeed, _ in
             self.newsArray = NNewsFeed
             
+//            self.tableView.rowHeight = UITableView.automaticDimension
             self.tableView.reloadData()
         }
     }
@@ -70,7 +71,7 @@ class NewsFeedTableViewController: UITableViewController {
             guard let cell = tableView.dequeueReusableCell( withIdentifier: "PhotoNewsFeedCell", for: indexPath) as? PhotoNewsFeedCell else { return returnCell }
             
             let post = newsArray[indexPath.section]
-            guard let photoUrl = post.photoSizes?.last?.url else {
+            guard let photoUrl = post.self.photoPost?.last?.url else {
                 let cell2 = UITableViewCell()
                 return cell2
             }
@@ -78,6 +79,9 @@ class NewsFeedTableViewController: UITableViewController {
             
 //            cell.config(urlAuthorPhoto: photoUrl ?? "")
             cell.photoFeedImageView.image = photoService.photo(atIndexpath: indexPath, byUrl: photoUrl)
+//            let ratio = cell.photoFeedImageView.contentClippingRect.width / cell.photoFeedImageView.contentClippingRect.height
+//            let newHeight = cell.photoFeedImageView.frame.width / ratio
+//            cell.photoFeedImageView.image?.size.height = newHeight
             returnCell = cell
             
         case .autor:
@@ -125,11 +129,20 @@ class NewsFeedTableViewController: UITableViewController {
         switch newsCellType {
 
         case .text:
-
+     
             if item.text == nil {
                 height = 0.0
             }
-            else { height = UITableView.automaticDimension}
+            else {
+                height = UITableView.automaticDimension
+//                let cell = tableView.dequeueReusableCell(withIdentifier: "TextNewsFeedCell") as! TextNewsFeedCell
+//                let text = newsArray[indexPath.section].text ?? ""
+//                height = text.getHeightForLabel(
+//                    indent: nil,
+//                    font: (cell.textFeedLabel.font)!,
+//                    indentX: 0,
+//                    indentY: 0)
+            }
 
         case .photo:
 
