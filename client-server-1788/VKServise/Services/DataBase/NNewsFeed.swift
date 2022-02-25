@@ -228,6 +228,7 @@ struct NPhoto: Codable {
         case hasTags = "has_tags"
     }
     
+//    метод для выбора из массива адресов фотографий с подходящим размером
     func getPropperSize() -> NSize {
         if let sizeX = sizes.first(where: { $0.type?.rawValue == "x"}) {
             return sizeX
